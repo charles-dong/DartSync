@@ -1,0 +1,25 @@
+//
+//  DirectoryOrFile+Access.h
+//  DartSync
+//
+//  Created by Charles on 5/14/14.
+//  Copyright (c) 2014 Charles. All rights reserved.
+//
+
+#include "data_structures.h"
+#import "DirectoryOrFile.h"
+
+@interface DirectoryOrFile (Access)
+
++ (void)updateCoreDataWithCollection:(file_collection_t *)collection;
++ (void)updateAllCoreDataRelationships;
++ (void) printCoreData;
+// ----------------------------------  Support functions
+
+//+ (void)deleteDirectoryOrFileWithFile_Node_Struct:(file_node_t *)fileNodeStruct;
+// adds DirectoryOrFile object to Core Data with info from a file_node_t struct
+- (NSArray *)modifyWithFileNode:(file_node_t *)fileNodeStruct andPeers:(NSArray *)peers;
++ (NSArray *)addDirectoryOrFileWithFile_Node_Struct:(file_node_t *)directoryStruct andPeers:(NSArray *)peers;
++ (DirectoryOrFile *)getRootDirectory;
+
+@end

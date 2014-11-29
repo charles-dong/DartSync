@@ -1,0 +1,16 @@
+//
+//  MyUIManagedDocument.m
+//  DartSync
+//
+//  Created by Charles on 5/13/14.
+//  Copyright (c) 2014 Charles. All rights reserved.
+//
+
+#import "MyUIManagedDocument.h"
+
+@implementation MyUIManagedDocument
++(NSString*) persistentStoreName{
+    return @"DartSyncData.sqlite";
+}
+  
+@end

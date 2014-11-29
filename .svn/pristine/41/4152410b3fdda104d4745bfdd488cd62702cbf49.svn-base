@@ -1,0 +1,38 @@
+//
+//  DirectoryOrFile.h
+//  DartSync
+//
+//  Created by Charles on 5/18/14.
+//  Copyright (c) 2014 Charles. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+
+@class DirectoryOrFile, PeerIP;
+
+@interface DirectoryOrFile : NSManagedObject
+
+@property (nonatomic, retain) NSNumber * directory;
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSNumber * numPeers;
+@property (nonatomic, retain) NSNumber * size;
+@property (nonatomic, retain) NSNumber * version_number;
+@property (nonatomic, retain) DirectoryOrFile *inDirectory;
+@property (nonatomic, retain) NSSet *parentDirectoryOf;
+@property (nonatomic, retain) NSSet *peerIPs;
+@end
+
+@interface DirectoryOrFile (CoreDataGeneratedAccessors)
+
+- (void)addParentDirectoryOfObject:(DirectoryOrFile *)value;
+- (void)removeParentDirectoryOfObject:(DirectoryOrFile *)value;
+- (void)addParentDirectoryOf:(NSSet *)values;
+- (void)removeParentDirectoryOf:(NSSet *)values;
+
+- (void)addPeerIPsObject:(PeerIP *)value;
+- (void)removePeerIPsObject:(PeerIP *)value;
+- (void)addPeerIPs:(NSSet *)values;
+- (void)removePeerIPs:(NSSet *)values;
+
+@end

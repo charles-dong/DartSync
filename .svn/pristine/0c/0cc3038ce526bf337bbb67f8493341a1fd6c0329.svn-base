@@ -1,0 +1,54 @@
+//
+//  FileManagement.m
+//  DartSync
+//
+//  Created by Charles on 5/16/14.
+//  Copyright (c) 2014 Charles. All rights reserved.
+//
+
+#import "FileManagement.h"
+
+@implementation FileManagement
+
+
++ (BOOL)fileOrDirectory:(NSString *)name isInDirectory:(NSString *)directoryName {
+    if ([directoryName localizedCompare:[name stringByDeletingLastPathComponent]] == NSOrderedSame)
+        return YES;
+    else
+        return NO;
+}
+
+//returns url of document with passed filePath (stored in Documents directory)
++ (NSURL *)getURLForFileName:(NSString *)fileName {
+return [[self applicationDocumentsDirectory] URLByAppendingPathComponent:fileName];
+}
+
+/*
++(const char *)getCPathForFopen:(NSURL *)url {
+  return [[url path] fileSystemRepresentation];
+}
+*/
+
++ (void)createFileAtURL:(NSURL *)url withData:(NSData *)contents {
+  if (![[NSFileManager defaultManager] createFileAtPath:[url path] contents:contents attributes:nil])
+        NSLog(@"Error creating file at path %@", [url path]);
+  [[NSNotificationCenter defaultCenter]
+   postNotificationName:@"FileWasDownloadedNotification"
+   object:url];
+}
+
++ (void)removeItemAtURL:(NSURL *)url {
+  NSError *error;
+  if (![[NSFileManager defaultManager] removeItemAtPath:[url path] error: &error])
+    NSLog(@"Error removing file at path %@", [url path]);
+}
+
+//returns URL of app's documents directory
++ (NSURL *)applicationDocumentsDirectory
+{
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+
+
+@end

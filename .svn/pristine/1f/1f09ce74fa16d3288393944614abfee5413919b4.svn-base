@@ -1,0 +1,13 @@
+//
+//  MyUIManagedDocument.h
+//  DartSync
+//
+//  Created by Charles on 5/13/14.
+//  Copyright (c) 2014 Charles. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface MyUIManagedDocument : UIManagedDocument
+
+@end

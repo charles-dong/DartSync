@@ -1,0 +1,46 @@
+/*
+ * =====================================================================================
+ *
+ *       Filename:  compress.h
+ *
+ *    Description:  Compile with zlib-1.2.8/libz.a
+ *
+ *        Version:  1.0
+ *        Created:  05/10/2014 18:30:25
+ *       Revision:  none
+ *       Compiler:  gcc
+ *
+ *         Author: 
+ *   Organization:  Dartmouth College - Department of Computer Science
+ *
+ * =====================================================================================
+ */
+
+#ifndef  compress_INC
+#define  compress_INC
+
+// ---------------- Prerequisites e.g., Requires "math.h"
+
+// ---------------- Constants
+
+// ---------------- Global Variables
+
+// ---------------- Functions
+
+/*
+ * Description: Takes in pointers to an uncompressed string, uncompressLength, and compressLength.
+ * UncompressLength pointer must already be assigned the value of strlen(string)+1.
+ * Mallocs a compressed string, sets value of compressLength.
+ */
+char *compress_string(char *original, unsigned long int *uncompressLength, unsigned long int *compressLength);
+
+
+/*
+ * Description: Takes in pointers to a compressed string, uncompressLength, and compressLength.
+ * UncompressLength pointer must already be assigned the value of strlen(original)+1.
+ * CompressLength pointer must already be assigned the value returned by compress_string.
+ * Mallocs a decompressed string, sets value of uncompressLength.
+ */
+char *decompress_string(char *compressed, unsigned long int *uncompressLength, unsigned long int *compressLength);
+
+#endif   /* ----- #ifndef compress_INC  ----- */

@@ -1,0 +1,731 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5612ADCE193424D0004FEFCD /* ConnectToTrackerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5612ADCC193424D0004FEFCD /* ConnectToTrackerViewController.m */; };
+		5612ADCF193424D0004FEFCD /* ConnectToTrackerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5612ADCD193424D0004FEFCD /* ConnectToTrackerViewController.xib */; };
+		5612ADD519342FF0004FEFCD /* iOSPeer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5612ADD419342FF0004FEFCD /* iOSPeer.m */; };
+		5670D39519365E0500799F78 /* aes_modes.c in Sources */ = {isa = PBXBuildFile; fileRef = 5670D37F19365E0500799F78 /* aes_modes.c */; };
+		5670D39619365E0500799F78 /* aescrypt.c in Sources */ = {isa = PBXBuildFile; fileRef = 5670D38119365E0500799F78 /* aescrypt.c */; };
+		5670D39719365E0500799F78 /* aeskey.c in Sources */ = {isa = PBXBuildFile; fileRef = 5670D38219365E0500799F78 /* aeskey.c */; };
+		5670D39819365E0500799F78 /* aestab.c in Sources */ = {isa = PBXBuildFile; fileRef = 5670D38419365E0500799F78 /* aestab.c */; };
+		5670D39919365E0500799F78 /* checksum.c in Sources */ = {isa = PBXBuildFile; fileRef = 5670D38819365E0500799F78 /* checksum.c */; };
+		5670D39A19365E0500799F78 /* common.c in Sources */ = {isa = PBXBuildFile; fileRef = 5670D38919365E0500799F78 /* common.c */; };
+		5670D39B19365E0500799F78 /* compress.c in Sources */ = {isa = PBXBuildFile; fileRef = 5670D38B19365E0500799F78 /* compress.c */; };
+		5670D39C19365E0500799F78 /* data_structures.c in Sources */ = {isa = PBXBuildFile; fileRef = 5670D38D19365E0500799F78 /* data_structures.c */; };
+		5670D39D19365E0500799F78 /* encrypt.c in Sources */ = {isa = PBXBuildFile; fileRef = 5670D38F19365E0500799F78 /* encrypt.c */; };
+		5670D39E19365E0500799F78 /* qs.c in Sources */ = {isa = PBXBuildFile; fileRef = 5670D39119365E0500799F78 /* qs.c */; };
+		5670D39F19365E0500799F78 /* socket_common.c in Sources */ = {isa = PBXBuildFile; fileRef = 5670D39319365E0500799F78 /* socket_common.c */; };
+		56D8AC0D19348FFB003A2746 /* files.c in Sources */ = {isa = PBXBuildFile; fileRef = 56D8AC0B19348FFB003A2746 /* files.c */; };
+		56EF58B11935309A00298A07 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 56EF58B01935309A00298A07 /* MBProgressHUD.m */; };
+		CB4B3D4F1925724700F5C3C5 /* TBCoreDataStoreS1.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4B3D4E1925724700F5C3C5 /* TBCoreDataStoreS1.m */; };
+		CB4B3D521925F2E900F5C3C5 /* FileManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4B3D511925F2E900F5C3C5 /* FileManagement.m */; };
+		CB4B3D561926015500F5C3C5 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4B3D541926015500F5C3C5 /* LoginViewController.m */; };
+		CB4B3D571926015500F5C3C5 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB4B3D551926015500F5C3C5 /* LoginViewController.xib */; };
+		CB5ED1831929343D001768E7 /* PeerIP+Access.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5ED1821929343D001768E7 /* PeerIP+Access.m */; };
+		CBA19BAE192200C400028696 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA19BAD192200C400028696 /* Foundation.framework */; };
+		CBA19BB0192200C400028696 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA19BAF192200C400028696 /* CoreGraphics.framework */; };
+		CBA19BB2192200C400028696 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA19BB1192200C400028696 /* UIKit.framework */; };
+		CBA19BB8192200C400028696 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CBA19BB6192200C400028696 /* InfoPlist.strings */; };
+		CBA19BBA192200C400028696 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA19BB9192200C400028696 /* main.m */; };
+		CBA19BBE192200C400028696 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA19BBD192200C400028696 /* AppDelegate.m */; };
+		CBA19BC9192200C400028696 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBA19BC8192200C400028696 /* Images.xcassets */; };
+		CBA19BD0192200C400028696 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA19BCF192200C400028696 /* XCTest.framework */; };
+		CBA19BD1192200C400028696 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA19BAD192200C400028696 /* Foundation.framework */; };
+		CBA19BD2192200C400028696 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA19BB1192200C400028696 /* UIKit.framework */; };
+		CBA19BDA192200C400028696 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CBA19BD8192200C400028696 /* InfoPlist.strings */; };
+		CBA19BDC192200C400028696 /* DartSyncTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA19BDB192200C400028696 /* DartSyncTests.m */; };
+		CBA19BE7192201A600028696 /* DartSync.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBA19BE5192201A600028696 /* DartSync.xcdatamodeld */; };
+		CBA19C0419226BDD00028696 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA19C0019226BDD00028696 /* CoreDataTableViewController.m */; };
+		CBD38B00192335030093C857 /* Lecture Notes in Resources */ = {isa = PBXBuildFile; fileRef = CBD38AFF192335030093C857 /* Lecture Notes */; };
+		CBD38B03192347EE0093C857 /* DirectoryCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD38B02192347EE0093C857 /* DirectoryCDTVC.m */; };
+		CBD38B0D1923511B0093C857 /* CacheForNSData.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD38B061923511B0093C857 /* CacheForNSData.m */; };
+		CBD38B101923511B0093C857 /* NetworkIndicatorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD38B0C1923511B0093C857 /* NetworkIndicatorHelper.m */; };
+		CBD38B1F192444FF0093C857 /* DirectoryOrFile+Access.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD38B1E192444FF0093C857 /* DirectoryOrFile+Access.m */; };
+		CBD38B22192447AD0093C857 /* PeerIP.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD38B21192447AD0093C857 /* PeerIP.m */; };
+		CBD38B25192447AD0093C857 /* DirectoryOrFile.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD38B24192447AD0093C857 /* DirectoryOrFile.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CBA19BD3192200C400028696 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CBA19BA2192200C300028696 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CBA19BA9192200C400028696;
+			remoteInfo = DartSync;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5612ADCB193424D0004FEFCD /* ConnectToTrackerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectToTrackerViewController.h; sourceTree = "<group>"; };
+		5612ADCC193424D0004FEFCD /* ConnectToTrackerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectToTrackerViewController.m; sourceTree = "<group>"; };
+		5612ADCD193424D0004FEFCD /* ConnectToTrackerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConnectToTrackerViewController.xib; sourceTree = "<group>"; };
+		5612ADD319342FF0004FEFCD /* iOSPeer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSPeer.h; sourceTree = "<group>"; };
+		5612ADD419342FF0004FEFCD /* iOSPeer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iOSPeer.m; sourceTree = "<group>"; };
+		5670D37F19365E0500799F78 /* aes_modes.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aes_modes.c; sourceTree = "<group>"; };
+		5670D38019365E0500799F78 /* aes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
+		5670D38119365E0500799F78 /* aescrypt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aescrypt.c; sourceTree = "<group>"; };
+		5670D38219365E0500799F78 /* aeskey.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aeskey.c; sourceTree = "<group>"; };
+		5670D38319365E0500799F78 /* aesopt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aesopt.h; sourceTree = "<group>"; };
+		5670D38419365E0500799F78 /* aestab.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aestab.c; sourceTree = "<group>"; };
+		5670D38519365E0500799F78 /* aestab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aestab.h; sourceTree = "<group>"; };
+		5670D38619365E0500799F78 /* brg_endian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = brg_endian.h; sourceTree = "<group>"; };
+		5670D38719365E0500799F78 /* brg_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = brg_types.h; sourceTree = "<group>"; };
+		5670D38819365E0500799F78 /* checksum.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = checksum.c; sourceTree = "<group>"; };
+		5670D38919365E0500799F78 /* common.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = common.c; sourceTree = "<group>"; };
+		5670D38A19365E0500799F78 /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		5670D38B19365E0500799F78 /* compress.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = compress.c; sourceTree = "<group>"; };
+		5670D38C19365E0500799F78 /* compress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = compress.h; sourceTree = "<group>"; };
+		5670D38D19365E0500799F78 /* data_structures.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = data_structures.c; sourceTree = "<group>"; };
+		5670D38E19365E0500799F78 /* data_structures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = data_structures.h; sourceTree = "<group>"; };
+		5670D38F19365E0500799F78 /* encrypt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = encrypt.c; sourceTree = "<group>"; };
+		5670D39019365E0500799F78 /* encrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = encrypt.h; sourceTree = "<group>"; };
+		5670D39119365E0500799F78 /* qs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qs.c; sourceTree = "<group>"; };
+		5670D39219365E0500799F78 /* qs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qs.h; sourceTree = "<group>"; };
+		5670D39319365E0500799F78 /* socket_common.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = socket_common.c; sourceTree = "<group>"; };
+		5670D39419365E0500799F78 /* socket_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = socket_common.h; sourceTree = "<group>"; };
+		5670D3A019365E7000799F78 /* aes_via_ace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aes_via_ace.h; path = encrypt/aes/aes_via_ace.h; sourceTree = "<group>"; };
+		56D8AC0B19348FFB003A2746 /* files.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = files.c; sourceTree = "<group>"; };
+		56D8AC0C19348FFB003A2746 /* files.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = files.h; sourceTree = "<group>"; };
+		56EF58AF1935309A00298A07 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		56EF58B01935309A00298A07 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		56F74760193439300009578A /* libaes.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libaes.a; path = ../../../CS60/labs/proj/hip/Project/encrypt/libaes.a; sourceTree = "<group>"; };
+		CB4B3D4D1925724700F5C3C5 /* TBCoreDataStoreS1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCoreDataStoreS1.h; sourceTree = "<group>"; };
+		CB4B3D4E1925724700F5C3C5 /* TBCoreDataStoreS1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCoreDataStoreS1.m; sourceTree = "<group>"; };
+		CB4B3D501925F2E900F5C3C5 /* FileManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileManagement.h; sourceTree = "<group>"; };
+		CB4B3D511925F2E900F5C3C5 /* FileManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileManagement.m; sourceTree = "<group>"; };
+		CB4B3D531926015500F5C3C5 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		CB4B3D541926015500F5C3C5 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		CB4B3D551926015500F5C3C5 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		CB5ED17B1929318E001768E7 /* PeerIP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeerIP.h; sourceTree = "<group>"; };
+		CB5ED17C1929318E001768E7 /* PeerIP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeerIP.m; sourceTree = "<group>"; };
+		CB5ED17E1929318F001768E7 /* DirectoryOrFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectoryOrFile.h; sourceTree = "<group>"; };
+		CB5ED17F1929318F001768E7 /* DirectoryOrFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectoryOrFile.m; sourceTree = "<group>"; };
+		CB5ED1811929343D001768E7 /* PeerIP+Access.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PeerIP+Access.h"; sourceTree = "<group>"; };
+		CB5ED1821929343D001768E7 /* PeerIP+Access.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PeerIP+Access.m"; sourceTree = "<group>"; };
+		CBA19BAA192200C400028696 /* DartSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DartSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBA19BAD192200C400028696 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CBA19BAF192200C400028696 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CBA19BB1192200C400028696 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CBA19BB5192200C400028696 /* DartSync-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DartSync-Info.plist"; sourceTree = "<group>"; };
+		CBA19BB7192200C400028696 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CBA19BB9192200C400028696 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CBA19BBB192200C400028696 /* DartSync-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DartSync-Prefix.pch"; sourceTree = "<group>"; };
+		CBA19BBC192200C400028696 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CBA19BBD192200C400028696 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CBA19BC8192200C400028696 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CBA19BCE192200C400028696 /* DartSyncTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DartSyncTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBA19BCF192200C400028696 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		CBA19BD7192200C400028696 /* DartSyncTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DartSyncTests-Info.plist"; sourceTree = "<group>"; };
+		CBA19BD9192200C400028696 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CBA19BDB192200C400028696 /* DartSyncTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DartSyncTests.m; sourceTree = "<group>"; };
+		CBA19BE6192201A600028696 /* DartSync.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DartSync.xcdatamodel; sourceTree = "<group>"; };
+		CBA19BFF19226BDD00028696 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
+		CBA19C0019226BDD00028696 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
+		CBD38AFF192335030093C857 /* Lecture Notes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Lecture Notes"; path = "DartSync/Lecture Notes"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		CBD38B01192347EE0093C857 /* DirectoryCDTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectoryCDTVC.h; sourceTree = "<group>"; };
+		CBD38B02192347EE0093C857 /* DirectoryCDTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectoryCDTVC.m; sourceTree = "<group>"; };
+		CBD38B051923511B0093C857 /* CacheForNSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheForNSData.h; sourceTree = "<group>"; };
+		CBD38B061923511B0093C857 /* CacheForNSData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheForNSData.m; sourceTree = "<group>"; };
+		CBD38B0B1923511B0093C857 /* NetworkIndicatorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkIndicatorHelper.h; sourceTree = "<group>"; };
+		CBD38B0C1923511B0093C857 /* NetworkIndicatorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkIndicatorHelper.m; sourceTree = "<group>"; };
+		CBD38B1D192444FF0093C857 /* DirectoryOrFile+Access.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DirectoryOrFile+Access.h"; sourceTree = "<group>"; };
+		CBD38B1E192444FF0093C857 /* DirectoryOrFile+Access.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DirectoryOrFile+Access.m"; sourceTree = "<group>"; };
+		CBD38B20192447AD0093C857 /* PeerIP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeerIP.h; sourceTree = "<group>"; };
+		CBD38B21192447AD0093C857 /* PeerIP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeerIP.m; sourceTree = "<group>"; };
+		CBD38B23192447AD0093C857 /* DirectoryOrFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectoryOrFile.h; sourceTree = "<group>"; };
+		CBD38B24192447AD0093C857 /* DirectoryOrFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectoryOrFile.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CBA19BA7192200C400028696 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBA19BB0192200C400028696 /* CoreGraphics.framework in Frameworks */,
+				CBA19BB2192200C400028696 /* UIKit.framework in Frameworks */,
+				CBA19BAE192200C400028696 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBA19BCB192200C400028696 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBA19BD0192200C400028696 /* XCTest.framework in Frameworks */,
+				CBA19BD2192200C400028696 /* UIKit.framework in Frameworks */,
+				CBA19BD1192200C400028696 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5612ADCA19342499004FEFCD /* ConnectToTracker */ = {
+			isa = PBXGroup;
+			children = (
+				5612ADCB193424D0004FEFCD /* ConnectToTrackerViewController.h */,
+				5612ADCC193424D0004FEFCD /* ConnectToTrackerViewController.m */,
+				5612ADCD193424D0004FEFCD /* ConnectToTrackerViewController.xib */,
+			);
+			name = ConnectToTracker;
+			sourceTree = "<group>";
+		};
+		56F74762193439FC0009578A /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				5670D3A019365E7000799F78 /* aes_via_ace.h */,
+				5670D37F19365E0500799F78 /* aes_modes.c */,
+				5670D38019365E0500799F78 /* aes.h */,
+				5670D38119365E0500799F78 /* aescrypt.c */,
+				5670D38219365E0500799F78 /* aeskey.c */,
+				5670D38319365E0500799F78 /* aesopt.h */,
+				5670D38419365E0500799F78 /* aestab.c */,
+				5670D38519365E0500799F78 /* aestab.h */,
+				5670D38619365E0500799F78 /* brg_endian.h */,
+				5670D38719365E0500799F78 /* brg_types.h */,
+				5670D38819365E0500799F78 /* checksum.c */,
+				5670D38919365E0500799F78 /* common.c */,
+				5670D38A19365E0500799F78 /* common.h */,
+				5670D38B19365E0500799F78 /* compress.c */,
+				5670D38C19365E0500799F78 /* compress.h */,
+				5670D38D19365E0500799F78 /* data_structures.c */,
+				5670D38E19365E0500799F78 /* data_structures.h */,
+				5670D38F19365E0500799F78 /* encrypt.c */,
+				5670D39019365E0500799F78 /* encrypt.h */,
+				5670D39119365E0500799F78 /* qs.c */,
+				5670D39219365E0500799F78 /* qs.h */,
+				5670D39319365E0500799F78 /* socket_common.c */,
+				5670D39419365E0500799F78 /* socket_common.h */,
+			);
+			name = Project;
+			path = ../../../CS60/labs/proj/hip/Project;
+			sourceTree = "<group>";
+		};
+		CB4B3D581926015E00F5C3C5 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CB4B3D531926015500F5C3C5 /* LoginViewController.h */,
+				CB4B3D541926015500F5C3C5 /* LoginViewController.m */,
+				CB4B3D551926015500F5C3C5 /* LoginViewController.xib */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		CBA19BA1192200C300028696 = {
+			isa = PBXGroup;
+			children = (
+				56F74762193439FC0009578A /* Project */,
+				CBD38AFF192335030093C857 /* Lecture Notes */,
+				CBA19BB3192200C400028696 /* DartSync */,
+				CBA19BB4192200C400028696 /* Supporting Files */,
+				CBA19BD5192200C400028696 /* DartSyncTests */,
+				CBA19BAC192200C400028696 /* Frameworks */,
+				CBA19BAB192200C400028696 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CBA19BAB192200C400028696 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CBA19BAA192200C400028696 /* DartSync.app */,
+				CBA19BCE192200C400028696 /* DartSyncTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CBA19BAC192200C400028696 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				56F74760193439300009578A /* libaes.a */,
+				CBA19BAD192200C400028696 /* Foundation.framework */,
+				CBA19BAF192200C400028696 /* CoreGraphics.framework */,
+				CBA19BB1192200C400028696 /* UIKit.framework */,
+				CBA19BCF192200C400028696 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CBA19BB3192200C400028696 /* DartSync */ = {
+			isa = PBXGroup;
+			children = (
+				CBA19BBC192200C400028696 /* AppDelegate.h */,
+				CBA19BBD192200C400028696 /* AppDelegate.m */,
+				CBD38B04192350EA0093C857 /* Helper */,
+				CBA19BFE19226BDD00028696 /* CoreDataTableViewController */,
+				CBA19BE8192201B800028696 /* Model */,
+				5612ADCA19342499004FEFCD /* ConnectToTracker */,
+				CB4B3D581926015E00F5C3C5 /* Login */,
+				5612ADD319342FF0004FEFCD /* iOSPeer.h */,
+				5612ADD419342FF0004FEFCD /* iOSPeer.m */,
+			);
+			path = DartSync;
+			sourceTree = "<group>";
+		};
+		CBA19BB4192200C400028696 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CBA19BC8192200C400028696 /* Images.xcassets */,
+				CBA19BB5192200C400028696 /* DartSync-Info.plist */,
+				CBA19BB6192200C400028696 /* InfoPlist.strings */,
+				CBA19BB9192200C400028696 /* main.m */,
+				CBA19BBB192200C400028696 /* DartSync-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			path = DartSync;
+			sourceTree = "<group>";
+		};
+		CBA19BD5192200C400028696 /* DartSyncTests */ = {
+			isa = PBXGroup;
+			children = (
+				CBA19BDB192200C400028696 /* DartSyncTests.m */,
+				CBA19BD6192200C400028696 /* Supporting Files */,
+			);
+			path = DartSyncTests;
+			sourceTree = "<group>";
+		};
+		CBA19BD6192200C400028696 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CBA19BD7192200C400028696 /* DartSyncTests-Info.plist */,
+				CBA19BD8192200C400028696 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CBA19BE8192201B800028696 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CBA19BE5192201A600028696 /* DartSync.xcdatamodeld */,
+				CB5ED17B1929318E001768E7 /* PeerIP.h */,
+				CB5ED17C1929318E001768E7 /* PeerIP.m */,
+				CB5ED17E1929318F001768E7 /* DirectoryOrFile.h */,
+				CB5ED17F1929318F001768E7 /* DirectoryOrFile.m */,
+				CBD38B1D192444FF0093C857 /* DirectoryOrFile+Access.h */,
+				CBD38B1E192444FF0093C857 /* DirectoryOrFile+Access.m */,
+				CB5ED1811929343D001768E7 /* PeerIP+Access.h */,
+				CB5ED1821929343D001768E7 /* PeerIP+Access.m */,
+				CBD38B2619244A650093C857 /* Objects */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CBA19BFE19226BDD00028696 /* CoreDataTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CBA19BFF19226BDD00028696 /* CoreDataTableViewController.h */,
+				CBA19C0019226BDD00028696 /* CoreDataTableViewController.m */,
+				CBD38B01192347EE0093C857 /* DirectoryCDTVC.h */,
+				CBD38B02192347EE0093C857 /* DirectoryCDTVC.m */,
+			);
+			path = CoreDataTableViewController;
+			sourceTree = "<group>";
+		};
+		CBD38B04192350EA0093C857 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				56EF58AF1935309A00298A07 /* MBProgressHUD.h */,
+				56EF58B01935309A00298A07 /* MBProgressHUD.m */,
+				56D8AC0B19348FFB003A2746 /* files.c */,
+				56D8AC0C19348FFB003A2746 /* files.h */,
+				CB4B3D501925F2E900F5C3C5 /* FileManagement.h */,
+				CB4B3D511925F2E900F5C3C5 /* FileManagement.m */,
+				CB4B3D4D1925724700F5C3C5 /* TBCoreDataStoreS1.h */,
+				CB4B3D4E1925724700F5C3C5 /* TBCoreDataStoreS1.m */,
+				CBD38B051923511B0093C857 /* CacheForNSData.h */,
+				CBD38B061923511B0093C857 /* CacheForNSData.m */,
+				CBD38B0B1923511B0093C857 /* NetworkIndicatorHelper.h */,
+				CBD38B0C1923511B0093C857 /* NetworkIndicatorHelper.m */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		CBD38B2619244A650093C857 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				CBD38B20192447AD0093C857 /* PeerIP.h */,
+				CBD38B21192447AD0093C857 /* PeerIP.m */,
+				CBD38B23192447AD0093C857 /* DirectoryOrFile.h */,
+				CBD38B24192447AD0093C857 /* DirectoryOrFile.m */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CBA19BA9192200C400028696 /* DartSync */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBA19BDF192200C400028696 /* Build configuration list for PBXNativeTarget "DartSync" */;
+			buildPhases = (
+				CBA19BA6192200C400028696 /* Sources */,
+				CBA19BA7192200C400028696 /* Frameworks */,
+				CBA19BA8192200C400028696 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DartSync;
+			productName = DartSync;
+			productReference = CBA19BAA192200C400028696 /* DartSync.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CBA19BCD192200C400028696 /* DartSyncTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBA19BE2192200C400028696 /* Build configuration list for PBXNativeTarget "DartSyncTests" */;
+			buildPhases = (
+				CBA19BCA192200C400028696 /* Sources */,
+				CBA19BCB192200C400028696 /* Frameworks */,
+				CBA19BCC192200C400028696 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CBA19BD4192200C400028696 /* PBXTargetDependency */,
+			);
+			name = DartSyncTests;
+			productName = DartSyncTests;
+			productReference = CBA19BCE192200C400028696 /* DartSyncTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CBA19BA2192200C300028696 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Charles;
+				TargetAttributes = {
+					CBA19BA9192200C400028696 = {
+						DevelopmentTeam = 5PBDJVQUK2;
+					};
+					CBA19BCD192200C400028696 = {
+						TestTargetID = CBA19BA9192200C400028696;
+					};
+				};
+			};
+			buildConfigurationList = CBA19BA5192200C300028696 /* Build configuration list for PBXProject "DartSync" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CBA19BA1192200C300028696;
+			productRefGroup = CBA19BAB192200C400028696 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CBA19BA9192200C400028696 /* DartSync */,
+				CBA19BCD192200C400028696 /* DartSyncTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CBA19BA8192200C400028696 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB4B3D571926015500F5C3C5 /* LoginViewController.xib in Resources */,
+				CBA19BC9192200C400028696 /* Images.xcassets in Resources */,
+				CBA19BB8192200C400028696 /* InfoPlist.strings in Resources */,
+				CBD38B00192335030093C857 /* Lecture Notes in Resources */,
+				5612ADCF193424D0004FEFCD /* ConnectToTrackerViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBA19BCC192200C400028696 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBA19BDA192200C400028696 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CBA19BA6192200C400028696 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5670D39719365E0500799F78 /* aeskey.c in Sources */,
+				CB4B3D4F1925724700F5C3C5 /* TBCoreDataStoreS1.m in Sources */,
+				CB4B3D521925F2E900F5C3C5 /* FileManagement.m in Sources */,
+				5670D39F19365E0500799F78 /* socket_common.c in Sources */,
+				5612ADD519342FF0004FEFCD /* iOSPeer.m in Sources */,
+				CBD38B0D1923511B0093C857 /* CacheForNSData.m in Sources */,
+				5670D39D19365E0500799F78 /* encrypt.c in Sources */,
+				5670D39919365E0500799F78 /* checksum.c in Sources */,
+				CBD38B1F192444FF0093C857 /* DirectoryOrFile+Access.m in Sources */,
+				56EF58B11935309A00298A07 /* MBProgressHUD.m in Sources */,
+				5670D39E19365E0500799F78 /* qs.c in Sources */,
+				CBD38B101923511B0093C857 /* NetworkIndicatorHelper.m in Sources */,
+				5670D39C19365E0500799F78 /* data_structures.c in Sources */,
+				5670D39B19365E0500799F78 /* compress.c in Sources */,
+				5612ADCE193424D0004FEFCD /* ConnectToTrackerViewController.m in Sources */,
+				CBD38B22192447AD0093C857 /* PeerIP.m in Sources */,
+				CBA19BE7192201A600028696 /* DartSync.xcdatamodeld in Sources */,
+				5670D39819365E0500799F78 /* aestab.c in Sources */,
+				56D8AC0D19348FFB003A2746 /* files.c in Sources */,
+				CBA19BBE192200C400028696 /* AppDelegate.m in Sources */,
+				5670D39519365E0500799F78 /* aes_modes.c in Sources */,
+				CBA19C0419226BDD00028696 /* CoreDataTableViewController.m in Sources */,
+				CBA19BBA192200C400028696 /* main.m in Sources */,
+				5670D39A19365E0500799F78 /* common.c in Sources */,
+				CBD38B03192347EE0093C857 /* DirectoryCDTVC.m in Sources */,
+				CB5ED1831929343D001768E7 /* PeerIP+Access.m in Sources */,
+				CBD38B25192447AD0093C857 /* DirectoryOrFile.m in Sources */,
+				5670D39619365E0500799F78 /* aescrypt.c in Sources */,
+				CB4B3D561926015500F5C3C5 /* LoginViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBA19BCA192200C400028696 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBA19BDC192200C400028696 /* DartSyncTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CBA19BD4192200C400028696 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CBA19BA9192200C400028696 /* DartSync */;
+			targetProxy = CBA19BD3192200C400028696 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CBA19BB6192200C400028696 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CBA19BB7192200C400028696 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CBA19BD8192200C400028696 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CBA19BD9192200C400028696 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CBA19BDD192200C400028696 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CBA19BDE192200C400028696 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CBA19BE0192200C400028696 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DartSync/DartSync-Prefix.pch";
+				INFOPLIST_FILE = "DartSync/DartSync-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Charles/Dropbox/CS60/labs/proj/hip/Project/encrypt,
+				);
+				OTHER_LDFLAGS = "-lz";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CBA19BE1192200C400028696 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DartSync/DartSync-Prefix.pch";
+				INFOPLIST_FILE = "DartSync/DartSync-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Charles/Dropbox/CS60/labs/proj/hip/Project/encrypt,
+				);
+				OTHER_LDFLAGS = "-lz";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		CBA19BE3192200C400028696 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DartSync.app/DartSync";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DartSync/DartSync-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "DartSyncTests/DartSyncTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		CBA19BE4192200C400028696 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DartSync.app/DartSync";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DartSync/DartSync-Prefix.pch";
+				INFOPLIST_FILE = "DartSyncTests/DartSyncTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CBA19BA5192200C300028696 /* Build configuration list for PBXProject "DartSync" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBA19BDD192200C400028696 /* Debug */,
+				CBA19BDE192200C400028696 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CBA19BDF192200C400028696 /* Build configuration list for PBXNativeTarget "DartSync" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBA19BE0192200C400028696 /* Debug */,
+				CBA19BE1192200C400028696 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CBA19BE2192200C400028696 /* Build configuration list for PBXNativeTarget "DartSyncTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBA19BE3192200C400028696 /* Debug */,
+				CBA19BE4192200C400028696 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CBA19BE5192201A600028696 /* DartSync.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CBA19BE6192201A600028696 /* DartSync.xcdatamodel */,
+			);
+			currentVersion = CBA19BE6192201A600028696 /* DartSync.xcdatamodel */;
+			path = DartSync.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = CBA19BA2192200C300028696 /* Project object */;
+}

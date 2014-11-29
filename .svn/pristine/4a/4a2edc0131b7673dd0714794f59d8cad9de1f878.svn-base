@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+    <title>DartSync</title>
+    <%= stylesheet_link_tag "bootstrap.min" %>
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <%= stylesheet_link_tag "dhackstheme" %>
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="/index">
+                    <i class="fa fa-play-circle"></i>  <span class="light">DartSync</span>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="hidden">
+                        <a href="/index"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="/index">DartSync</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="/about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="/contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">DartSync</h1>
+                        <p class="intro-text">By Charlie Dong, Ethan Yu, Saisi Peter, Shuyang Fang</p>
+                        <div class="page-scroll">
+                            <a href="#about" class="btn btn-circle">
+                                <i class="fa fa-angle-double-down animated"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section class = "content">
+  <% if @up %>
+    <h2 id="status">System is up!</h2>
+    <p id="uptime">Total uptime: <%= @uptime %> seconds</p> 
+  <% else %>
+    <h2 id="status">System is down!</h2>
+    <p id="uptime"></p>
+  <% end %>
+  <p id="totaluncompress">Total uncompressed size transfered: <%= @stat.tuncompress %> bytes</p>
+  <p id="totalcompress">Total compressed size transfered: <%= @stat.tcompress %> bytes</p>
+  <p id="totalencrypt">Total encrypted size transfered: <%= @stat.tencrypt %> bytes</p>
+  <p id="totalsaved">Saved a total of <%= @stat.tuncompress - @stat.tencrypt %> bytes with compression and encryption.</p>
+
+  
+  <p>Graphs of usage updated every 5 seconds</p>
+  <p>Uncompress file usage graph.</p>
+  <div class="graph" id="uncompressgraph" style="width:600px;height:300px"></div>
+  <p>Compressed file usage graph.</p>
+  <div class="graph" id="compressgraph" style="width:600px;height:300px"></div>
+  <p>Encrypted file usage graph.</p>
+  <div class="graph" id="encryptgraph" style="width:600px;height:300px"></div>
+</section>
+
+</div> <!-- /container -->
+
+<%=render "footer" %>
+
+<%= javascript_include_tag "site" %>
+<%= javascript_include_tag "jquery" %>
+<%= javascript_include_tag "bootstrap" %>
+<%= javascript_include_tag "jquery.flot" %>
+

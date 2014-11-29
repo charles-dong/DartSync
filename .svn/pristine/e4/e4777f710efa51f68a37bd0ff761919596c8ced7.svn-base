@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+    <title>DartSync</title>
+    <%= stylesheet_link_tag "bootstrap.min" %>
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <%= stylesheet_link_tag "dhackstheme" %>
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="/index">
+                    <i class="fa fa-play-circle"></i>  <span class="light">DartSync</span>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="hidden">
+                        <a href="/index"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="/index">DartSync</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="/about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="/contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">DartSync</h1>
+                        <p class="intro-text">By Charlie Dong, Ethan Yu, Saisi Peter, Shuyang Fang</p>
+                        <div class="page-scroll">
+                            <a href="#about" class="btn btn-circle">
+                                <i class="fa fa-angle-double-down animated"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  <section class = "content">
+<div class="bs-docs-featurette">
+  <div class="container">
+    <h2 class="bs-docs-featurette-title">DartSync Team Members</h2>
+    <p class="lead">Feel free to contact us with questions! Click our names to email us!</p>
+
+    <hr class="half-rule">
+
+    <div class="row">
+      <div class="col-sm-4 col-centered">
+        <%= image_tag "charlie.jpg" %>
+        <h3><a href="mailto:Charles.J.Dong.13@dartmouth.edu">Charlie Dong '14</a></h3>
+      </div>
+      <div class="col-sm-4 col-centered">
+        <%= image_tag "ethan.jpg" %>
+        <h3><a href="mailto:Ethan.Yu@dartmouth.edu">Ethan Yu '16</a></h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4 col-centered">
+        <%= image_tag "saisi.jpg" %>
+        <h3><a href="mailto:saisi.peter@gmail.com">Saisi Peter '16</a></h3>
+      </div>
+      <div class="col-sm-4 col-centered">
+        <%= image_tag "shuyang.jpg" %>
+        <h3><a href="mailto:shuyangfang@gmail.com">Shuyang Fang '14</a></h3>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<%= render "footer" %>
+<%= javascript_include_tag "bootstrap" %>

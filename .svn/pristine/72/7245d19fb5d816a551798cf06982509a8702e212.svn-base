@@ -1,0 +1,14 @@
+//
+//  PeerIP+Access.h
+//  DartSync
+//
+//  Created by Charles on 5/18/14.
+//  Copyright (c) 2014 Charles. All rights reserved.
+//
+
+#import "PeerIP.h"
+
+@interface PeerIP (Access)
++ (PeerIP *)getPeerFromIP:(NSString *)IPAddress inManagedObjectContext:(NSManagedObjectContext *)context;
++ (NSArray *)getAllPeers;
+@end

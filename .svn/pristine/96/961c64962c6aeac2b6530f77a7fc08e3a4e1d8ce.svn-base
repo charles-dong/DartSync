@@ -1,0 +1,103 @@
+//
+//  DBHelper.m
+//  DartSync
+//
+//  Created by Charles on 5/13/14.
+//  Copyright (c) 2014 Charles. All rights reserved.
+
+#import "DBHelper.h"
+#import "MyUIManagedDocument.h"
+
+#define DEFAULT_DB_NAME @"DartSyncDatabase"
+
+@implementation DBHelper
+
+@synthesize dbName =_dbName;
+//----------------------------------------------------------------
+# pragma mark   -   Accessors
+//----------------------------------------------------------------
+
+- (NSFileManager *)fileManager
+{
+    if (!_fileManager) _fileManager = [[NSFileManager alloc] init];
+    return _fileManager;
+}
+
+//lazy instantiation of UIManagedDocument with URL baseDirectoryPath/self.dbName/DartSyncData.sqlite
+- (UIManagedDocument *)database
+{
+    if (!_database) {
+        NSFileManager *fm = self.fileManager;
+        NSURL *baseDir=[[fm URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+        _database = [[MyUIManagedDocument alloc] initWithFileURL:
+                     [baseDir URLByAppendingPathComponent:self.dbName]];
+
+        NSLog(@"Core Data: %@%@",[baseDir URLByAppendingPathComponent:self.dbName],[MyUIManagedDocument persistentStoreName]);
+    }
+    return _database;
+}
+
+-(void)setDbName:(NSString *)dbName
+{
+    if (_dbName != dbName) {
+        _dbName = dbName;
+        self.database =nil;
+    }
+
+}
+- (NSString *)dbName
+{
+    if (!_dbName) {
+        _dbName = DEFAULT_DB_NAME;
+    }
+    return _dbName;
+}
+
+
++ (DBHelper *)sharedManagedDocument
+{
+    //----- It's a singleton --------------------- aka only one of these objects is ever created
+    static dispatch_once_t pred = 0;
+    __strong static DBHelper *_sharedManagedDocument = nil;
+    dispatch_once(&pred, ^{
+        _sharedManagedDocument = [[self alloc] init];
+    });
+    return _sharedManagedDocument;
+}
+
+//----------------------------------------------------------------
+# pragma mark   -   DBHelper methods
+//----------------------------------------------------------------
+
+
+//opens UIManagedDocument self.database and performs 'block' on completion
+- (void)openDBUsingBlock:(void (^)(BOOL))block
+{
+    DBHelper *dbh = [DBHelper sharedManagedDocument];
+    if (![dbh.fileManager fileExistsAtPath:[dbh.database.fileURL path]]) {
+        [dbh.database saveToURL:dbh.database.fileURL forSaveOperation:UIDocumentSaveForCreating completionHandler:block];
+    } else if (dbh.database.documentState == UIDocumentStateClosed) {
+        [dbh.database openWithCompletionHandler:block];
+    } else {
+        BOOL success = YES;
+        block(success);
+    }
+}
+
+//passed a block to perform with parameter self.database (UIManagedDocument)
+- (void)performWithDocument:(OnDocumentReady)onDocumentReady
+{
+    void (^OnDocumentDidLoad)(BOOL) =^(BOOL success) { //block that user passed is performed after appropriate steps are taken below
+        onDocumentReady(self.database);    };
+    
+    if (![self.fileManager fileExistsAtPath:[self.database.fileURL path]]){ //if the file doesn't exist on disk yet..
+        [self.database saveToURL:self.database.fileURL forSaveOperation:UIDocumentSaveForCreating  completionHandler:OnDocumentDidLoad];
+    } else if (self.database.documentState == UIDocumentStateClosed) { //if the document is in the closed state..
+        [self.database openWithCompletionHandler:OnDocumentDidLoad];
+    } else if (self.database.documentState == UIDocumentStateNormal) { //if the doc is ready..
+        OnDocumentDidLoad(YES);
+    }
+}
+
+
+@end

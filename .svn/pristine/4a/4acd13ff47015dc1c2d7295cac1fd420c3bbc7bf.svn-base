@@ -1,0 +1,22 @@
+//
+//  ConnectToTrackerViewController.h
+//  DartSync
+//
+//  Created by Charles Dong on 5/26/14.
+//  Copyright (c) 2014 Charles. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface ConnectToTrackerViewController : UIViewController  <UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *DartSyncLabel;
+@property (weak, nonatomic) IBOutlet UILabel *ConnectionFailed;
+@property (weak, nonatomic) IBOutlet UITextField *TrackerIPField;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+@property (weak, nonatomic) IBOutlet UIButton *ConnectButton;
+
+
+- (IBAction)connectToTrackerAttempt:(UIButton *)sender;
+- (IBAction)backgroundTap:(id)sender;
+
+@end

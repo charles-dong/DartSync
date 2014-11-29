@@ -1,0 +1,870 @@
+ /*
+ * =====================================================================================
+ *
+ *       Filename:  socket_common.c
+ *
+ *    Description:  
+ *
+ *        Version:  1.0
+ *        Created:  05/10/2014 20:57:42
+ *       Revision:  none
+ *       Compiler:  gcc
+ *
+ *         Author:  Shuyang Fang (Shu), sfang@cs.dartmouth.edu
+ *   Organization:  Dartmouth College - Department of Computer Science
+ *
+ * =====================================================================================
+ */
+
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netdb.h>
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <netinet/in.h>
+#include <errno.h>
+#include <arpa/inet.h>
+#include <unistd.h>
+#include <ifaddrs.h>
+
+#include "socket_common.h"
+#include "data_structures.h"
+#include "../compress/compress.h"
+#include "../encrypt/encrypt.h"
+#include "common.h"
+
+#define CHUNK_SIZE 1024
+
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  send_struct
+ *  Description:  Sends a struct of TYPE to the given sockfd. Returns 0 on 
+ *  success, -1 on failure.
+ * =====================================================================================
+ */
+int send_struct(int sockfd, void *unknown, int TYPE) {
+  ptp_peer_t *peer_ptp            = NULL;
+  ptp_tracker_t *tracker_ptp      = NULL;
+  dl_req_t *dl_req                = NULL;
+  ul_resp_t *ul_resp              = NULL;
+  ul_resp_t *current              = NULL;
+  char *to_send                   = NULL;
+  char *cmp_str                   = NULL;
+  char *encrypt_str               = NULL;
+  unsigned long long pre_ptr_len  = 0;
+  unsigned long long length       = 0;
+  unsigned long long post_ptr_len = 0;
+  unsigned long long ptr_len      = 0;
+  unsigned long cmp_len           = 0;
+  unsigned long uncmp_len         = 0;
+  unsigned long encrypt_len       = 0;
+
+  if (!unknown) {
+    LOG(stderr, "send_struct called with NULL!");
+    return -1;
+  }
+
+  /*-----------------------------------------------------------------------------
+   *  We need to determine the length of whatever struct we're sending. Then, 
+   *  we need to convert the struct into a char array.
+   *  
+   *  ADD ADDITIONAL CASES HERE
+   *-----------------------------------------------------------------------------*/
+  switch (TYPE) {
+    // case where the struct that is being sent is a ptp_peer_t
+    case PTP_PEER_T:
+      peer_ptp    = (ptp_peer_t *) unknown;
+
+      // change endianness to network order
+      peer_ptp->port = htonl(peer_ptp->port);
+      peer_ptp->type = htonl(peer_ptp->type);
+
+
+      // calculate the size of the char pointer, pre-pointer, post-pointer, 
+      // and total
+      ptr_len      = (peer_ptp->file_table) ? (strlen(peer_ptp->file_table) + sizeof(char)) : 0;
+      pre_ptr_len  = (unsigned long long) &peer_ptp->file_table - (unsigned long long) peer_ptp;
+      post_ptr_len = sizeof(ptp_peer_t) - sizeof(char *) - pre_ptr_len;
+      length       = sizeof(ptp_peer_t) - sizeof(char *) + ptr_len;
+
+      // calloc the buffer and fill it in
+		  if (!length) {
+			  LOG(stderr, "Length 0");
+			  return -1;
+		  }
+      to_send      = (char *) calloc(length, sizeof(char));
+      MALLOC_CHECK(stderr, to_send);
+      if (pre_ptr_len)
+        memcpy(to_send, (char *) peer_ptp, pre_ptr_len);
+      if (ptr_len)
+        memcpy(to_send + pre_ptr_len, peer_ptp->file_table, ptr_len);
+      if (post_ptr_len)
+        memcpy(to_send + pre_ptr_len + ptr_len, (char *) peer_ptp + pre_ptr_len + sizeof(char *), post_ptr_len);
+
+      // change endianness back to host order
+      peer_ptp->port = ntohl(peer_ptp->port);
+      peer_ptp->type = ntohl(peer_ptp->type);
+      break;
+
+      // case where the struct that is being sent is a ptp_tracker_t
+    case PTP_TRACKER_T:
+      tracker_ptp  = (ptp_tracker_t *) unknown;
+
+      // change endianness to network order
+
+      unsigned long long a = tracker_ptp->interval;
+      tracker_ptp->interval = hton64(&a);
+
+      // calculate the size of the char pointer, pre, post, and total
+      ptr_len      = (tracker_ptp->file_table) ? (strlen(tracker_ptp->file_table) + sizeof(char)) : 0;
+      pre_ptr_len  = (unsigned long long) &tracker_ptp->file_table - (unsigned long long) tracker_ptp;
+      post_ptr_len = sizeof(ptp_tracker_t) - sizeof(char *) - pre_ptr_len;
+      length       = sizeof(ptp_tracker_t) - sizeof(char *) + ptr_len;
+
+      // calloc the buffer and fill it in
+		  if (!length) {
+			  LOG(stderr, "Length 0");
+			  return -1;
+		  }
+      to_send      = (char *) calloc(length, sizeof(char));
+      MALLOC_CHECK(stderr, to_send);
+      if (pre_ptr_len)
+        memcpy(to_send, (char *) tracker_ptp, pre_ptr_len);
+      if (ptr_len)
+        memcpy(to_send + pre_ptr_len, tracker_ptp->file_table, ptr_len);
+      if (post_ptr_len)
+        memcpy(to_send + pre_ptr_len + ptr_len, (char *) tracker_ptp + pre_ptr_len + sizeof(char *), post_ptr_len); 
+
+      // change endianness back to host order
+      a = tracker_ptp->interval;
+      tracker_ptp->interval = ntoh64(&a);
+      break;
+
+      // case where the struct that is being sent is a dl_req_t
+    case DL_REQUEST:
+      dl_req       = (dl_req_t *) unknown;
+
+      // change endianness to network order
+      dl_req->start_pos = hton64(&dl_req->start_pos);
+      dl_req->length    = hton64(&dl_req->length);
+      dl_req->req_ver   = hton64(&dl_req->req_ver);
+
+      //dl_req->req_piece_num = htonl(dl_req->req_piece_num);
+      //dl_req->req_ver       = htonl(dl_req->req_ver);
+
+      // calculate the size of the char pointer, pre, post, and total
+      ptr_len      = (dl_req->file_name) ? (strlen(dl_req->file_name) + sizeof(char)) : 0;
+      pre_ptr_len  = (unsigned long long) &dl_req->file_name - (unsigned long long) dl_req;
+      post_ptr_len = sizeof(dl_req_t) - sizeof(char *) - pre_ptr_len;
+      length       = sizeof(dl_req_t) - sizeof(char *) + ptr_len;
+
+      // calloc the buffer and fill it in
+		  if (!length) {
+			  LOG(stderr, "Length 0");
+			  return -1;
+		  }
+      to_send      = (char *) calloc(length, sizeof(char));
+      MALLOC_CHECK(stderr, to_send);
+      if (pre_ptr_len)
+        memcpy(to_send, (char *) dl_req, pre_ptr_len);
+      if (ptr_len)
+        memcpy(to_send + pre_ptr_len, dl_req->file_name, ptr_len);
+      if (post_ptr_len)
+        memcpy(to_send + pre_ptr_len + ptr_len, (char *) dl_req + pre_ptr_len + sizeof(char *), post_ptr_len);
+
+      // change endianness back to host order
+      dl_req->start_pos = ntoh64(&dl_req->start_pos);
+      dl_req->length    = ntoh64(&dl_req->length);
+      dl_req->req_ver   = ntoh64(&dl_req->req_ver);
+
+      //dl_req->req_piece_num = ntohl(dl_req->req_piece_num);
+      //dl_req->req_ver       = ntohl(dl_req->req_ver);
+      break;
+
+      // case where the struct that is being sent is a ul_resp_t
+    case UL_RESPONSE:
+      ul_resp      = (ul_resp_t *) unknown;
+
+      // calculate the size of the char pointer, pre, post, and total
+      ptr_len      = ul_resp->length;
+      pre_ptr_len  = (unsigned long long) &ul_resp->diff - (unsigned long long) ul_resp;
+      length       = sizeof(ul_resp_t) - sizeof(char *) - sizeof(ul_resp_t *) + ptr_len;
+
+      // calloc the buffer and fill it in
+		  if (!length) {
+			  LOG(stderr, "Length 0");
+			  return -1;
+		  }
+      to_send      = (char *) calloc(length, sizeof(char));
+      MALLOC_CHECK(stderr, to_send);
+
+      // change endianness to network order
+      ul_resp->length    = hton64(&ul_resp->length);
+      ul_resp->start_pos = hton64(&ul_resp->start_pos);
+
+      if (pre_ptr_len)
+        memcpy(to_send, (char *) ul_resp, pre_ptr_len);
+      if (ptr_len)
+        memcpy(to_send + pre_ptr_len, ul_resp->diff, ptr_len);
+
+      // change endianness back to host order
+      ul_resp->length    = ntoh64(&ul_resp->length);
+      ul_resp->start_pos = ntoh64(&ul_resp->start_pos);
+
+      // move the linked list
+      current                        = ul_resp->next;
+
+      while (current) {
+        // calculate new node's char pointer len
+        ptr_len = current->length;
+
+        // change endianness to network order
+        current->length    = hton64(&current->length);
+        current->start_pos = hton64(&current->start_pos);
+
+        // reallocate memory and fill it in
+		  if (length + pre_ptr_len + ptr_len == 0) {
+			  LOG(stderr, "Length 0");
+			  return -1;
+		  }
+        to_send = (char *) realloc(to_send, length + pre_ptr_len + ptr_len);
+        MALLOC_CHECK(stderr, to_send);
+        if (pre_ptr_len)
+          memcpy(to_send + length, (char *) current, pre_ptr_len);
+          if (ptr_len) {
+              memcpy(to_send + length + pre_ptr_len, current->diff, ptr_len);
+              free(current->diff);
+              current->diff = NULL;
+          }
+        // update the length
+        length                         = length + pre_ptr_len + ptr_len;
+
+        // change endianness back to host order
+        current->length    = ntoh64(&current->length);
+        current->start_pos = ntoh64(&current->start_pos);
+
+        //current->length    = ntohl(current->length);
+        //current->start_pos = ntohl(current->start_pos);
+
+        // update current
+        current                        = current->next;
+      }
+      break;
+
+    default:
+      return -1;
+  }
+    
+  // compress the string
+
+  uncmp_len = length;
+	if (!uncmp_len) {
+		LOG(stderr, "Length 0");
+		return -1;
+	}
+  cmp_str     = compress_string(to_send, &uncmp_len, &cmp_len);
+	if (!cmp_len) {
+		LOG(stderr, "Length 0");
+		return -1;
+	}
+  MALLOC_CHECK(stderr, cmp_str);
+    free(to_send);
+  // encrypt the string
+  encrypt_len = cmp_len;
+
+	if (!encrypt_len) {
+		LOG(stderr, "Length 0");
+		return -1;
+	}
+	
+  encrypt_str = encrypt_string(cmp_str, &encrypt_len);
+	if (!encrypt_len) {
+		LOG(stderr, "Length 0");
+		return -1;
+	}
+  MALLOC_CHECK(stderr, encrypt_str);
+    free(cmp_str);
+  // send the uncompressed length
+  length = uncmp_len;
+  length = hton64(&length);
+  if (send(sockfd, &length, sizeof(unsigned long long), 0) < 0) {
+    LOG(stderr, "ERROR: send failure.");
+    return -1;
+  }
+
+  // send the compression length 
+  length = cmp_len;
+  length = hton64(&length);
+  if (send(sockfd, &length, sizeof(unsigned long long), 0) < 0) {
+    LOG(stderr, "ERROR: send failure.");
+    return -1;
+  }
+
+  // send the encryption length
+  length = encrypt_len;
+  length = hton64(&length);
+  if (send(sockfd, &length, sizeof(unsigned long long), 0) < 0) {
+    LOG(stderr, "ERROR: send failure.");
+    return -1;
+  }
+    /*
+  // send the payload
+  if (send(sockfd, encrypt_str, encrypt_len, 0) < 0) {
+    LOG(stderr, "ERROR: send failure.");
+     perror("This is the error message:");
+    free(to_send);
+    return -1;
+  }*/
+    
+    char payload[CHUNK_SIZE];
+    unsigned long buffered = 0;
+    while (buffered < encrypt_len) {
+        unsigned long buffersize = CHUNK_SIZE;
+        if (encrypt_len - buffered < CHUNK_SIZE)
+            buffersize = encrypt_len - buffered;
+        memcpy(payload, encrypt_str+buffered, buffersize);
+        buffered += buffersize;
+        unsigned long bytesleft = buffersize;
+        unsigned long sent = 0;
+        int offset = 0;
+        while (bytesleft > 0 && ((sent = send(sockfd, payload + offset, bytesleft, 0)) > 0 || (sent == -1 && errno == EINTR))) {
+            if (sent > 0) {
+                offset += sent;
+                bytesleft -= sent;
+            }
+        }
+		printf("Sent %lu bytes\n", buffered);
+        memset(payload, 0, CHUNK_SIZE);
+    }
+
+  free(encrypt_str);
+  
+  
+  return 1;
+}		/* -----  end of function send_struct  ----- */
+
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  receive_struct
+ *  Description:  Receives a struct of TYPE from the given sockfd. Returns 
+ *  1 on success, -1 on failure.
+ *
+ *  ASSUMES: Unknown has been allocated. If the struct has a pointer field, it is set to NULL.
+ *
+ *  If unknown is a linked list, it is a single node linked list with a NULL 
+ *  next.
+ * =====================================================================================
+ */
+int receive_struct(int sockfd, void *unknown, int TYPE)
+{
+  ptp_peer_t *peer_ptp            = NULL;
+  ptp_tracker_t *tracker_ptp      = NULL;
+  dl_req_t *dl_req                = NULL;
+  ul_resp_t *ul_resp              = NULL;
+  ul_resp_t *current              = NULL;
+  char *encrypt_str               = NULL;
+  char *uncmp_str                 = NULL;
+  char *decrypt_str               = NULL;
+  unsigned long long pre_ptr_len  = 0;
+  unsigned long long length       = 0;
+  unsigned long long post_ptr_len = 0;
+  unsigned long long ptr_len      = 0;
+  unsigned long long current_len  = 0;
+  unsigned long long current_pos  = 0;
+  unsigned long cmp_len           = 0;
+  unsigned long uncmp_len         = 0;
+  unsigned long encrypt_len       = 0;
+
+  if (!unknown) {
+    LOG(stderr, "receive_struct called with NULL!");
+    return -1;
+  }
+
+  // receive the uncmp length
+  if (recv(sockfd, &length, sizeof(unsigned long long), 0) <= 0) {
+    LOG(stderr, "ERROR: recv failure.");
+    return -1;
+  }
+  uncmp_len = ntoh64(&length);
+
+
+  // receive the cmp length
+  if (recv(sockfd, &length, sizeof(unsigned long long), 0) <= 0) {
+    LOG(stderr, "ERROR: recv failure.");
+    return -1;
+  }
+  cmp_len = ntoh64(&length);
+
+
+  // receive the encrypt length
+  if (recv(sockfd, &length, sizeof(unsigned long long), 0) <= 0) {
+    LOG(stderr, "ERROR: recv failure.");
+    return -1;
+  }
+  encrypt_len = ntoh64(&length);
+
+
+  // receive the encrypted payload
+	if (!encrypt_len || !uncmp_len || !cmp_len) {
+		LOG(stderr, "Length 0");
+		return -1;
+	}
+  encrypt_str = (char *) calloc(encrypt_len, sizeof(char));
+  MALLOC_CHECK(stderr, encrypt_str);
+  /*if (recv(sockfd, buffer, encrypt_len, 0) <= 0) {
+    LOG(stderr, "ERROR: recv failure.");
+    free(buffer);
+    return -1;
+  }*/
+    char payload[CHUNK_SIZE];
+    unsigned long buffered = 0;
+    while (buffered < encrypt_len) {
+        unsigned long buffersize = CHUNK_SIZE;
+        if (encrypt_len - buffered < CHUNK_SIZE)
+            buffersize = encrypt_len - buffered;
+        unsigned long received = 0;
+        unsigned long bytesleft = buffersize;
+        int offset = 0;
+        while (bytesleft > 0 && ((received = recv(sockfd, payload + offset, bytesleft, 0)) > 0 || (received == -1 && errno == EINTR))) {
+			if (received > 0) {
+				offset += received;
+				bytesleft -= received;
+			}
+        }
+		printf("Received %lu bytes\n", buffered);
+        memcpy(encrypt_str+buffered, payload, buffersize);
+        buffered += buffersize;
+        memset(payload, 0, buffersize);
+    }
+
+  // decrypt it
+  decrypt_str = decrypt_string(encrypt_str, &encrypt_len);
+  MALLOC_CHECK(stderr, decrypt_str);
+    free(encrypt_str);
+  // uncompress it
+  uncmp_str = decompress_string(decrypt_str, &uncmp_len, &cmp_len);
+
+  MALLOC_CHECK(stderr, uncmp_str);
+    free(decrypt_str);
+
+  /*-----------------------------------------------------------------------------
+   *  We need to unpack the received buffer into a struct. 
+   *
+   *  ADD ADDITIONAL CASES HERE
+   *-----------------------------------------------------------------------------*/
+  switch (TYPE) {
+    // case where the struct that is being received is a ptp_peer_t
+    case PTP_PEER_T:
+      peer_ptp             = (ptp_peer_t *) unknown;
+
+      // calculate pre, post, ptr lengths
+      pre_ptr_len          = (unsigned long long) &peer_ptp->file_table - (unsigned long long) peer_ptp;
+      post_ptr_len         = sizeof(ptp_peer_t) - sizeof(char *) - pre_ptr_len;
+      ptr_len              = uncmp_len - sizeof(ptp_peer_t) + sizeof(char *);
+
+      // allocate the pointer in the struct, fill in the struct with the 
+      // received data
+      if (ptr_len) {
+        peer_ptp->file_table = (char *) calloc(ptr_len, sizeof(char));
+        MALLOC_CHECK(stderr, peer_ptp->file_table);
+      }
+      if (pre_ptr_len)
+        memcpy((char *) peer_ptp, uncmp_str, pre_ptr_len);
+      if (ptr_len)
+        memcpy(peer_ptp->file_table, uncmp_str + pre_ptr_len, ptr_len);
+      if (post_ptr_len)
+        memcpy((char *) peer_ptp + pre_ptr_len + sizeof(char *), uncmp_str + pre_ptr_len + ptr_len, post_ptr_len);
+
+      // clean up
+      free(uncmp_str);
+      
+      
+
+      // convert to host endianness
+      peer_ptp->port = ntohl(peer_ptp->port);
+      peer_ptp->type = ntohl(peer_ptp->type);
+      return 1;
+
+      // case where the struct that is being received is a ptp_tracker_t
+    case PTP_TRACKER_T:
+      tracker_ptp             = (ptp_tracker_t *) unknown;
+
+      // calculate pre, post, ptr lengths
+      pre_ptr_len             = (unsigned long long) &tracker_ptp->file_table - (unsigned long long) tracker_ptp;
+      post_ptr_len            = sizeof(ptp_tracker_t) - sizeof(char *) - pre_ptr_len;
+      ptr_len                 = uncmp_len - sizeof(ptp_tracker_t) + sizeof(char *);
+
+      // allocate the pointer in the struct, fill in the struct with the 
+      // received data
+      if (ptr_len) {
+        tracker_ptp->file_table = (char *) calloc(ptr_len, sizeof(char));
+        MALLOC_CHECK(stderr, tracker_ptp->file_table);
+      }
+      if (pre_ptr_len)
+        memcpy((char *) tracker_ptp, uncmp_str, pre_ptr_len);
+      if (ptr_len)
+        memcpy(tracker_ptp->file_table, uncmp_str + pre_ptr_len, ptr_len);
+      if (post_ptr_len)
+        memcpy((char *) tracker_ptp + pre_ptr_len + sizeof(char *), uncmp_str + pre_ptr_len + ptr_len, post_ptr_len);
+
+      // clean up
+      free(uncmp_str);
+
+      // convert to host endianness
+      unsigned long long a = tracker_ptp->interval;
+      tracker_ptp->interval = ntoh64(&a);
+      return 1;
+
+      // case where the struct that is being received is a dl_req_t
+    case DL_REQUEST:
+      dl_req                = (dl_req_t *) unknown;
+
+      // calculate pre, post, ptr lengths
+      pre_ptr_len           = (unsigned long long) &dl_req->file_name - (unsigned long long) dl_req;
+      post_ptr_len          = sizeof(dl_req_t) - sizeof(char *) - pre_ptr_len;
+      ptr_len               = uncmp_len - sizeof(dl_req_t) + sizeof(char *);
+
+      // allocate the pointer in the struct, fill in the struct with the 
+      // received data
+      if (ptr_len) {
+        dl_req->file_name     = (char *) calloc(ptr_len, sizeof(char));
+        MALLOC_CHECK(stderr, dl_req->file_name);
+      }
+      if (pre_ptr_len)
+        memcpy((char *) dl_req, uncmp_str, pre_ptr_len);
+      if (ptr_len)
+        memcpy(dl_req->file_name, uncmp_str + pre_ptr_len, ptr_len);
+      if (post_ptr_len)
+        memcpy((char *) dl_req + pre_ptr_len + sizeof(char *), uncmp_str + pre_ptr_len + ptr_len, post_ptr_len);
+
+      // clean up
+      free(uncmp_str);
+
+      // convert to host endianness
+      dl_req->length    = ntoh64(&dl_req->length);
+      dl_req->start_pos = ntoh64(&dl_req->start_pos);
+      dl_req->req_ver   = ntoh64(&dl_req->req_ver);
+
+      //dl_req->req_ver       = ntohl(dl_req->req_ver);
+      //dl_req->req_piece_num = ntohl(dl_req->req_piece_num);
+      return 1;
+
+      // case where the struct that is being received is a ul_resp_t
+    case UL_RESPONSE:
+      ul_resp     = (ul_resp_t *) unknown;
+      pre_ptr_len = (unsigned long long) &ul_resp->diff - (unsigned long long) ul_resp;
+      current_pos = 0;
+
+      // if the length is nonzero
+      if (uncmp_len) {
+
+        // bootstrap the head node 
+
+        // copy in pre pointer data
+        if (pre_ptr_len)
+          memcpy((char *) ul_resp, uncmp_str + current_pos, pre_ptr_len);
+        // convert to host endianness
+        ul_resp->length    = ntoh64(&ul_resp->length);
+        ul_resp->start_pos = ntoh64(&ul_resp->start_pos);
+
+        // update positioning
+        current_pos  += pre_ptr_len;
+        current_len   = ul_resp->length;
+        // copy in pointer data
+        if (current_len) {
+          ul_resp->diff = calloc(current_len, sizeof(char));
+          MALLOC_CHECK(stderr, ul_resp->diff);
+          memcpy(ul_resp->diff, uncmp_str + current_pos, current_len);
+        }
+        current_pos  += current_len;
+
+        //ul_resp->start_pos = ntohl(ul_resp->start_pos);
+        //ul_resp->length    = ntohl(ul_resp->length);
+
+        current       = ul_resp;
+        // while there's more data, we need to create new diff nodes and 
+        // populate them
+        while (current_pos != uncmp_len) {
+          // create a new node
+          current->next = calloc(1, sizeof(ul_resp_t));
+          MALLOC_CHECK(stderr, current->next);
+          current       = current->next;
+
+          // copy in pre pointer data
+          if (pre_ptr_len)
+            memcpy((char *) current, uncmp_str + current_pos, pre_ptr_len);
+          // convert to host endianness
+          current->start_pos = ntoh64(&current->start_pos);
+          current->length    = ntoh64(&current->length);
+
+          // update positioning
+          current_pos  += pre_ptr_len;
+          current_len   = current->length;
+          // copy in pointer data
+          if (current_len) {
+            current->diff = calloc(current_len, sizeof(char));
+            MALLOC_CHECK(stderr, current->diff);
+            memcpy(current->diff, uncmp_str + current_pos, current_len);
+          }
+          current_pos  += current_len;
+          current->next = NULL;
+
+          //current->start_pos = ntohl(current->start_pos);
+          //current->length    = ntohl(current->length);
+        }
+      }
+
+      // clean up
+      free(uncmp_str);
+      return 1;
+
+    default:
+      // clean up
+      free(uncmp_str);
+      return -1;
+  }
+
+  return 1;
+}		/* -----  end of function receive_struct  ----- */
+
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  create_listening_socket
+ *  Description:  Creates a socket of the given type on the given port. Begins 
+ *  listening on it, up to MAX_CONN, return the fd or -1 on failure.
+ * =====================================================================================
+ */
+int create_listening_socket(int port, int type) 
+{
+  struct sockaddr_in serv_addr;
+  int sockfd;
+  int optval;
+
+  // Allocate a socket.
+  if ((sockfd = socket(AF_INET, type, IPPROTO_TCP)) < 0) {
+    LOG(stderr, "ERROR: Unable to open socket.");
+    return -1;
+  }
+
+  // Bootstrap.
+  memset((char *) &serv_addr, 0, sizeof(serv_addr));
+  serv_addr.sin_family      = AF_INET;           // IPv4 protocol
+  serv_addr.sin_addr.s_addr = htonl(INADDR_ANY); // any ip
+  serv_addr.sin_port        = htons(port);       // conversion to big-endian
+
+  // Make it reuseable.
+  optval = 1;
+  if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, &optval, sizeof(optval)) < 0) {
+    LOG(stderr, "ERROR: setsockopt failure.");
+    close_socket(sockfd, TRUE);
+    return -1;
+  }
+
+  // Bind it to the port.
+  if (bind(sockfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) < 0) {
+    LOG(stderr, "ERROR: Unable to bind socket.");
+    close_socket(sockfd, TRUE);
+    return -1;
+  }
+
+  listen(sockfd, MAX_CONN);
+  return sockfd;
+}		/* -----  end of function create_listening_socket  ----- */
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  connect_to_server
+ *  Description:  Given the ip and port, connects to a TCP server socket and returns 
+ *  the client side fd.
+ * =====================================================================================
+ */
+int connect_to_server(int port, char *server_ip) 
+{
+  struct sockaddr_in serv_addr;
+  int sockfd;
+  int optval;
+
+  // Allocate a socket.
+  if ((sockfd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
+    LOG(stderr, "ERROR: Unable to open socket.");
+    return -1;
+  }
+
+  // Bootstrap serv_addr struct.
+  memset((char *) &serv_addr, 0, sizeof(serv_addr));  
+  serv_addr.sin_family      = AF_INET;              // IPv4 protocol
+  serv_addr.sin_addr.s_addr = inet_addr(server_ip); // IP address
+  serv_addr.sin_port        = htons(port);          // conversion to big-endian bit representation
+  
+  // Make it reuseable.
+  optval = 1;
+  if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, &optval, sizeof(optval)) < 0) {
+    LOG(stderr, "ERROR: setsockopt failure.");
+    close_socket(sockfd, TRUE);
+    return -1;
+  }
+  
+  // Connect the client to the server socket.
+  if (connect(sockfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) < 0) { 
+    LOG(stderr, "ERROR: connect failure.");
+    perror("This is the error message:");
+    close_socket(sockfd, TRUE);
+    return -1;
+  }
+
+  return sockfd;
+}   /*  -----  end of function connect_to_server  ----- */
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  close_socket
+ *  Description:  Shutdown and close the socket. Abortive close if option 
+ *  valid.
+ * =====================================================================================
+ */
+void close_socket(int sockfd, int abort) 
+{
+  if (abort) {
+    struct linger so_linger;
+    int z;  /* Status code */
+
+    so_linger.l_onoff  = TRUE;
+    so_linger.l_linger = 0;
+    z                  = setsockopt(sockfd,
+        SOL_SOCKET,
+        SO_LINGER,
+        &so_linger,
+        sizeof so_linger);
+
+    if (z)
+      LOG(stderr, "ERROR: setsockopt(2) failure");
+  }
+
+  shutdown(sockfd, 2);
+  close(sockfd);
+}		/* -----  end of function close_socket  ----- */
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  hostname_to_ip
+ *  Description:  Finds the ip linked to the given hostname. Places it into 
+ *  the passed in ip buffer.
+ * =====================================================================================
+ */
+int hostname_to_ip(char *hostname, char *ip) 
+{
+  struct addrinfo hints, *servinfo, *p;
+  struct sockaddr_in *h;
+  int rv;
+
+  memset(&hints, 0, sizeof(hints));
+  hints.ai_family   = AF_UNSPEC;
+  hints.ai_socktype = SOCK_STREAM;
+
+  if ((rv = getaddrinfo(hostname, "http", &hints, &servinfo)) != 0) 
+  {
+    fprintf(stderr, "ERROR: getaddrinfo: %s\n", gai_strerror(rv));
+    return -1;
+  }
+
+  // Connect to first valid ip.
+  for (p = servinfo; p != NULL; p = p->ai_next) 
+  {
+    h = (struct sockaddr_in *) p->ai_addr;
+    strcpy(ip, inet_ntoa(h->sin_addr));
+  }
+
+  freeaddrinfo(servinfo); // all done with this structure
+  return 0;
+}		/* -----  end of function hostname_to_ip  ----- */
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  get_my_ip
+ *  Description:  Finds the ip linked to the calling host. Places it into the 
+ *  passed in ip buffer.
+ * =====================================================================================
+ */
+int get_my_ip(char *ip)
+{
+  struct ifaddrs *ifaddr, *ifa;
+  int ret_val = -1;
+
+  if (getifaddrs(&ifaddr) == -1) {
+    LOG(stderr, "ERROR: getifaddrs failure.");
+    return ret_val;
+  }
+
+  ifa = ifaddr;
+
+  while (ifa) {
+    if (ifa->ifa_addr && ifa->ifa_addr->sa_family == AF_INET) {
+      memset(ip, 0, INET_ADDRSTRLEN);
+      struct sockaddr_in *pAddr = (struct sockaddr_in *) ifa->ifa_addr;
+      inet_ntop(AF_INET, &pAddr->sin_addr, ip, INET_ADDRSTRLEN); 
+      ret_val = 0;
+    }
+
+    ifa = ifa->ifa_next;
+  }
+
+  freeifaddrs(ifaddr);
+  return ret_val;
+}		/* -----  end of function get_my_ip  ----- */
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  find_port
+ *  Description:  Finds and returns the port number associated with the given 
+ *  sockfd.
+ * =====================================================================================
+ */
+int find_port(int sockfd) 
+{
+  struct sockaddr_in sin;
+  socklen_t len = sizeof(sin);
+  if (getsockname(sockfd, (struct sockaddr *)&sin, &len) == -1) {
+    LOG(stderr, "ERROR: getsockname failure");
+    return -1;
+  }
+
+  return ntohs(sin.sin_port);
+}		/* -----  end of function find_port  ----- */
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  ntoh64
+ *  Description:  Converts network order to host order for 64 bit.
+ * =====================================================================================
+ */
+uint64_t ntoh64(const uint64_t *input)
+{
+  uint64_t rval;
+  uint8_t *data = (uint8_t *)&rval;
+
+  data[0] = *input >> 56;
+  data[1] = *input >> 48;
+  data[2] = *input >> 40;
+  data[3] = *input >> 32;
+  data[4] = *input >> 24;
+  data[5] = *input >> 16;
+  data[6] = *input >> 8;
+  data[7] = *input >> 0;
+
+  return rval;
+}		/* -----  end of function ntoh64  ----- */
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  hton64
+ *  Description:  Converts host order to network order for 64 bits.
+ * =====================================================================================
+ */
+uint64_t hton64(const uint64_t *input)
+{
+  return (ntoh64(input));
+}		/* -----  end of function hton64  ----- */

@@ -1,0 +1,27 @@
+//
+//  PeerIP.h
+//  DartSync
+//
+//  Created by Charles on 5/18/14.
+//  Copyright (c) 2014 Charles. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+
+@class DirectoryOrFile;
+
+@interface PeerIP : NSManagedObject
+
+@property (nonatomic, retain) NSString * peerIP;
+@property (nonatomic, retain) NSSet *hasFile;
+@end
+
+@interface PeerIP (CoreDataGeneratedAccessors)
+
+- (void)addHasFileObject:(DirectoryOrFile *)value;
+- (void)removeHasFileObject:(DirectoryOrFile *)value;
+- (void)addHasFile:(NSSet *)values;
+- (void)removeHasFile:(NSSet *)values;
+
+@end

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+    <title>DartSync</title>
+    <%= stylesheet_link_tag "bootstrap.min" %>
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <%= stylesheet_link_tag "dhackstheme" %>
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="/index">
+                    <i class="fa fa-play-circle"></i>  <span class="light">DartSync</span>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="hidden">
+                        <a href="/index"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="/index">DartSync</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="/about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="/contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">DartSync</h1>
+                        <p class="intro-text">By Charlie Dong, Ethan Yu, Saisi Peter, Shuyang Fang</p>
+                        <div class="page-scroll">
+                            <a href="#about" class="btn btn-circle">
+                                <i class="fa fa-angle-double-down animated"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section class = "content">
+<div class="container">
+
+  <!-- Main hero unit for a primary marketing message or call to action -->
+  <div class="hero-unit">
+    <h1>About DartSync</h1>
+    <p>DartSync is a project made by four Dartmouth undergraduates for their <a href="http://www.cs.dartmouth.edu/~xia/cs60/index.html">CS 60 Networks</a> course. It is a lightweight distributed P2P version of Dropbox/Box sync-and-share service with local file exchange and synchronization across Windows, Mac, Linux, iOS, Android, Web. No copies are made on a centralized cloud.</p>
+    <p>Our project currently supports the following features:
+    <li>C command line implementation</li>
+    <li>Objective C for iOS, Java for Android, and Ruby for web</li>
+    <li>Password authentication</li>
+    <li>TCP connection and data transfer</li>
+    <li>Recursive local file monitoring and synchronization</li>
+    <li>Fetching data in pieces from multiple peers</li>
+    <li>Delta file updates</li>
+    <li>Compression/Decompression</li>
+    <li>Encryption/Decryption</li>
+    <li>Online program status monitoring</li>
+  </div>
+  
+
+</div> <!-- /container -->
+</section>
+<%=render "footer" %>
+<%= javascript_include_tag "bootstrap" %>

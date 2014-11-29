@@ -1,0 +1,73 @@
+//
+//  ConnectToTrackerViewController.m
+//  DartSync
+//
+//  Created by Charles Dong on 5/26/14.
+//  Copyright (c) 2014 Charles. All rights reserved.
+//
+
+#import "ConnectToTrackerViewController.h"
+#import "iOSpeer.h"
+#import "LoginViewController.h"
+
+@interface ConnectToTrackerViewController ()
+
+@end
+
+@implementation ConnectToTrackerViewController
+
+
+- (void)viewDidLoad
+{
+  [super viewDidLoad];
+  self.title = @"Tracker Connection";
+  self.ConnectionFailed.hidden = true;
+  self.spinner.hidesWhenStopped = YES;
+  [self.spinner stopAnimating];
+  self.TrackerIPField.delegate = self;
+}
+
+#pragma mark User Actions
+
+- (IBAction)connectToTrackerAttempt:(UIButton *)sender {
+  if ([self.TrackerIPField.text length] == 0)
+    return;
+  [self.spinner startAnimating];
+  self.ConnectionFailed.hidden = true;
+  char *ip = [self.TrackerIPField.text UTF8String];
+  printf("%s\n", ip);
+  if (connectToTracker(ip) > 0) {
+    printf("Successfully connected to tracker\n");
+    [self pushLoginVC];
+  }
+  else {
+    printf("Failed to connect to tracker\n");
+    [self.spinner stopAnimating];
+    self.ConnectionFailed.hidden = false;
+  }
+  
+}
+
+- (IBAction)backgroundTap:(id)sender {
+  [self.TrackerIPField resignFirstResponder];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+	[textField resignFirstResponder];
+  NSLog(@"User pressed return\n");
+	[self connectToTrackerAttempt:nil];
+  
+	return YES;
+}
+
+
+#pragma mark Navigation
+
+- (void)pushLoginVC {
+  LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+  [self.navigationController pushViewController:loginViewController animated:YES];
+  
+}
+
+
+@end

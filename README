@@ -1,0 +1,32 @@
+DartSync is a lightweight, distributed P2P version of Dropbox sync-and-share with local file exchange and synchronization across iOS, Android, Mac, and Linux devices. Instead of relying on a centralized cloud repository, files are exchanged locally between devices. DartSync is implemented as an always-on server that keeps track of a global file list, and a set of personal devices as peers.
+
+Core Project
+
+-	Synchronization of multiple files in a single directory 
+-	Compatibility across Linux systems
+-	TCP connection and data transfer
+-	Local file monitoring
+- Fetching data from multiple peers
+
+Project Extensions
+
+-	Recursive files monitoring and synchronization of a directory tree
+-	Piece-wise data transfers between all live peers to allow large files
+-	C implementation on OS X and Linux
+-	iOS application in Objective-C
+-	Android application in Java
+-	Website analytics in Ruby on Rails
+-	Delta file updates (rather than file replacement when updating files)
+-	Compression and encryption of all communication
+-	Password authentication
+-	Partial version control
+-	Raspberry Pi tracker support
+
+DartSync was a project done by Ethan Yu, Shuyang Fang, Charles Dong, and Peter Saisi for our Computer Networks course at Dartmouth. It took approximately two weeks to implement in C, and included not only this code but also clients for Android and iOS, and a Ruby on Rails web application that showed analytics for each peer. Code for those applications is also included, although they are not error free since they were extra credit additions added at the last minute. Included also are our project report and powerpoint presentation. Ten teams in the class all did this project, and our team was voted the best.
+
+DETAILS
+
+On the peer, DartSync has a file monitor that detects changes in the directory being monitored. When changes are detected, the program encapsulates information about the change and sends it to the tracker to be processed. When the peer needs a new file, it sends download requests directly to other peers rather than going through the tracker. A peer can ask multiple other peers for different parts of a file, speeding up the download process through parallel connections. In addition, only delta updates are sent, saving more bandwidth. Data transfers are broken into small chunk sizes, ensuring the reliability of the transfer (a 1GB movie was successfully sent over the protocol). Finally, all data is compressed and encrypted to save bandwidth and ensure security.
+
+On the tracker, a global file list is maintained that includes the most up-to-date information about all the files on all the peers. Whenever a peer updates any files, information about the change is sent to the tracker, which then analyzes the information and broadcasts the new file list. So a peer only finds out about file updates through the tracker, but downloads updated files directly from other peers. When a peer first comes online, it needs to authenticate with the tracker to have access to the file list. Changes to the file list are resolved with version numbers and file checksums the peer computes and sends to the tracker.
+

@@ -1,0 +1,18 @@
+//
+//  NetworkIndicatorHelper.h
+//  DartSync
+//
+//  Created by Charles on 5/13/14.
+//  Copyright (c) 2014 Charles. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+/* For the activity indicator next to 3G on upper left */
+
+@interface NetworkIndicatorHelper : NSObject
+
++ (void) setNetworkActivityIndicatorVisible:(BOOL) visible;
++ (BOOL) networkActivityIndicatorVisible;
+
+@end

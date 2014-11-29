@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13C64" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="DirectoryOrFile" representedClassName="DirectoryOrFile" syncable="YES">
+        <attribute name="directory" optional="YES" attributeType="Boolean" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="numPeers" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="size" optional="YES" attributeType="Integer 64" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="version_number" optional="YES" attributeType="Integer 16" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="inDirectory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DirectoryOrFile" inverseName="parentDirectoryOf" inverseEntity="DirectoryOrFile" syncable="YES"/>
+        <relationship name="parentDirectoryOf" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DirectoryOrFile" inverseName="inDirectory" inverseEntity="DirectoryOrFile" syncable="YES"/>
+        <relationship name="peerIPs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PeerIP" inverseName="hasFile" inverseEntity="PeerIP" syncable="YES"/>
+    </entity>
+    <entity name="PeerIP" representedClassName="PeerIP" syncable="YES">
+        <attribute name="peerIP" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="hasFile" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DirectoryOrFile" inverseName="peerIPs" inverseEntity="DirectoryOrFile" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="DirectoryOrFile" positionX="-146" positionY="47" width="128" height="163"/>
+        <element name="PeerIP" positionX="72" positionY="18" width="128" height="73"/>
+    </elements>
+</model>

@@ -1,0 +1,482 @@
+Core Data
+
+Object-oriented database that creates a visual object graph backed by a SQL/XML database. 
+	- create and query for objects using OO-API
+	- access "columns in database table" using @propertys on those objects
+
+Entities
+	Delete 
+		- nullify just sets pointer to nil 
+		- cascade deletes everything it points to
+
+NSManagedObjectContext - how we access all of this stuff in code
+	Creation:
+		- create a UIManagedDocument and ask for its managedObjectContext (a @property)
+		- OR click "Use Core Data" when creating a project; then AppDelegate will have a managedObjectContext @property
+
+UIManagedDocument 
+	- inherits from UIDocument (lots of mechanisms to manage storage)
+	- can think of as a thing that contains a Core Data database for us
+	- we just open/create a UIManagedDocument, and then grab its managedObjectContext to access the database
+
+Creation of UIManagedDocument:
+	//This creates the UIManagedDocument instance, but does not open nor create the underlying file
+		//creates document called "MyDocument" in user's documents directory
+	NSFileManager *fileManager = [NSFileManager defaultManager];
+		NSURL *documentsDirectory = [[fileManager URLsForDirectory:NSDocumentDirectory
+￼￼￼￼                                                         inDomains:NSUserDomainMask] firstObject];!
+		NSURL *url = [documentsDirectory URLByAppendingPathComponent:documentName];
+	UIManagedDocument *document = [[UIManagedDocument alloc] initWithFileURL:url];
+
+How to open or create a UIManagedDocument!
+	//First, check to see if the UIManagedDocument’s underlying file exists on disk ...
+	BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:[url path]];
+	// if it does, open the document using ...
+		[document openWithCompletionHandler:^(BOOL success) { /* block to execute when open */ }]; !
+	// else create the document using ...
+		[document saveToURL:document.fileURL
+	   	   forSaveOperation:UIDocumentSaveForCreating
+	   	   competionHandler:^(BOOL success) { /* block to execute when create is done */ }];
+		// note: completionHandler NECESSARY b/c open and save are ASYNCHRONOUS - don't happen immediately (happen on own queue)
+	   	   //completionHandler will get called back on the main queue when done (queue you called it on b/c UIManagedDocument is from UIKit)
+	   	   //maybe this document is on iCloud!! UIManagedDocument puts you on fast-track to iCloud
+
+		//example code
+		self.document = [[UIManagedDocument alloc] initWithFileURL:(URL *)url];
+		if ([[NSFileManager defaultManager] fileExistsAtPath:[url path]]) {
+		    [document openWithCompletionHandler:^(BOOL success) {
+		        if (success) [self documentIsReady];
+		        if (!success) NSLog(@“couldn’t open document at %@”, url);
+		}]; } else {
+		    [document saveToURL:url forSaveOperation:UIDocumentSaveForCreating
+		      completionHandler:^(BOOL success) {
+		        if (success) [self documentIsReady];
+		        if (!success) NSLog(@“couldn’t create document at %@”, url);
+		    }];
+		}
+		// can’t do anything with the document yet (do it in documentIsReady).
+		// check the documentState before we start using document
+		 - (void)documentIsReady {
+			if (self.document.documentState == UIDocumentStateNormal) { 
+				NSManagedObjectContext *context = self.document.managedObjectContext; 
+				// start doing Core Data stuff with context
+			}
+		}
+
+	Other document states:
+		UIDocumentStateClosed (you haven’t done the open or create yet)! 
+		UIDocumentStateSavingError (success will be NO in completion handler)! 
+		UIDocumentStateEditingDisabled (temporary situation, try again)! 
+		UIDocumentStateInConflict (e.g., because some other device changed it via iCloud)!
+
+Saving the Document:
+	- UIManagedDocuments AUTOSAVE!!!
+	- if want to do myself: //This is a UIKit class and so this method must be called on the main queue
+		[document saveToURL:document.fileURL
+		   forSaveOperation:UIDocumentSaveForOverwriting
+		   competionHandler:^(BOOL success) { /* block to execute when save is done */ }];
+
+Closing the document:
+	- AUTOCLOSES as well!!! When no more strong pointers, gets closed.
+	- if want to do myself (asynchronous):
+		[self.document closeWithCompletionHandler:^(BOOL success) {
+			if (!success) NSLog(@“failed to close document %@”, self.document.localizedName); 
+		}];
+
+Multiple instances of UIManagedDocument on same document:
+	- legal, but they DO NOT SHARE AN NSManagedObjectContext
+		- have to refetch in other UIManagedDocuments if you make a change in one
+		- can watch (via "radio station") other documents' managedObjectContexts, and then refetch:
+			- (void)viewDidAppear:(BOOL)animated {
+			    [super viewDidAppear:animated];
+			    [center  addObserver:self
+			                selector:@selector(contextChanged:)
+			                    name:NSManagedObjectContextDidSaveNotification
+                        object:document.managedObjectContext]; //don’t pass nil here!
+			 }
+			 - (void)viewWillDisappear:(BOOL)animated {
+			     [center removeObserver:self
+			                       name:NSManagedObjectContextDidSaveNotification
+			                     object:document.managedObjectContext];
+			     [super viewWillDisappear:animated];
+			 }
+
+			 //If you get notified that another NSManagedObjectContext has changed your database:
+			 	//you can just refetch (if you haven’t changed anything in your NSManagedObjectContext, for example)		 
+			 - (void)contextChanged:(NSNotification *)notification
+			 {
+				  // The notification.userInfo object is an NSDictionary with the following keys: 
+				  NSInsertedObjectsKey // an array of objects which were inserted 
+				  NSUpdatedObjectsKey // an array of objects whose attributes changed 
+				  NSDeletedObjectsKey // an array of objects which were deleted
+			 }
+			 // or you can use the NSManagedObjectContext method to merge changes
+             - (void)mergeChangesFromContextDidSaveNotification:(NSNotification *)notification;
+		- or just use single UIManagedDocument throughout
+
+Inserting objects into Core Data database:
+	NSManagedObjectContext *context = aDocument.managedObjectContext;
+	//note that we made a subclass of NSManagedObject called Photo so we can declare Photo *photo instead of NSManagedObject *photo
+		Photo *photo = [NSEntityDescription insertNewObjectForEntityForName:@“Photo” //entity name
+                              							   inManagedObjectContext:context];
+			//all objects in the database are represented by NSManagedObjects or subclasses thereof.!
+			//attributes of a newly-inserted object will start out nil (unless you specify default value in Xcode)
+
+	Accessing attributes in NSManagedObject instance:
+	-best practice
+		- create a subclass of NSManagedObject that has @propertys for each attribute in the database.
+			- name the subclass the same name as the Entity it matches
+			- @dynamic variable1 in .m files just suppresses warning. If NSManagedObject is sent a message it doesnt understand,
+				it traps and will try value:forKey: or setValue:forKey //if that doesn't work, it'll throw a "idk selector" warning
+			- now just use dot notation:
+				photo.title = [flickrData objectForKey:FLICKR_PHOTO_TITLE];
+				NSString *myThumbnail = photo.thumbnailURL;
+			photo.lastViewedDate = [NSDate date];
+			photo.whoTook = [[Photographer alloc] init]; // a Photographer object we created or got by querying
+			photo.whoTook.name = @“CS193p Instructor”; // yes, multiple dots will follow relationships!
+		-legal, but not ideal
+ 		- can use the following two NSKeyValueCoding protocol methods ...!
+			- (id)valueForKey:(NSString *)key;
+			- (void)setValue:(id)value forKey:(NSString *)key;
+		- you can also use valueForKeyPath: / setValue:forKeyPath: and it will follow your Relationships!
+		- key is the Attribute name in your data mapping! i.e. @“thumbnailURL” or @“title”.!
+		- value is whatever is stored (or to be stored) in the database
+￼￼￼￼		- it’ll be nil if nothing has been stored yet (unless Attribute has a default value in Xcode).!
+			- note that all values are objects (numbers and booleans are NSNumber objects, and binary data values are NSData objects)
+	- Relationships:
+		- “To-many” mapped relationships are NSSet objects (or NSOrderedSet if ordered).
+		- "To one" relationships are NSManagedObject *
+		- Don't need to set both sides!!! If you set one side of the relationship, the other is automatically set
+	- Changes (writes) only happen in memory, until you save (remember it autosaves!)
+		- when the document is saved, the context is saved and your changes get written to the database
+		- UIManagedDocumentDidSaveNotification will be “broadcast” at that pointers
+
+Deletion of Objects in Core Data database
+	[aDocument.managedObjectContext deleteObject:photo];
+	photo = nil; //make sure you set all strong pointers to the deleted object to nil
+		//Relationships will be updated for you (if you set Delete Rule for relationship attributes properly).
+	- Core Data sends method -(void)prepareForDeletion to all objects when you delete it
+		- can put this in a category (i.e. add it to Photo)
+
+QUERYING in Core data
+	 - use NSFetchRequest - 4 important things:
+	 	1. entity to fetch (required) - array can only return  one type
+	 	2. # to fetch (optional - default is all) - how many to fetch at a time and/or maximum to fetch
+	 	3. NSSortDescriptor to specify the order in which the array of fetched objects is returned
+	 	4. NSPredicate specifying which of those entities to fetch (optional - default is all)
+
+	 - example: 
+		 NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@“Photo”];
+		 request.fetchBatchSize = 20;
+		 request.fetchLimit = 100;
+		 request.sortDescriptors = @[sortDescriptor]; //array of sortDescriptors - sort first by one key, then another
+		 request.predicate = ...;
+
+	- NSSortDescriptor
+		NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@“title”
+	                                    								 ascending:YES
+	                                     								  selector:@selector(localizedStandardCompare:)];
+		//The selector: argument is just a method (conceptually) sent to each object to compare it to others. 
+			//Some of these “methods” might be smart (i.e. they can happen on the database side).
+			//localizedStandardCompare: is for ordering strings like the Finder on the Mac does (very common)
+
+	- NSPredicate
+		-Creating one looks a lot like creating an NSString, but the contents have semantic meaning.
+		NSString *serverName = @“flickr-5”;
+		NSPredicate *predicate = [NSPredicate predicateWithFormat:@“thumbnailURL contains %@”, serverName];
+		@“uniqueId = %@”, [flickrInfo objectForKey:@“id”] // unique a photo in the database 
+		@“name contains[c] %@”, (NSString *) // matches name case insensitively
+		@“viewed > %@”, (NSDate *) // viewed is a Date attribute in the data mapping
+		@“whoTook.name = %@”, (NSString *) // Photo search (by photographer’s name)
+		@“any photos.title contains %@”, (NSString *) // Photographer search (not a Photo search)! 
+		     - many more options. Look at the class documentation for NSPredicate.
+
+	- NSCompoundPredicate
+		-You can use AND and OR inside a predicate string, e.g. @“(name = %@) OR (title = %@)”
+		-Or you can combine NSPredicate objects with special NSCompoundPredicates.
+			NSArray *array = @[predicate1, predicate2];
+			NSPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates:array]; 
+				//This predicate is “predicate1 AND predicate2”. Or available too, of course.
+
+	- Key Value Coding
+		- Can actually do predicates like @“photos.@count > 5” (Photographers with more than 5 photos).
+			@count is a function (there are others) executed in the database itself.
+			https://developer.apple.com/library/ios/documentation/cocoa/conceptual/KeyValueCoding/Articles/CollectionOperators.html
+		- By the way, all this stuff (and more) works on dictionaries, arrays and sets too ...
+			e.g. [propertyListResults valueForKeyPath:@“photos.photo.@avg.latitude”] on Flickr results
+				//returns the average latitude of all of the photos in the results (yes, really)!
+			e.g. @“photos.photo.title.length" // returns an array of the lengths of the titles of the photos
+
+	- Fetch requests can get data instead of just UIManagedObjects using NSExpression
+		//advanced topic - look up yourself
+		NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@“...”];
+		[request setResultType:NSDictionaryResultType]; // fetch returns array of dicts instead of NSMO’s
+		[request setPropertiesToFetch:@[@“name”, expression, etc.]];
+
+	-example Fetch request
+		//Let’s say we want to query for all Photographers ...
+		NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@“Photographer”];
+		//... who have taken a photo in the last 24 hours ...!
+		NSDate *yesterday = [NSDate dateWithTimeIntervalSinceNow:-24*60*60];
+		request.predicate = [NSPredicate predicateWithFormat:@“any photos.uploadDate > %@”, yesterday]; 
+		//... sorted by the Photographer’s name ...
+		request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@“name” ascending:YES selector:@selector(localizedStandardCompare:)]];
+
+	Executing the Fetch:
+		NSManagedObjectContext *context = aDocument.managedObjectContext; 
+		NSError *error;
+		NSArray *photographers = [context executeFetchRequest:request error:&error];
+		//Returns nil if there is an error (check the NSError for details).
+				//You can pass NULL for error: if you don’t care why it fails.
+		//Returns an empty array (not nil) if there are no matches in the database.
+		//Returns an NSArray of NSManagedObjects (or subclasses thereof) if there were any matches.
+
+	Faulting
+		-The above fetch does not necessarily fetch any actual data.
+		-It could be an array of “as yet unfaulted” objects, waiting for you to access their attributes.
+			-Core Data is very smart about “faulting” the data in as it is actually accessed
+
+	Thread safety
+		-NOT THREADSAFE - cant just use them in multiple threads
+		-we usually create NSManagedObjectContext using a queue-based concurrency model
+			-means you can only touch a context and its NSManagedObjects in the queue it was created on
+		-thread-safe access to an NSManagedObjectContext:
+			[context performBlock:^{ // or performBlockAndWait:
+				// do stuff with context in its safe queue (the queue it was created on)
+			}];
+			//Note that the Q might  be the main Q, so you’re not necessarily getting “multithreaded," but it will be safe
+
+	Parent Contexts
+		- Some contexts (including UIManagedDocument ones) have a parentContext (a @property on NSManagedObjectContext).
+			-This parentContext will almost always be on a separate queue, but access the same database.
+		-This means you can performBlock: on it to access the database off the main queue (e.g.).
+			-But it is still a different context, so you’ll have to refetch in the child context to see any changes.
+
+	To look up:
+		- optimistic locking (deleteConflictsForObject:)
+		- Undo/Redo etc. are very powerful!
+		- rolling back unsaved changes
+		- staleness (how long after a fetch until a refetch of an object is required?)
+
+
+
+
+
+
+
+
+
+
+
+
+	Core Data and UITableView
+
+NSFetchedResultsController - hooks an NSFetchRequest up to an UITableViewController
+	- Examples of using NSFetchedResultsController:
+		- (NSUInteger)numberOfSectionsInTableView:(UITableView *)sender {
+		      return [[self.fetchedResultsController sections] count];
+		}
+		- (NSUInteger)tableView:(UITableView *)sender numberOfRowsInSection:(NSUInteger)section {
+		      return [[[self.fetchedResultsController sections] objectAtIndex:section] numberOfObjects];
+		}
+		- (UITableViewCell *)tableView:(UITableView *)sender cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+		    UITableViewCell *cell = ...;
+			NSManagedObject *managedObject = // or, e.g., Photo *photo = (Photo *) ... 
+				[self.fetchedResultsController objectAtIndexPath:indexPath]; //SUPER IMPORTANT NSFetchedResultsController METHOD
+			// load up the cell based on the properties of the managedObject
+			// of course, if you had a custom subclass, you’d be using dot notation to get them return cell;
+		}
+
+How to create an NSFetchedResultsController?
+	- just need the NSFetchRequest to drive it (and an NSManagedObjectContext to fetch from).
+	- Example: show all photos taken by someone with the name "photogName" in our table;
+		NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@“Photo”];
+		request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@“title” ...]];
+		request.predicate = [NSPredicate predicateWithFormat:@“whoTook.name = %@”, photogName];
+		NSFetchedResultsController *frc = [[NSFetchedResultsController alloc]
+		 initWithFetchRequest:(NSFetchRequest *)request
+		 managedObjectContext:(NSManagedObjectContext *)context
+		   sectionNameKeyPath:(NSString *)keyThatSaysWhichSectionEachManagedObjectIsIn
+		            cacheName:@“MyPhotoCache”];  // careful!
+		//Be sure that any cacheName you use is always associated with exactly the same request.
+			//It’s okay to specify nil for the cacheName (no cacheing of fetch results in that case).
+		//It is critical that the sortDescriptor matches up with the keyThatSaysWhichSection...
+			//The results must sort such that all objects in the first section come first, second second, etc.
+
+Delegate "watches" changes in Core Data and auto-updates table
+	- uses a key-value observing mechanism.
+	- When it notices a change, it sends message like this to its delegate:
+		 - (void)controller:(NSFetchedResultsController *)controller
+			didChangeObject:(id)anObject
+			    atIndexPath:(NSIndexPath *)indexPath
+			  forChangeType:(NSFetchedResultsChangeType)type
+			   newIndexPath:(NSIndexPath *)newIndexPath
+		 {
+			 // here you are supposed call appropriate UITableView methods to update rows
+		 }
+
+
+
+
+
+
+	Categories
+
+Add methods to a class without subclassing it - without even having to access the code of the class(dont need its .m)
+	-CANNOT ADD INSTANCE VARIABLES
+
+Sample Syntax:
+	@interface NameOfClassToAddTo (AddOnClassName)
+	- (UIImage *)image;
+	@property (readonly) BOOL isOld;
+	@end
+
+Implementation examples:
+	//first example - add methods
+	@implementation Photo (AddOn)
+	- (UIImage *)image // image is not an attribute in the database, but photoURL is
+	{
+	    NSURL *imageURL = [NSURL URLWithString:self.photoURL];
+	    NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+	    return [UIImage imageWithData:imageData];
+	}
+	- (BOOL)isOld // whether this Photo was uploaded more than a day ago {
+	    return [self.uploadDate timeIntervalSinceNow] > -24*60*60;
+	}
+	@end
+
+	//most common usage: creation example
+	@implementation Photo (Create)
+	+ (Photo *)photoWithFlickrData:(NSDictionary *)flickrData {
+		inManagedObjectContext:(NSManagedObjectContext *)context
+		Photo *photo = ...; // see if a Photo for that Flickr data is already in the database
+		if (!photo) {
+		    photo = [NSEntityDescription insertNewObjectForEntityForName:@“Photo”
+		                                          inManagedObjectContext:context];
+		// initialize the photo from the Flickr data
+		// perhaps even create other database objects (like the Photographer)
+		}
+		    return photo;
+	} 
+	@end
+
+	//prepareForDeletion is sent to all objects by core data when Photo is deleted
+	@implementation Photo (Deletion)
+    - (void)prepareForDeletion  {
+		// we don’t need to set our whoTook to nil or anything here (that will happen automatically)
+		￼// but if Photographer had, for example, a “number of photos taken” attribute,
+		// we might adjust it down by one here (e.g. self.whoTook.photoCount--).
+
+		//note that the object itself has not yet been deleted when this method is called
+	}
+	@end
+
+Other examples
+	- sometimes we add @propertys to an NSManagedObject subclass via categories to make accessing BOOL attributes (which are NSNumbers) more cleanly.
+	- or add @propertys to convert NSDatas to whatever the bits represent
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	View Controller Lifecycle
+
+Summary:
+	-Instantiated (from storyboard - many ways for this to happen which we’ll cover later)
+	-awakeFromNib (if coming from storyboard)
+	-outlets get set (if coming from storyboard)
+	-viewDidLoad
+	(when geometry is determined)
+		-viewWillLayoutSubviews: and viewDidLayoutSubviews:
+	(next group can happen repeatedly as your MVC appears and disappears from the screen ...) 
+		viewWillAppear: and viewDidAppear:
+		(whenever geometry changes again while visible, e.g. device rotation) 
+			viewWillLayoutSubviews: and viewDidLayoutSubviews:
+			(if it is autorotation, then you also get will/didRotateTo/From messages--rare to use these)
+		viewWillDisappear: and viewDidDisappear: 
+
+viewDidLoad:
+	-outlets are set already
+	-not on screen yet
+	-this method is only called once
+	-DO NOT do geometry stuff here - not sure what bounds are yet
+
+viewWillAppear:
+	-happens every time view reappears; do stuff here if things you display are changing while MVC is off-screen
+	-optimize performance by doing expensive operation here (dont know if view will ever come on screen in viewDidLoad)
+
+viewWillDisappear:
+	-cleanup code (stop stuff) and "remember what's going on" code
+
+viewDidAppear and viewDidDisappear
+
+Autorotation:
+	-when device is rotated, controller will reorient bounds iff:
+		-view controller returns YES from shouldAutorotate
+		-view controller returns the new orientation in supportedInterfaceOrientations
+		-application allows rotation (defined in Info.plist file)
+
+awakeFromNib:
+	-sent to all objects that come out of a storyboard (including your Controller)
+	-happens before outlets are set! (i.e. before the MVC is “loaded”)
+	-put code somewhere else if at all possible (e.g. viewDidLoad or viewWillAppear:).
+	-Anything that would go in your Controller’s init method would have to go in awakeFromNib too (because init methods are not called on objects that come out of a storyboard).
+	￼￼￼￼-(void)setup{}; //dosomethingwhichcan’twaituntilviewDidLoad
+		-(void)awakeFromNib { [self setup]; }
+		// UIViewController’s designated initializer is initWithNibName:bundle: (ugh!)
+		- (instancetype)initWithNibName:(NSString *)name bundle:(NSBundle *)bundle
+		{
+		    self = [super initWithNibName:name bundle:bundle];
+		    [self setup];
+		    return self;
+		}
+
+
+
+	Notifications
+
+NSNotificationCenter
+	-Get the default “notification center” via [NSNotificationCenter defaultCenter] 
+	-Then send it the following message if you want to “listen to a radio station”:
+		- (void)addObserver:(id)observer // you (the object to get notified)
+				   selector:(SEL)methodToInvokeIfSomethingHappens
+					   name:(NSString *)name // name of station (a constant somewhere)
+					 object:(id)sender; // whose changes you’re interested in (nil is anyone’s)
+		- (void)methodToInvokeIfSomethingHappens:(NSNotification *)notification {
+			notification.name // the name passed above
+			notification.object // the object sending you the notification 
+			notification.userInfo // notification-specific information about what happened
+		}
+	-Be sure to “tune out” when done listening (A good place to remove yourself is when your MVC’s View goes off screen)
+		[center removeObserver:self]; OR [center removeObserver:self name:UIContentSizeCategoryDidChangeNotification object:nil];
+			OR you can remove yourself in a method called dealloc (called when you leave the heap)
+		- (void)dealloc {
+		// be careful in this method! can’t access properties! you are almost gone from heap!
+		    [[NSNotificationCenter defaultCenter] removeObserver:self];
+		}
+
+
+
+	Miscellaneous
+
+Outlets: viewController has outlet properties that reference stuff in the view so you can send messages to your view objects. 
+	-The more outlets an object has, the more memory it takes up. If there are other ways to obtain a reference to an object, such as finding it through its index position in a matrix, or through its inclusion as a function parameter, or through use of a tag (an assigned numeric identifier), you should do that instead.
+
+	Conventions
+
+
+

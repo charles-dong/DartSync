@@ -1,0 +1,22 @@
+//
+//  FileManagement.h
+//  DartSync
+//
+//  Created by Charles on 5/16/14.
+//  Copyright (c) 2014 Charles. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface FileManagement : NSObject
+
++ (NSURL *)getURLForFileName:(NSString *)fileName;
++ (NSURL *)applicationDocumentsDirectory;
+
++ (BOOL)fileOrDirectory:(NSString *)name isInDirectory:(NSString *)directoryName;
+
+//+(const char *)getCPathForFopen:(NSURL *)url;
++ (void)createFileAtURL:(NSURL *)url withData:(NSData *)contents;
++ (void)removeItemAtURL:(NSURL *)url;
+
+@end

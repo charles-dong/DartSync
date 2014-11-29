@@ -1,0 +1,20 @@
+//
+//  iOSPeer.h
+//  DartSync
+//
+//  Created by Charles Dong on 5/26/14.
+//  Copyright (c) 2014 Charles. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "DirectoryOrFile.h"
+
+int sendPassword(char *password);
+int connectToTracker(char *trackerIP);
+void initPeer();
+int sendRegister();
+int new_download(DirectoryOrFile *arg);
+
+@interface iOSPeer : NSObject
+
+@end

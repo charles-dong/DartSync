@@ -1,0 +1,460 @@
+//
+//  iOSPeer.m
+//  DartSync
+//
+//  Created by Charles Dong on 5/26/14.
+//  Copyright (c) 2014 Charles. All rights reserved.
+//
+
+#import "iOSPeer.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <pthread.h>
+#include <sys/socket.h>
+#include <signal.h>
+#include <sys/stat.h>
+#include <netinet/in.h>
+#include <pwd.h>
+#include <errno.h>
+#include <sys/types.h>
+#include <arpa/inet.h>
+
+
+#include "data_structures.h"
+#include "socket_common.h"
+#include "common.h"
+#include "files.h"
+#import "DirectoryOrFile+Access.h"
+#include "PeerIP.h"
+#import "FileManagement.h"
+#import "TBCoreDataStoreS1.h"
+
+#define CHECK_PEER_TABLE_INTERVAL 1
+
+// ---------------- Global Variables
+
+file_node_t *globalFileListHead;   //global file list is a linked list of file_node_t
+peer_side_peer_t *dlPeerTableHead; //peer table of peers currently being dl'd from
+
+int tracker_conn; 	//socket file descriptor to tracker connection
+int P2P_conn; 		  //socket file descriptor to P2P listener connection
+
+int heartbeat_interval;
+int WHO_AM_I = 0;
+
+pthread_t heartbeat_thread;
+pthread_t tracker_thread;
+pthread_t *download_thread_list_head;
+
+pthread_mutex_t ul_peer_table_lock = PTHREAD_MUTEX_INITIALIZER;
+pthread_mutex_t dl_peer_table_lock = PTHREAD_MUTEX_INITIALIZER;
+
+pthread_mutex_t file_list_lock = PTHREAD_MUTEX_INITIALIZER;
+
+char* root_path   = NULL;
+char* backup_path = NULL;
+
+unsigned long root_path_len;
+unsigned long bu_path_len;
+
+// ----------------- Functions
+
+void *waitTracker(void *arg);
+void *alive_thread(void *heartbeat_arg);
+void *P2P_download_thread(void *download_arg);
+void cleanup(int arg);
+void free_dl_table(peer_side_peer_t *head);
+void free_ul_table(peer_side_peer_t *head);
+
+
+
+
+
+
+
+// returns 1 on success, -1 for fail
+int sendPassword(char *password) {
+  ptp_peer_t login;
+  memset((char *) &login, 0, sizeof(ptp_peer_t));
+  login.type = AUTHENTICATION;
+  login.file_table = password;
+  
+  //send password
+  printf("Sending password %s\n", login.file_table);
+  if (send_struct(tracker_conn, &login, PTP_PEER_T) < 0) {
+    printf("Error sending login, exiting\n");
+    return -1;
+  }
+  
+  ptp_tracker_t login_response;
+  memset((char *) &login_response, 0, sizeof(ptp_tracker_t));
+  if (receive_struct(tracker_conn, &login_response, PTP_TRACKER_T) < 0) {
+    printf("Error receiving login response, exiting\n");
+    return -1;
+  }
+  
+  free(login_response.file_table);
+  login_response.file_table = NULL;
+  
+  if (login_response.interval == PASSWORD_CORRECT)
+    return 1;
+  if (login_response.interval == PASSWORD_INCORRECT)
+    return -1;
+  
+  
+  // no existing password
+  if (login_response.interval == PASSWORD_NULL)
+    login.type = CHANGE_PASSWORD;
+  
+  //send change password
+  if (send_struct(tracker_conn, &login, PTP_PEER_T) < 0) {
+    printf("Error sending login, exiting\n");
+    return -1;
+  }
+  
+  //get change password response
+  memset((char *) &login_response, 0, sizeof(ptp_tracker_t));
+  if (receive_struct(tracker_conn, &login_response, PTP_TRACKER_T) < 0) {
+    printf("Error receiving login response, exiting\n");
+    return -1;
+  }
+  free(login_response.file_table);
+  login_response.file_table = NULL;
+  if (login_response.interval == PASSWORD_CHANGE_ACK)
+    return 1;
+  else
+    return -1;
+}
+
+
+//returns 1 for success, -1 for fail
+int connectToTracker(char *trackerIP) {
+  char *ip = (char *)calloc(sizeof(char), 16);
+  hostname_to_ip(trackerIP, ip); // 129.170.213.32
+  printf("Hardcoded IP: %s\n", ip);
+  tracker_conn = connect_to_server(HANDSHAKE_PORT, ip);
+  if (tracker_conn < 0) {
+    printf("Error connecting to tracker, exiting.\n");
+    return -1;
+  }
+  set_tracker_con(tracker_conn);/* pass tracker conn to file_walker*/
+  return 1;
+}
+
+
+// 1 for success, -1 for fail
+int sendRegister() {
+  // Send registration packet
+  ptp_peer_t reg;
+  memset(&reg, 0, sizeof(ptp_peer_t));
+  reg.type = REGISTER;
+  get_my_ip(reg.peer_ip);
+  reg.port = find_port(tracker_conn);
+  
+  if (send_struct(tracker_conn, &reg, PTP_PEER_T) < 0) {
+    printf("Error sending register, exiting\n"); 
+    return -1;
+  }
+  printf("\nFormat file_name:checksum:newpeerip:numpeers:type:size:version\n");
+  // Get registration response including global file table
+  ptp_tracker_t* reg_response= (ptp_tracker_t*)malloc(sizeof(ptp_tracker_t));
+  
+  memset(reg_response, 0, sizeof(ptp_tracker_t));
+  if (receive_struct(tracker_conn, reg_response, PTP_TRACKER_T) < 0) {
+    printf("Error receiving register response, exiting\n");
+    return -1;
+  }
+  
+  if(reg_response->file_table)
+    printf("Received initial file table %s\n", reg_response->file_table);
+  else
+    printf("Received empty file table from tracker\n");
+  
+  // Get heartbeat interval
+  heartbeat_interval = (int) reg_response->interval;
+  
+  // If tracker already has files, download those
+  if (reg_response->file_table && strlen(reg_response->file_table) > 0) {
+    
+    printf("\nTracker already has files. Applying updates");
+    file_collection_t *differences = getDifferences(reg_response->file_table, NULL);
+
+    //update core data
+    [DirectoryOrFile updateCoreDataWithCollection:differences];
+    
+    //clean up
+    if(differences){
+      if(differences->deleted_head)
+        free_linked_list(differences->deleted_head);
+      if(differences->common_files)
+        free_linked_list(differences->common_files);
+      if(differences->modified_head)
+        free_linked_list(differences->modified_head);
+      if (differences->new_head)
+        free_linked_list(differences->new_head);
+      if (differences->renamed_head)
+        free_linked_list(differences->renamed_head);
+      free(differences);
+    }
+  }
+  
+  //cleanup
+  if(reg_response->file_table)
+    free(reg_response->file_table);
+  if(reg_response)
+    free(reg_response);
+  
+  pthread_create(&heartbeat_thread, NULL, alive_thread, NULL);
+  pthread_create(&tracker_thread, NULL, waitTracker, NULL);
+  
+  return 1;
+}
+
+void initPeer() {
+  
+  // init some globals
+  globalFileListHead   = NULL;
+  dlPeerTableHead      = NULL;
+}
+
+/*
+ Description: Receive information from the tracker and update file list
+ */
+void *waitTracker(void *arg) {
+  
+  //setup
+  ptp_tracker_t* tracker_info = (ptp_tracker_t*)malloc(sizeof(ptp_tracker_t));
+  memset(tracker_info, 0, sizeof(ptp_tracker_t));
+  file_collection_t *differences = NULL;
+  
+  while (receive_struct(tracker_conn, tracker_info, PTP_TRACKER_T) > 0) {
+    
+    printf("WT: Received file table %s\n", tracker_info->file_table);
+    differences = getDifferences(tracker_info->file_table, NULL);
+    
+    //update core data
+    [DirectoryOrFile updateCoreDataWithCollection:differences];
+    printf("WaitTracker finished updating.\n");
+
+    //clean up
+    if(differences){
+      if(differences->deleted_head)
+        free_linked_list(differences->deleted_head);
+      if(differences->common_files)
+        free_linked_list(differences->common_files);
+      if(differences->modified_head)
+        free_linked_list(differences->modified_head);
+      if (differences->new_head)
+        free_linked_list(differences->new_head);
+      if (differences->renamed_head)
+        free_linked_list(differences->renamed_head);
+      free(differences);
+      differences = NULL;
+    }
+
+    memset(tracker_info, 0, sizeof(ptp_tracker_t));
+    
+  }
+  
+  if(tracker_info){
+    if(tracker_info->file_table)
+      free(tracker_info->file_table);
+    free(tracker_info);
+  }
+  pthread_exit(NULL);
+}
+
+
+/*
+ Description: this thread sends a heartbeat message to the tracker every KEEP_ALIVE_TIMEOUT_PERIOD.
+ */
+void *alive_thread(void *timeout_arg) {
+  ptp_peer_t heartbeat;
+  memset((char *) &heartbeat, 0, sizeof(ptp_peer_t));
+  heartbeat.type = KEEP_ALIVE;
+  get_my_ip(heartbeat.peer_ip);
+  heartbeat.port = find_port(tracker_conn);
+  
+  while (1) {
+    if (send_struct(tracker_conn, &heartbeat, PTP_PEER_T) == 0)
+      printf("Sent heartbeat\n");
+    sleep(heartbeat_interval);
+  }
+  
+  pthread_exit(NULL);
+}
+
+
+
+
+
+/*
+ * ===  FUNCTION  ======================================================================
+ *         Name:  master_new_dl_thread
+ *  Description:  Carries out download of new file with parameters in passed
+ *  in arg.
+ * =====================================================================================
+ */
+int new_download(DirectoryOrFile *arg)
+{
+  DirectoryOrFile *current            = arg;
+  PeerIP *peerToDownloadFrom          = nil;
+  uint64_t start_pos                  = 0;
+  uint64_t length                     = 0;
+  uint32_t num_live_peers             = 0;
+  int peer_sockfd                     = -1;
+  char my_ip[WALK_SIZE];
+  memset(my_ip, 0, WALK_SIZE);
+  get_my_ip(my_ip);
+  
+  NSLog(@"\n[%s/%d] NEW_DOWNLOAD: Beginning a new download for %@!\n", __FILE__,
+         __LINE__, current.name);
+  
+  
+    // If the size is nonzero
+    if ([current.size unsignedLongLongValue] > 0) {
+      
+      /*-----------------------------------------------------------------------------
+       *  Determine the number of alive peers.
+       *-----------------------------------------------------------------------------*/
+      for (PeerIP *currentPeer in current.peerIPs) {
+        peer_sockfd = -1;
+        char *peerIPAddr = [currentPeer.peerIP UTF8String];
+        printf("peer IP to connect to: %s", peerIPAddr);
+        if ((peer_sockfd = connect_to_server(P2P_PORT, peerIPAddr)) < 0) {
+          printf("\n[%s/%d] NEW_DOWNLOAD: Peer with ip %s is offline!\n", __FILE__, __LINE__,
+                 peerIPAddr);
+          peer_sockfd = -1;
+        }
+        else {
+          printf("\n[%s/%d] NEW_DOWNLOAD: Peer with ip %s is online!\n", __FILE__, __LINE__,
+                 peerIPAddr);
+          num_live_peers++;
+          peerToDownloadFrom = currentPeer;
+          break;
+        }
+      }
+      
+      pthread_t dl_thread;
+      
+      // calculate the piece length, ceiling division
+      length = [current.size unsignedLongLongValue];
+      
+      NSLog(@"\n[%s/%d] NEW_DOWNLOAD: Number alive peers with file %@ is %d. File size is %@, and length is %llu.\n", __FILE__,
+            __LINE__, current.name, num_live_peers, current.size, length);
+      
+      
+        
+        if (peer_sockfd == -1)
+          NSLog(@"\n\n\n\n\n\n Can't find any peers with the file we want!!!!\n");
+      
+        // create the download request and start the dl thread
+        dl_req_t *new = new_dl_req_t(start_pos, 65536,
+                                     length, [current.name UTF8String], [peerToDownloadFrom.peerIP UTF8String]);
+        
+        dl_arg_t *info = calloc(1, sizeof(dl_arg_t));
+        memset((char *) info, 0, sizeof(dl_arg_t));
+        info->new_checksum = 0;
+        info->dl_req       = new;
+        info->port         = peer_sockfd;
+      
+        
+        NSLog(@"\n[%s/%d] NEW_DOWNLOAD: Starting a download for piece from file %s "
+               "with start pos %llu and length %llu from peer ip %s. The total file size is "
+               "%u.\n", __FILE__, __LINE__, new->file_name, new->start_pos, new->length, new->peer_ip,
+               [current.size unsignedIntValue]);
+        
+        pthread_create(&dl_thread, NULL, P2P_download_thread, (void *) info);
+        pthread_join(dl_thread, NULL);
+    }
+    else {
+      NSLog(@"\n\n\n\n\nThe file size is 0! (actually %@). Not downloading\n", current.size);
+      return -1;
+    }
+
+  
+  printf("\n[%s/%d] NEW_DOWNLOAD: Finished downloading.\n", __FILE__, __LINE__);
+  return 1;
+}		/* -----  end of function master_new_dl_thread  ----- */
+
+
+
+
+
+/*
+ Description: this thread downloads data from a remote peer
+ Parameters: peer information, file segment being downloaded
+ */
+void *P2P_download_thread(void *download_arg) {
+  dl_arg_t *arg            = (dl_arg_t *) download_arg;
+  dl_req_t *req            = (dl_req_t *) arg->dl_req;
+  ul_resp_t *resp          = new_ul_resp_t(0, 0, NULL);
+  int conn_fd              = arg->port;
+  
+  
+  printf("\n[%s/%d] DOWNLOADING: Dling file %s's delta for piece starting at %llu with length %llu "
+         "from peer with ip %s.",  __FILE__, __LINE__, req->file_name, req->start_pos, req->length, req->peer_ip);
+  
+  if (req->req_ver == 65536)
+    printf(" I don't have this file, so this is a NEW file download. "
+           "The peer has revision %llu.\n", arg->new_checksum);
+  else
+    printf("Error! Thinks this is a modified file!\n");
+  
+  // send the file request
+  if (send_struct(conn_fd, req, DL_REQUEST) < 0) {
+    LOG(stderr, "ERROR: Unable to send download request to peer!");
+    close_socket(conn_fd, TRUE);
+    free_dl_req_t(req);
+    free(arg);
+    pthread_exit(NULL);
+  }
+  
+  printf("\n[%s/%d] DOWNLOADING: Sent request for %s's delta for piece starting at %llu with length %llu "
+         "from peer with ip %s sent.\n", __FILE__, __LINE__, req->file_name, req->start_pos, req->length, req->peer_ip);
+  
+  // receive the diff linked list
+  if (receive_struct(conn_fd, resp, UL_RESPONSE) < 0) {
+    LOG(stderr, "ERROR: Unable to receive upload response from peer!");
+    close_socket(conn_fd, TRUE);
+    free_dl_req_t(req);
+    free_ul_resp_t(resp);
+    free(arg);
+    pthread_exit(NULL);
+  }
+  
+  close_socket(conn_fd, TRUE);
+  
+  // move through the diff linked list, write each diff to the correct
+  // position in the file
+  printf("\n[%s/%d] DOWNLOADING: Received a delta piece for file %s, rev %llu, from peer with ip %s."
+           "This delta piece starts at %llu and has length %llu. req->length was %llu\n", __FILE__, __LINE__, req->file_name,
+           arg->new_checksum, req->peer_ip, resp->start_pos, resp->length, req->length);
+  
+  if (NSURLResponseUnknownLength == resp->length)
+    printf("Error converting to NSData. Length not known.\n");
+  else if (resp->length < 0)
+    printf("Error converting to NSData. Length too little\n");
+  else if (resp->length > NSUIntegerMax)
+    printf("Error converting to NSData. Length too big\n");
+  
+  //put it in NSData
+  NSData* data = [NSData dataWithBytes:(const void *)resp->diff length:req->length];
+  //create file
+  NSURL *url = [FileManagement getURLForFileName:[[NSString stringWithCString:req->file_name encoding:NSUTF8StringEncoding] lastPathComponent]];
+  [FileManagement createFileAtURL:url withData:data];
+  
+  printf("\n[%s/%d] DOWNLOADING: Downloaded file!.\n", __FILE__, __LINE__);
+    
+  // cleanup
+  free_dl_req_t(req);
+  free_ul_resp_t(resp);
+  free(arg);
+  
+  pthread_exit(NULL);
+}
+
+@implementation iOSPeer
+@end

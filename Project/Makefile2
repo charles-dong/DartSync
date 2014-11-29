@@ -1,0 +1,35 @@
+
+export PATH=/tmp/my-android-toolchain/bin:$PATH
+N=/Users/saisi/Downloads/android-ndk-r9d
+SYSROOT=$N/platforms/android-19/arch-a
+ANDROID_NDK_BIN=/Users/saisi/Downloads/android-ndk-r9d/toolchains/arm-linux-androideabi-4.6/prebuilt/darwin-x86_64/bin
+CC=$(ANDROID_NDK_BIN)/arm-linux-androideabi-gcc 
+
+CFLAGS = -Wall -pedantic -std=gnu99 -ggdb
+
+library: compress/compress.o encrypt/encrypt.o filemonitor/lukefilewalker.o peer/peer.o tracker/tracker.o
+	$(AR) rcs libdartsync.a compress/compress.o encrypt/encrypt.o filemonitor/lukefilewalker.o peer/peer.o tracker/tracker.o encrypt/aes/*.o utils/*.o
+	
+compress/compress.o: compress/compress.c compress/compress.h
+	$(CC) $(CFLAGS) -c compress/compress.c -o compress/compress.o
+
+encrypt/encrypt.o: encrypt/encrypt.c encrypt/encrypt.h
+	$(CC) $(CFLAGS) -c encrypt/encrypt.c -o encrypt/encrypt.o
+
+file_monitor/lukefilewalker.o: filemonitor/lukefilewalker.c filemonitor/lukefilewalker.h
+	$(CC) $(CFLAGS) -c -D_BSD_SOURCE filemonitor/lukefilewalker.c -o filemonitor/lukefilewalker.o
+
+peer/peer.o: peer/peer.c peer/peer.h
+	$(CC) $(CFLAGS) -pthread -c peer/peer.c -o peer/peer.o
+
+tracker/tracker.o: tracker/tracker.c tracker/tracker.h
+	$(CC) $(CFLAGS) -pthread -c tracker/tracker.c -o tracker/tracker.o
+
+utils/libutils.a: utils/checksum.c utils/common.c utils/common.h utils/qs.c utils/qs.h utils/socket_common.c utils/socket_common.h
+	cd utils && $(CC) $(CFLAGS) -c *.c
+
+encrypt/aes/libaes.a: encrypt/aes
+	cd encrypt/aes && $(CC) $(CFLAGS) -c aescrypt.c aeskey.c aestab.c aes_modes.c
+
+
+inclusde ar

@@ -1,0 +1,30 @@
+//
+//  DBHelper.h
+//  DartSync
+//
+//  Created by Charles on 5/13/14.
+//  Copyright (c) 2014 Charles. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+typedef void (^OnDocumentReady) (UIManagedDocument *document);
+
+@interface DBHelper : NSObject
+
+
+@property (nonatomic, strong) NSString *dbName;
+@property (nonatomic, strong) UIManagedDocument *database;
+@property (nonatomic, strong) NSFileManager *fileManager;
+
+//there is only one sharedManagedDocument for the whole application - returns it
+    //this contains a UIManagedDocument as self.database
++ (DBHelper *)sharedManagedDocument;
+
+//opens UIManagedDocument self.database and performs 'block' on completion
+- (void)openDBUsingBlock:(void (^)(BOOL success))block;
+
+//passed a block to perform with parameter self.database (UIManagedDocument)
+- (void)performWithDocument:(OnDocumentReady)onDocumentReady;
+
+@end

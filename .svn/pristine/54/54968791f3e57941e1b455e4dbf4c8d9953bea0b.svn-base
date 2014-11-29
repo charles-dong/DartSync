@@ -1,0 +1,202 @@
+//
+//  DirectoryCDTVC.m
+//  DartSync
+//
+//  Created by Charles on 5/14/14.
+//  Copyright (c) 2014 Charles. All rights reserved.
+//
+
+#import "DirectoryCDTVC.h"
+#import "TBCoreDataStoreS1.h"
+#import "FileManagement.h"
+#import "DirectoryOrFile+Access.h"
+#import "iOSPeer.h"
+#import "PeerIP.h"
+#import "MBProgressHUD.h"
+
+#define FETCH_BATCH_SIZE 20
+
+@interface DirectoryCDTVC () <MBProgressHUDDelegate>
+@property (nonatomic, strong) UIDocumentInteractionController *filePreviewController;
+@property (nonatomic, strong) MBProgressHUD *HUD;
+@end
+
+@implementation DirectoryCDTVC
+
+
+# pragma mark Before On-Screen
+
+//called only once when the view is initially loaded
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.debug = YES;
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+}
+
+//called every time the view is about to appear on-screen
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    //set up the fetchedresultscontroller with the main queue context (for CDTVCs)
+    /*[[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(contextChanged:)
+                                               name:NSManagedObjectContextDidSaveNotification
+                                             object:[TBCoreDataStoreS1 mainQueueContext]]; */
+    [self setupFetchedResultsControllerWithContext:[TBCoreDataStoreS1 mainQueueContext]];
+}
+
+
+- (void)setupFetchedResultsControllerWithContext:(NSManagedObjectContext *)context
+{
+    NSFetchRequest *request       =  [NSFetchRequest fetchRequestWithEntityName:@"DirectoryOrFile"];
+    request.fetchBatchSize        = FETCH_BATCH_SIZE;
+    request.sortDescriptors       =  [NSArray arrayWithObject:[[NSSortDescriptor alloc]
+                                                               initWithKey:@"name"
+                                                                 ascending:YES
+                                                                  selector:@selector(localizedCaseInsensitiveCompare:)]];
+    request.predicate             =  [NSPredicate predicateWithFormat:@"inDirectory.name = %@", self.currentDirectory.name];
+  
+    //NSString *cacheName = self.currentDirectory.name;
+    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
+                                                                        managedObjectContext:context
+                                                                          sectionNameKeyPath:nil
+                                                                                   cacheName:nil];
+  printf("\n\n\n");
+  [DirectoryOrFile printCoreData];
+}
+
+#pragma mark TableView Stuff
+/*
+-(void)contextChanged:(NSNotification *)notification {
+  NSLog(@"Context Changed.\n");
+  if (self.debug)
+    NSLog(@"Debugging");
+  else
+    NSLog(@"Not Debugging");
+  [self.fetchedResultsController.managedObjectContext mergeChangesFromContextDidSaveNotification:notification];
+  [self performFetch];
+} */
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  //NSLog(@"indexPath %@\n", indexPath);
+  static NSString *CellIdentifier = @"Cell";
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+  
+  /*
+  if (cell == nil) {
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+  } */
+  
+  DirectoryOrFile *DorF = (DirectoryOrFile *)[self.fetchedResultsController objectAtIndexPath:indexPath];
+  // NSString *nameForDebugging = DorF.name;
+  
+  if (DorF) {
+    cell.textLabel.text = DorF.name;
+    cell.textLabel.font = [cell.textLabel.font fontWithSize:20];
+    
+    if ([DorF.directory intValue] == 1) {
+      UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+      imgView.image = [UIImage imageNamed:@"FolderIcon"];
+      cell.imageView.image = imgView.image;
+      cell.detailTextLabel.text = @"Directory";
+    }
+    else{
+      UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+      imgView.image = [UIImage imageNamed:@"File"];
+      cell.imageView.image = imgView.image;
+      cell.detailTextLabel.text = @"File";
+    }
+  }
+  else {
+    cell.textLabel.text = @"Unknown";
+  }
+  
+  return cell;
+}
+
+
+#pragma mark - Navigation
+
+//when user selects a cell - depending on whether it's a directory or file, push an appropriate new VC onto the nav controller stack
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  
+    //get the selected directory or file
+    DirectoryOrFile *selectedDirectoryOrFile = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    NSLog(@"User selected indexPath with directoryorfile %@", selectedDirectoryOrFile.name);
+  
+    if ([selectedDirectoryOrFile.directory intValue] == 1){ // directory - push a new directory CDTVC onto the nav controller stack
+        DirectoryCDTVC *newDirectoryCDTVC   = [[DirectoryCDTVC alloc] init];
+        newDirectoryCDTVC.currentDirectory  = selectedDirectoryOrFile;
+        newDirectoryCDTVC.title             = newDirectoryCDTVC.currentDirectory.name;
+        [self.navigationController pushViewController:newDirectoryCDTVC animated:YES];
+    } else { //it's a file - push a new fileVC onto the stack
+      
+      //HUD Stuff
+      self.HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+      [self.navigationController.view addSubview:self.HUD];
+      self.HUD.delegate = self;
+      self.HUD.labelText = @"Loading";
+      
+      //register for notification
+      [[NSNotificationCenter defaultCenter] addObserver:self
+                                               selector:@selector(previewFileAtURL:)
+                                                   name:@"FileWasDownloadedNotification"
+                                                 object:nil];
+      [self.HUD showWhileExecuting:@selector(downloadFile:) onTarget:self withObject:selectedDirectoryOrFile animated:YES];
+
+    }
+}
+
+-(void) downloadFile:(DirectoryOrFile *)selectedDirectoryOrFile {
+  if (new_download(selectedDirectoryOrFile) < 0)
+    NSLog(@"Failed to download %@", selectedDirectoryOrFile.name);
+  else
+    NSLog(@"Successfully downloaded file!\n");
+}
+
+-(void)viewDidUnload {
+  [super viewDidUnload];
+  self.fetchedResultsController = nil;
+}
+
+#pragma mark - Preview
+
+- (UIViewController *) documentInteractionControllerViewControllerForPreview: (UIDocumentInteractionController *) controller {
+  return self;
+}
+
+-(void)previewFileAtURL:(NSNotification *)notification {
+  
+  //hide activity indicator
+  [MBProgressHUD hideHUDForView:self.view animated:YES];
+  
+  [[NSNotificationCenter defaultCenter] removeObserver:self name:@"FileWasDownloadedNotification" object:nil];
+  NSFileManager *fileManager  = [NSFileManager defaultManager];
+  NSURL *url = notification.object;
+  if ([fileManager fileExistsAtPath:[url path]]) {
+    // Initialize Document Interaction Controller
+    self.filePreviewController = [UIDocumentInteractionController interactionControllerWithURL:url];
+    [self.filePreviewController setDelegate:self];
+    
+    // Preview
+    if (![self.filePreviewController presentPreviewAnimated:YES]) {
+      CGRect rectToDisplayOpenInMenu = CGRectMake(300, 300, 100, 100);
+      BOOL canOpen = [self.filePreviewController presentOpenInMenuFromRect:rectToDisplayOpenInMenu
+                                                                    inView:self.view
+                                                                  animated:YES];
+      if (!canOpen) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Cannot Preview/Open File"
+                                                        message:@"Please install an app that can open files of this type."
+                                                       delegate: nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+      }
+    }
+  }
+}
+
+
+@end

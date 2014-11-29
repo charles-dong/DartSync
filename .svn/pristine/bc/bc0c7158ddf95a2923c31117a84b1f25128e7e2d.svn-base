@@ -1,0 +1,17 @@
+//
+//  PeerIP.m
+//  DartSync
+//
+//  Created by Charles on 5/18/14.
+//  Copyright (c) 2014 Charles. All rights reserved.
+//
+
+#import "PeerIP.h"
+#import "DirectoryOrFile.h"
+
+@implementation PeerIP
+
+@dynamic peerIP;
+@dynamic hasFile;
+
+@end

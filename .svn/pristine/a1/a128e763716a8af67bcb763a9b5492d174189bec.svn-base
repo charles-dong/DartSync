@@ -1,0 +1,54 @@
+//
+//  PeerIP+Access.m
+//  DartSync
+//
+//  Created by Charles on 5/18/14.
+//  Copyright (c) 2014 Charles. All rights reserved.
+//
+
+#import "PeerIP+Access.h"
+#import "TBCoreDataStoreS1.h"
+
+@implementation PeerIP (Access)
+
++ (PeerIP *)getPeerFromIP:(NSString *)IPAddress inManagedObjectContext:(NSManagedObjectContext *)context{
+    PeerIP *peer;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"PeerIP"];
+    request.predicate = [NSPredicate predicateWithFormat:@"peerIP = %@", IPAddress];
+    NSError *error;
+    NSArray *matches = [context executeFetchRequest:request error:&error];
+    
+    if (!matches || ([matches count] > 1)) { //nil pointer or more than one match
+        
+      NSLog(@"Nil pointer or more than one match in getPeerFromIP.\n");
+      
+    } else if (![matches count]) {
+        //create the new PeerIP in Core Data
+        peer = [NSEntityDescription insertNewObjectForEntityForName:@"PeerIP"
+                                             inManagedObjectContext:context];
+        peer.peerIP = IPAddress;
+    } else {
+        //PeerIP already exists - return
+        peer = [matches lastObject];
+    }
+    return peer;
+}
+
+
++ (NSArray *)getAllPeers {
+   NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"PeerIP"];
+  NSError *error;
+  NSArray *matches = [[TBCoreDataStoreS1 privateQueueContext] executeFetchRequest:request error:&error];
+  if (!matches) { //nil pointer or more than one match
+    
+    NSLog(@"Nil pointer in getAllPeers\n");
+    return nil;
+  } else {
+    //PeerIP already exists - return
+    return matches;
+  }
+}
+
+
+
+@end

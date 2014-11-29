@@ -1,0 +1,1084 @@
+# Logfile created on 2014-05-14 00:29:28 -0400 by logger.rb/36483
+I, [2014-05-14T00:29:28.186711 #95102]  INFO -- : 0:  rake (10.3.1) from /Library/Ruby/Gems/2.0.0/specifications/rake-10.3.1.gemspec
+I, [2014-05-14T00:29:28.197969 #95102]  INFO -- : 0:  i18n (0.6.9) from /Library/Ruby/Gems/2.0.0/specifications/i18n-0.6.9.gemspec
+I, [2014-05-14T00:29:28.793094 #95102]  INFO -- : 0:  multi_json (1.10.0) from /Library/Ruby/Gems/2.0.0/specifications/multi_json-1.10.0.gemspec
+I, [2014-05-14T00:29:28.796763 #95102]  INFO -- : 0:  activesupport (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/activesupport-3.2.3.gemspec
+I, [2014-05-14T00:29:28.797066 #95102]  INFO -- : 0:  builder (3.0.4) from /Library/Ruby/Gems/2.0.0/specifications/builder-3.0.4.gemspec
+I, [2014-05-14T00:29:28.797340 #95102]  INFO -- : 0:  activemodel (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/activemodel-3.2.3.gemspec
+I, [2014-05-14T00:29:28.797601 #95102]  INFO -- : 0:  erubis (2.7.0) from /Library/Ruby/Gems/2.0.0/specifications/erubis-2.7.0.gemspec
+I, [2014-05-14T00:29:28.797860 #95102]  INFO -- : 0:  journey (1.0.4) from /Library/Ruby/Gems/2.0.0/specifications/journey-1.0.4.gemspec
+I, [2014-05-14T00:29:28.798117 #95102]  INFO -- : 0:  rack (1.4.5) from /Library/Ruby/Gems/2.0.0/specifications/rack-1.4.5.gemspec
+I, [2014-05-14T00:29:28.798365 #95102]  INFO -- : 0:  rack-cache (1.2) from /Library/Ruby/Gems/2.0.0/specifications/rack-cache-1.2.gemspec
+I, [2014-05-14T00:29:28.798622 #95102]  INFO -- : 0:  rack-test (0.6.2) from /Library/Ruby/Gems/2.0.0/specifications/rack-test-0.6.2.gemspec
+I, [2014-05-14T00:29:28.798869 #95102]  INFO -- : 0:  hike (1.2.3) from /Library/Ruby/Gems/2.0.0/specifications/hike-1.2.3.gemspec
+I, [2014-05-14T00:29:28.799117 #95102]  INFO -- : 0:  tilt (1.4.1) from /Library/Ruby/Gems/2.0.0/specifications/tilt-1.4.1.gemspec
+I, [2014-05-14T00:29:28.799367 #95102]  INFO -- : 0:  sprockets (2.1.3) from /Library/Ruby/Gems/2.0.0/specifications/sprockets-2.1.3.gemspec
+I, [2014-05-14T00:29:28.799614 #95102]  INFO -- : 0:  actionpack (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/actionpack-3.2.3.gemspec
+I, [2014-05-14T00:29:28.799861 #95102]  INFO -- : 0:  mime-types (1.25.1) from /Library/Ruby/Gems/2.0.0/specifications/mime-types-1.25.1.gemspec
+I, [2014-05-14T00:29:29.386311 #95102]  INFO -- : 0:  polyglot (0.3.4) from /Library/Ruby/Gems/2.0.0/specifications/polyglot-0.3.4.gemspec
+I, [2014-05-14T00:29:29.388128 #95102]  INFO -- : 0:  treetop (1.4.15) from /Library/Ruby/Gems/2.0.0/specifications/treetop-1.4.15.gemspec
+I, [2014-05-14T00:29:29.388470 #95102]  INFO -- : 0:  mail (2.4.4) from /Library/Ruby/Gems/2.0.0/specifications/mail-2.4.4.gemspec
+I, [2014-05-14T00:29:29.388798 #95102]  INFO -- : 0:  actionmailer (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/actionmailer-3.2.3.gemspec
+I, [2014-05-14T00:29:29.389096 #95102]  INFO -- : 0:  arel (3.0.3) from /Library/Ruby/Gems/2.0.0/specifications/arel-3.0.3.gemspec
+I, [2014-05-14T00:29:30.533158 #95102]  INFO -- : 0:  tzinfo (0.3.39) from /Library/Ruby/Gems/2.0.0/specifications/tzinfo-0.3.39.gemspec
+I, [2014-05-14T00:29:30.570381 #95102]  INFO -- : 0:  activerecord (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/activerecord-3.2.3.gemspec
+I, [2014-05-14T00:29:30.570730 #95102]  INFO -- : 0:  activeresource (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/activeresource-3.2.3.gemspec
+I, [2014-05-14T00:29:30.570976 #95102]  INFO -- : 0:  bundler (1.5.1) from /Library/Ruby/Gems/2.0.0/specifications/bundler-1.5.1.gemspec
+I, [2014-05-14T00:29:31.213362 #95102]  INFO -- : 0:  coffee-script-source (1.7.0) from /Library/Ruby/Gems/2.0.0/specifications/coffee-script-source-1.7.0.gemspec
+I, [2014-05-14T00:29:31.834560 #95102]  INFO -- : 0:  execjs (2.0.2) from /Library/Ruby/Gems/2.0.0/specifications/execjs-2.0.2.gemspec
+I, [2014-05-14T00:29:32.385795 #95102]  INFO -- : 0:  coffee-script (2.2.0) from /Library/Ruby/Gems/2.0.0/specifications/coffee-script-2.2.0.gemspec
+I, [2014-05-14T00:29:33.029798 #95102]  INFO -- : 0:  rack-ssl (1.3.4) from /Library/Ruby/Gems/2.0.0/specifications/rack-ssl-1.3.4.gemspec
+I, [2014-05-14T00:29:33.031439 #95102]  INFO -- : 0:  json (1.8.1) from /Library/Ruby/Gems/2.0.0/specifications/json-1.8.1.gemspec
+I, [2014-05-14T00:29:33.031789 #95102]  INFO -- : 0:  rdoc (3.12.2) from /Library/Ruby/Gems/2.0.0/specifications/rdoc-3.12.2.gemspec
+I, [2014-05-14T00:29:33.032102 #95102]  INFO -- : 0:  thor (0.14.6) from /Library/Ruby/Gems/2.0.0/specifications/thor-0.14.6.gemspec
+I, [2014-05-14T00:29:33.032390 #95102]  INFO -- : 0:  railties (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/railties-3.2.3.gemspec
+I, [2014-05-14T00:29:33.583886 #95102]  INFO -- : 0:  coffee-rails (3.2.2) from /Library/Ruby/Gems/2.0.0/specifications/coffee-rails-3.2.2.gemspec
+I, [2014-05-14T00:29:34.335376 #95102]  INFO -- : 0:  jquery-rails (3.1.0) from /Library/Ruby/Gems/2.0.0/specifications/jquery-rails-3.1.0.gemspec
+I, [2014-05-14T00:29:34.338874 #95102]  INFO -- : 0:  rails (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/rails-3.2.3.gemspec
+I, [2014-05-14T00:29:35.282809 #95102]  INFO -- : 0:  sass (3.3.7) from /Library/Ruby/Gems/2.0.0/specifications/sass-3.3.7.gemspec
+I, [2014-05-14T00:29:36.071699 #95102]  INFO -- : 0:  sass-rails (3.2.6) from /Library/Ruby/Gems/2.0.0/specifications/sass-rails-3.2.6.gemspec
+E, [2014-05-14T00:29:38.967764 #95102] ERROR -- : Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
+
+        /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/bin/ruby extconf.rb 
+checking for sqlite3.h... yes
+checking for sqlite3_libversion_number() in -lsqlite3... yes
+checking for rb_proc_arity()... yes
+checking for rb_integer_pack()... no
+checking for sqlite3_initialize()... yes
+checking for sqlite3_backup_init()... yes
+checking for sqlite3_column_database_name()... no
+checking for sqlite3_enable_load_extension()... no
+checking for sqlite3_load_extension()... no
+checking for sqlite3_open_v2()... yes
+checking for sqlite3_prepare_v2()... yes
+checking for sqlite3_int64 in sqlite3.h... yes
+checking for sqlite3_uint64 in sqlite3.h... yes
+creating Makefile
+
+make
+compiling backup.c
+compiling database.c
+database.c:300:1: warning: control may reach end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+compiling exception.c
+compiling sqlite3.c
+compiling statement.c
+linking shared-object sqlite3/sqlite3_native.bundle
+clang: error: unknown argument: '-multiply_definedsuppress' [-Wunused-command-line-argument-hard-error-in-future]
+clang: note: this will be a hard error (cannot be downgraded to a warning) in the future
+make: *** [sqlite3_native.bundle] Error 1
+
+
+Gem files will remain installed in /Users/ethanyu94/.bundler/tmp/95102/gems/sqlite3-1.3.9 for inspection.
+Results logged to /Users/ethanyu94/.bundler/tmp/95102/gems/sqlite3-1.3.9/ext/sqlite3/gem_make.out
+
+/Library/Ruby/Site/2.0.0/rubygems/installer.rb:556:in `rescue in block in build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:534:in `block in build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:509:in `each'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:509:in `build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:180:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source/rubygems.rb:101:in `block in install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/rubygems_integration.rb:118:in `preserve_paths'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source/rubygems.rb:94:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:111:in `block in install_gem_from_spec'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/rubygems_integration.rb:150:in `with_build_args'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:110:in `install_gem_from_spec'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:295:in `block in install_sequentially'  \n/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/forwardable.rb:171:in `each'  \n/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/forwardable.rb:171:in `each'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:294:in `install_sequentially'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:97:in `run'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:15:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/cli.rb:257:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/command.rb:27:in `run'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/invocation.rb:120:in `invoke_command'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor.rb:363:in `dispatch'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/base.rb:438:in `start'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/cli.rb:10:in `start'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/bin/bundle:22:in `block in <main>'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/friendly_errors.rb:5:in `with_friendly_errors'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/bin/bundle:22:in `<main>'
+I, [2014-05-14T00:48:03.403120 #95497]  INFO -- : 0:  rake (10.3.1) from /Library/Ruby/Gems/2.0.0/specifications/rake-10.3.1.gemspec
+I, [2014-05-14T00:48:03.403484 #95497]  INFO -- : 0:  i18n (0.6.9) from /Library/Ruby/Gems/2.0.0/specifications/i18n-0.6.9.gemspec
+I, [2014-05-14T00:48:03.403775 #95497]  INFO -- : 0:  multi_json (1.10.0) from /Library/Ruby/Gems/2.0.0/specifications/multi_json-1.10.0.gemspec
+I, [2014-05-14T00:48:03.404051 #95497]  INFO -- : 0:  activesupport (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/activesupport-3.2.3.gemspec
+I, [2014-05-14T00:48:03.404316 #95497]  INFO -- : 0:  builder (3.0.4) from /Library/Ruby/Gems/2.0.0/specifications/builder-3.0.4.gemspec
+I, [2014-05-14T00:48:03.404571 #95497]  INFO -- : 0:  activemodel (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/activemodel-3.2.3.gemspec
+I, [2014-05-14T00:48:03.404821 #95497]  INFO -- : 0:  erubis (2.7.0) from /Library/Ruby/Gems/2.0.0/specifications/erubis-2.7.0.gemspec
+I, [2014-05-14T00:48:03.405059 #95497]  INFO -- : 0:  journey (1.0.4) from /Library/Ruby/Gems/2.0.0/specifications/journey-1.0.4.gemspec
+I, [2014-05-14T00:48:03.405294 #95497]  INFO -- : 0:  rack (1.4.5) from /Library/Ruby/Gems/2.0.0/specifications/rack-1.4.5.gemspec
+I, [2014-05-14T00:48:03.405536 #95497]  INFO -- : 0:  rack-cache (1.2) from /Library/Ruby/Gems/2.0.0/specifications/rack-cache-1.2.gemspec
+I, [2014-05-14T00:48:03.405773 #95497]  INFO -- : 0:  rack-test (0.6.2) from /Library/Ruby/Gems/2.0.0/specifications/rack-test-0.6.2.gemspec
+I, [2014-05-14T00:48:03.406008 #95497]  INFO -- : 0:  hike (1.2.3) from /Library/Ruby/Gems/2.0.0/specifications/hike-1.2.3.gemspec
+I, [2014-05-14T00:48:03.406243 #95497]  INFO -- : 0:  tilt (1.4.1) from /Library/Ruby/Gems/2.0.0/specifications/tilt-1.4.1.gemspec
+I, [2014-05-14T00:48:03.406479 #95497]  INFO -- : 0:  sprockets (2.1.3) from /Library/Ruby/Gems/2.0.0/specifications/sprockets-2.1.3.gemspec
+I, [2014-05-14T00:48:03.406718 #95497]  INFO -- : 0:  actionpack (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/actionpack-3.2.3.gemspec
+I, [2014-05-14T00:48:03.406956 #95497]  INFO -- : 0:  mime-types (1.25.1) from /Library/Ruby/Gems/2.0.0/specifications/mime-types-1.25.1.gemspec
+I, [2014-05-14T00:48:03.407197 #95497]  INFO -- : 0:  polyglot (0.3.4) from /Library/Ruby/Gems/2.0.0/specifications/polyglot-0.3.4.gemspec
+I, [2014-05-14T00:48:03.407433 #95497]  INFO -- : 0:  treetop (1.4.15) from /Library/Ruby/Gems/2.0.0/specifications/treetop-1.4.15.gemspec
+I, [2014-05-14T00:48:03.407664 #95497]  INFO -- : 0:  mail (2.4.4) from /Library/Ruby/Gems/2.0.0/specifications/mail-2.4.4.gemspec
+I, [2014-05-14T00:48:03.407898 #95497]  INFO -- : 0:  actionmailer (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/actionmailer-3.2.3.gemspec
+I, [2014-05-14T00:48:03.408133 #95497]  INFO -- : 0:  arel (3.0.3) from /Library/Ruby/Gems/2.0.0/specifications/arel-3.0.3.gemspec
+I, [2014-05-14T00:48:03.408374 #95497]  INFO -- : 0:  tzinfo (0.3.39) from /Library/Ruby/Gems/2.0.0/specifications/tzinfo-0.3.39.gemspec
+I, [2014-05-14T00:48:03.408631 #95497]  INFO -- : 0:  activerecord (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/activerecord-3.2.3.gemspec
+I, [2014-05-14T00:48:03.408867 #95497]  INFO -- : 0:  activeresource (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/activeresource-3.2.3.gemspec
+I, [2014-05-14T00:48:03.409088 #95497]  INFO -- : 0:  bundler (1.5.1) from /Library/Ruby/Gems/2.0.0/specifications/bundler-1.5.1.gemspec
+I, [2014-05-14T00:48:03.409330 #95497]  INFO -- : 0:  coffee-script-source (1.7.0) from /Library/Ruby/Gems/2.0.0/specifications/coffee-script-source-1.7.0.gemspec
+I, [2014-05-14T00:48:03.409569 #95497]  INFO -- : 0:  execjs (2.0.2) from /Library/Ruby/Gems/2.0.0/specifications/execjs-2.0.2.gemspec
+I, [2014-05-14T00:48:03.409809 #95497]  INFO -- : 0:  coffee-script (2.2.0) from /Library/Ruby/Gems/2.0.0/specifications/coffee-script-2.2.0.gemspec
+I, [2014-05-14T00:48:03.410053 #95497]  INFO -- : 0:  rack-ssl (1.3.4) from /Library/Ruby/Gems/2.0.0/specifications/rack-ssl-1.3.4.gemspec
+I, [2014-05-14T00:48:03.410291 #95497]  INFO -- : 0:  json (1.8.1) from /Library/Ruby/Gems/2.0.0/specifications/json-1.8.1.gemspec
+I, [2014-05-14T00:48:03.410530 #95497]  INFO -- : 0:  rdoc (3.12.2) from /Library/Ruby/Gems/2.0.0/specifications/rdoc-3.12.2.gemspec
+I, [2014-05-14T00:48:03.410771 #95497]  INFO -- : 0:  thor (0.14.6) from /Library/Ruby/Gems/2.0.0/specifications/thor-0.14.6.gemspec
+I, [2014-05-14T00:48:03.411011 #95497]  INFO -- : 0:  railties (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/railties-3.2.3.gemspec
+I, [2014-05-14T00:48:03.411253 #95497]  INFO -- : 0:  coffee-rails (3.2.2) from /Library/Ruby/Gems/2.0.0/specifications/coffee-rails-3.2.2.gemspec
+I, [2014-05-14T00:48:03.411493 #95497]  INFO -- : 0:  jquery-rails (3.1.0) from /Library/Ruby/Gems/2.0.0/specifications/jquery-rails-3.1.0.gemspec
+I, [2014-05-14T00:48:03.411735 #95497]  INFO -- : 0:  rails (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/rails-3.2.3.gemspec
+I, [2014-05-14T00:48:03.411973 #95497]  INFO -- : 0:  sass (3.3.7) from /Library/Ruby/Gems/2.0.0/specifications/sass-3.3.7.gemspec
+I, [2014-05-14T00:48:03.412212 #95497]  INFO -- : 0:  sass-rails (3.2.6) from /Library/Ruby/Gems/2.0.0/specifications/sass-rails-3.2.6.gemspec
+E, [2014-05-14T00:48:10.988025 #95497] ERROR -- : Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
+
+        /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/bin/ruby extconf.rb 
+checking for sqlite3.h... yes
+checking for sqlite3_libversion_number() in -lsqlite3... yes
+checking for rb_proc_arity()... yes
+checking for rb_integer_pack()... no
+checking for sqlite3_initialize()... yes
+checking for sqlite3_backup_init()... yes
+checking for sqlite3_column_database_name()... no
+checking for sqlite3_enable_load_extension()... no
+checking for sqlite3_load_extension()... no
+checking for sqlite3_open_v2()... yes
+checking for sqlite3_prepare_v2()... yes
+checking for sqlite3_int64 in sqlite3.h... yes
+checking for sqlite3_uint64 in sqlite3.h... yes
+creating Makefile
+
+make
+compiling backup.c
+compiling database.c
+database.c:300:1: warning: control may reach end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+compiling exception.c
+compiling sqlite3.c
+compiling statement.c
+linking shared-object sqlite3/sqlite3_native.bundle
+clang: error: unknown argument: '-multiply_definedsuppress' [-Wunused-command-line-argument-hard-error-in-future]
+clang: note: this will be a hard error (cannot be downgraded to a warning) in the future
+make: *** [sqlite3_native.bundle] Error 1
+
+
+Gem files will remain installed in /Users/ethanyu94/.bundler/tmp/95497/gems/sqlite3-1.3.9 for inspection.
+Results logged to /Users/ethanyu94/.bundler/tmp/95497/gems/sqlite3-1.3.9/ext/sqlite3/gem_make.out
+
+/Library/Ruby/Site/2.0.0/rubygems/installer.rb:556:in `rescue in block in build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:534:in `block in build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:509:in `each'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:509:in `build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:180:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source/rubygems.rb:101:in `block in install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/rubygems_integration.rb:118:in `preserve_paths'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source/rubygems.rb:94:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:111:in `block in install_gem_from_spec'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/rubygems_integration.rb:150:in `with_build_args'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:110:in `install_gem_from_spec'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:295:in `block in install_sequentially'  \n/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/forwardable.rb:171:in `each'  \n/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/forwardable.rb:171:in `each'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:294:in `install_sequentially'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:97:in `run'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:15:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/cli.rb:257:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/command.rb:27:in `run'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/invocation.rb:120:in `invoke_command'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor.rb:363:in `dispatch'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/base.rb:438:in `start'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/cli.rb:10:in `start'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/bin/bundle:22:in `block in <top (required)>'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/friendly_errors.rb:5:in `with_friendly_errors'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/bin/bundle:22:in `<top (required)>'  \n/usr/bin/bundle:23:in `load'  \n/usr/bin/bundle:23:in `<main>'
+I, [2014-05-14T00:49:00.984524 #95618]  INFO -- : 0:  rake (10.3.1) from /Library/Ruby/Gems/2.0.0/specifications/rake-10.3.1.gemspec
+I, [2014-05-14T00:49:00.984925 #95618]  INFO -- : 0:  i18n (0.6.9) from /Library/Ruby/Gems/2.0.0/specifications/i18n-0.6.9.gemspec
+I, [2014-05-14T00:49:00.985225 #95618]  INFO -- : 0:  multi_json (1.10.0) from /Library/Ruby/Gems/2.0.0/specifications/multi_json-1.10.0.gemspec
+I, [2014-05-14T00:49:00.985523 #95618]  INFO -- : 0:  activesupport (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/activesupport-3.2.3.gemspec
+I, [2014-05-14T00:49:00.985790 #95618]  INFO -- : 0:  builder (3.0.4) from /Library/Ruby/Gems/2.0.0/specifications/builder-3.0.4.gemspec
+I, [2014-05-14T00:49:00.986058 #95618]  INFO -- : 0:  activemodel (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/activemodel-3.2.3.gemspec
+I, [2014-05-14T00:49:00.986311 #95618]  INFO -- : 0:  erubis (2.7.0) from /Library/Ruby/Gems/2.0.0/specifications/erubis-2.7.0.gemspec
+I, [2014-05-14T00:49:00.986554 #95618]  INFO -- : 0:  journey (1.0.4) from /Library/Ruby/Gems/2.0.0/specifications/journey-1.0.4.gemspec
+I, [2014-05-14T00:49:00.986799 #95618]  INFO -- : 0:  rack (1.4.5) from /Library/Ruby/Gems/2.0.0/specifications/rack-1.4.5.gemspec
+I, [2014-05-14T00:49:00.987044 #95618]  INFO -- : 0:  rack-cache (1.2) from /Library/Ruby/Gems/2.0.0/specifications/rack-cache-1.2.gemspec
+I, [2014-05-14T00:49:00.987289 #95618]  INFO -- : 0:  rack-test (0.6.2) from /Library/Ruby/Gems/2.0.0/specifications/rack-test-0.6.2.gemspec
+I, [2014-05-14T00:49:00.987533 #95618]  INFO -- : 0:  hike (1.2.3) from /Library/Ruby/Gems/2.0.0/specifications/hike-1.2.3.gemspec
+I, [2014-05-14T00:49:00.987771 #95618]  INFO -- : 0:  tilt (1.4.1) from /Library/Ruby/Gems/2.0.0/specifications/tilt-1.4.1.gemspec
+I, [2014-05-14T00:49:00.988006 #95618]  INFO -- : 0:  sprockets (2.1.3) from /Library/Ruby/Gems/2.0.0/specifications/sprockets-2.1.3.gemspec
+I, [2014-05-14T00:49:00.988567 #95618]  INFO -- : 0:  actionpack (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/actionpack-3.2.3.gemspec
+I, [2014-05-14T00:49:00.988820 #95618]  INFO -- : 0:  mime-types (1.25.1) from /Library/Ruby/Gems/2.0.0/specifications/mime-types-1.25.1.gemspec
+I, [2014-05-14T00:49:00.989097 #95618]  INFO -- : 0:  polyglot (0.3.4) from /Library/Ruby/Gems/2.0.0/specifications/polyglot-0.3.4.gemspec
+I, [2014-05-14T00:49:00.989338 #95618]  INFO -- : 0:  treetop (1.4.15) from /Library/Ruby/Gems/2.0.0/specifications/treetop-1.4.15.gemspec
+I, [2014-05-14T00:49:00.989577 #95618]  INFO -- : 0:  mail (2.4.4) from /Library/Ruby/Gems/2.0.0/specifications/mail-2.4.4.gemspec
+I, [2014-05-14T00:49:00.989820 #95618]  INFO -- : 0:  actionmailer (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/actionmailer-3.2.3.gemspec
+I, [2014-05-14T00:49:00.990061 #95618]  INFO -- : 0:  arel (3.0.3) from /Library/Ruby/Gems/2.0.0/specifications/arel-3.0.3.gemspec
+I, [2014-05-14T00:49:00.990307 #95618]  INFO -- : 0:  tzinfo (0.3.39) from /Library/Ruby/Gems/2.0.0/specifications/tzinfo-0.3.39.gemspec
+I, [2014-05-14T00:49:00.990550 #95618]  INFO -- : 0:  activerecord (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/activerecord-3.2.3.gemspec
+I, [2014-05-14T00:49:00.990796 #95618]  INFO -- : 0:  activeresource (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/activeresource-3.2.3.gemspec
+I, [2014-05-14T00:49:00.991022 #95618]  INFO -- : 0:  bundler (1.5.1) from /Library/Ruby/Gems/2.0.0/specifications/bundler-1.5.1.gemspec
+I, [2014-05-14T00:49:00.991269 #95618]  INFO -- : 0:  coffee-script-source (1.7.0) from /Library/Ruby/Gems/2.0.0/specifications/coffee-script-source-1.7.0.gemspec
+I, [2014-05-14T00:49:00.991512 #95618]  INFO -- : 0:  execjs (2.0.2) from /Library/Ruby/Gems/2.0.0/specifications/execjs-2.0.2.gemspec
+I, [2014-05-14T00:49:00.991753 #95618]  INFO -- : 0:  coffee-script (2.2.0) from /Library/Ruby/Gems/2.0.0/specifications/coffee-script-2.2.0.gemspec
+I, [2014-05-14T00:49:00.992000 #95618]  INFO -- : 0:  rack-ssl (1.3.4) from /Library/Ruby/Gems/2.0.0/specifications/rack-ssl-1.3.4.gemspec
+I, [2014-05-14T00:49:00.992241 #95618]  INFO -- : 0:  json (1.8.1) from /Library/Ruby/Gems/2.0.0/specifications/json-1.8.1.gemspec
+I, [2014-05-14T00:49:00.992477 #95618]  INFO -- : 0:  rdoc (3.12.2) from /Library/Ruby/Gems/2.0.0/specifications/rdoc-3.12.2.gemspec
+I, [2014-05-14T00:49:00.992716 #95618]  INFO -- : 0:  thor (0.14.6) from /Library/Ruby/Gems/2.0.0/specifications/thor-0.14.6.gemspec
+I, [2014-05-14T00:49:00.992957 #95618]  INFO -- : 0:  railties (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/railties-3.2.3.gemspec
+I, [2014-05-14T00:49:00.993198 #95618]  INFO -- : 0:  coffee-rails (3.2.2) from /Library/Ruby/Gems/2.0.0/specifications/coffee-rails-3.2.2.gemspec
+I, [2014-05-14T00:49:00.993437 #95618]  INFO -- : 0:  jquery-rails (3.1.0) from /Library/Ruby/Gems/2.0.0/specifications/jquery-rails-3.1.0.gemspec
+I, [2014-05-14T00:49:00.993676 #95618]  INFO -- : 0:  rails (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/rails-3.2.3.gemspec
+I, [2014-05-14T00:49:00.993924 #95618]  INFO -- : 0:  sass (3.3.7) from /Library/Ruby/Gems/2.0.0/specifications/sass-3.3.7.gemspec
+I, [2014-05-14T00:49:00.994165 #95618]  INFO -- : 0:  sass-rails (3.2.6) from /Library/Ruby/Gems/2.0.0/specifications/sass-rails-3.2.6.gemspec
+E, [2014-05-14T00:49:03.291887 #95618] ERROR -- : Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
+
+        /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/bin/ruby extconf.rb 
+checking for sqlite3.h... yes
+checking for sqlite3_libversion_number() in -lsqlite3... yes
+checking for rb_proc_arity()... yes
+checking for rb_integer_pack()... no
+checking for sqlite3_initialize()... yes
+checking for sqlite3_backup_init()... yes
+checking for sqlite3_column_database_name()... no
+checking for sqlite3_enable_load_extension()... no
+checking for sqlite3_load_extension()... no
+checking for sqlite3_open_v2()... yes
+checking for sqlite3_prepare_v2()... yes
+checking for sqlite3_int64 in sqlite3.h... yes
+checking for sqlite3_uint64 in sqlite3.h... yes
+creating Makefile
+
+make
+compiling backup.c
+compiling database.c
+database.c:300:1: warning: control may reach end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+compiling exception.c
+compiling sqlite3.c
+compiling statement.c
+linking shared-object sqlite3/sqlite3_native.bundle
+clang: error: unknown argument: '-multiply_definedsuppress' [-Wunused-command-line-argument-hard-error-in-future]
+clang: note: this will be a hard error (cannot be downgraded to a warning) in the future
+make: *** [sqlite3_native.bundle] Error 1
+
+
+Gem files will remain installed in /Users/ethanyu94/.bundler/tmp/95618/gems/sqlite3-1.3.9 for inspection.
+Results logged to /Users/ethanyu94/.bundler/tmp/95618/gems/sqlite3-1.3.9/ext/sqlite3/gem_make.out
+
+/Library/Ruby/Site/2.0.0/rubygems/installer.rb:556:in `rescue in block in build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:534:in `block in build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:509:in `each'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:509:in `build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:180:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source/rubygems.rb:101:in `block in install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/rubygems_integration.rb:118:in `preserve_paths'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source/rubygems.rb:94:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:111:in `block in install_gem_from_spec'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/rubygems_integration.rb:150:in `with_build_args'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:110:in `install_gem_from_spec'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:295:in `block in install_sequentially'  \n/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/forwardable.rb:171:in `each'  \n/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/forwardable.rb:171:in `each'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:294:in `install_sequentially'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:97:in `run'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:15:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/cli.rb:257:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/command.rb:27:in `run'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/invocation.rb:120:in `invoke_command'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor.rb:363:in `dispatch'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/base.rb:438:in `start'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/cli.rb:10:in `start'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/bin/bundle:22:in `block in <top (required)>'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/friendly_errors.rb:5:in `with_friendly_errors'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/bin/bundle:22:in `<top (required)>'  \n/usr/bin/bundle:23:in `load'  \n/usr/bin/bundle:23:in `<main>'
+I, [2014-05-14T00:49:35.319927 #95743]  INFO -- : 0:  rake (10.3.1) from /Library/Ruby/Gems/2.0.0/specifications/rake-10.3.1.gemspec
+I, [2014-05-14T00:49:35.320291 #95743]  INFO -- : 0:  i18n (0.6.9) from /Library/Ruby/Gems/2.0.0/specifications/i18n-0.6.9.gemspec
+I, [2014-05-14T00:49:35.320575 #95743]  INFO -- : 0:  multi_json (1.10.0) from /Library/Ruby/Gems/2.0.0/specifications/multi_json-1.10.0.gemspec
+I, [2014-05-14T00:49:35.320850 #95743]  INFO -- : 0:  activesupport (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/activesupport-3.2.3.gemspec
+I, [2014-05-14T00:49:35.321114 #95743]  INFO -- : 0:  builder (3.0.4) from /Library/Ruby/Gems/2.0.0/specifications/builder-3.0.4.gemspec
+I, [2014-05-14T00:49:35.321387 #95743]  INFO -- : 0:  activemodel (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/activemodel-3.2.3.gemspec
+I, [2014-05-14T00:49:35.321639 #95743]  INFO -- : 0:  erubis (2.7.0) from /Library/Ruby/Gems/2.0.0/specifications/erubis-2.7.0.gemspec
+I, [2014-05-14T00:49:35.321882 #95743]  INFO -- : 0:  journey (1.0.4) from /Library/Ruby/Gems/2.0.0/specifications/journey-1.0.4.gemspec
+I, [2014-05-14T00:49:35.322117 #95743]  INFO -- : 0:  rack (1.4.5) from /Library/Ruby/Gems/2.0.0/specifications/rack-1.4.5.gemspec
+I, [2014-05-14T00:49:35.322352 #95743]  INFO -- : 0:  rack-cache (1.2) from /Library/Ruby/Gems/2.0.0/specifications/rack-cache-1.2.gemspec
+I, [2014-05-14T00:49:35.322585 #95743]  INFO -- : 0:  rack-test (0.6.2) from /Library/Ruby/Gems/2.0.0/specifications/rack-test-0.6.2.gemspec
+I, [2014-05-14T00:49:35.322815 #95743]  INFO -- : 0:  hike (1.2.3) from /Library/Ruby/Gems/2.0.0/specifications/hike-1.2.3.gemspec
+I, [2014-05-14T00:49:35.323048 #95743]  INFO -- : 0:  tilt (1.4.1) from /Library/Ruby/Gems/2.0.0/specifications/tilt-1.4.1.gemspec
+I, [2014-05-14T00:49:35.323280 #95743]  INFO -- : 0:  sprockets (2.1.3) from /Library/Ruby/Gems/2.0.0/specifications/sprockets-2.1.3.gemspec
+I, [2014-05-14T00:49:35.323512 #95743]  INFO -- : 0:  actionpack (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/actionpack-3.2.3.gemspec
+I, [2014-05-14T00:49:35.323743 #95743]  INFO -- : 0:  mime-types (1.25.1) from /Library/Ruby/Gems/2.0.0/specifications/mime-types-1.25.1.gemspec
+I, [2014-05-14T00:49:35.323974 #95743]  INFO -- : 0:  polyglot (0.3.4) from /Library/Ruby/Gems/2.0.0/specifications/polyglot-0.3.4.gemspec
+I, [2014-05-14T00:49:35.324207 #95743]  INFO -- : 0:  treetop (1.4.15) from /Library/Ruby/Gems/2.0.0/specifications/treetop-1.4.15.gemspec
+I, [2014-05-14T00:49:35.324445 #95743]  INFO -- : 0:  mail (2.4.4) from /Library/Ruby/Gems/2.0.0/specifications/mail-2.4.4.gemspec
+I, [2014-05-14T00:49:35.324677 #95743]  INFO -- : 0:  actionmailer (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/actionmailer-3.2.3.gemspec
+I, [2014-05-14T00:49:35.324909 #95743]  INFO -- : 0:  arel (3.0.3) from /Library/Ruby/Gems/2.0.0/specifications/arel-3.0.3.gemspec
+I, [2014-05-14T00:49:35.325143 #95743]  INFO -- : 0:  tzinfo (0.3.39) from /Library/Ruby/Gems/2.0.0/specifications/tzinfo-0.3.39.gemspec
+I, [2014-05-14T00:49:35.325375 #95743]  INFO -- : 0:  activerecord (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/activerecord-3.2.3.gemspec
+I, [2014-05-14T00:49:35.325608 #95743]  INFO -- : 0:  activeresource (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/activeresource-3.2.3.gemspec
+I, [2014-05-14T00:49:35.325821 #95743]  INFO -- : 0:  bundler (1.5.1) from /Library/Ruby/Gems/2.0.0/specifications/bundler-1.5.1.gemspec
+I, [2014-05-14T00:49:35.326053 #95743]  INFO -- : 0:  coffee-script-source (1.7.0) from /Library/Ruby/Gems/2.0.0/specifications/coffee-script-source-1.7.0.gemspec
+I, [2014-05-14T00:49:35.326287 #95743]  INFO -- : 0:  execjs (2.0.2) from /Library/Ruby/Gems/2.0.0/specifications/execjs-2.0.2.gemspec
+I, [2014-05-14T00:49:35.326522 #95743]  INFO -- : 0:  coffee-script (2.2.0) from /Library/Ruby/Gems/2.0.0/specifications/coffee-script-2.2.0.gemspec
+I, [2014-05-14T00:49:35.326759 #95743]  INFO -- : 0:  rack-ssl (1.3.4) from /Library/Ruby/Gems/2.0.0/specifications/rack-ssl-1.3.4.gemspec
+I, [2014-05-14T00:49:35.326991 #95743]  INFO -- : 0:  json (1.8.1) from /Library/Ruby/Gems/2.0.0/specifications/json-1.8.1.gemspec
+I, [2014-05-14T00:49:35.327223 #95743]  INFO -- : 0:  rdoc (3.12.2) from /Library/Ruby/Gems/2.0.0/specifications/rdoc-3.12.2.gemspec
+I, [2014-05-14T00:49:35.327456 #95743]  INFO -- : 0:  thor (0.14.6) from /Library/Ruby/Gems/2.0.0/specifications/thor-0.14.6.gemspec
+I, [2014-05-14T00:49:35.327689 #95743]  INFO -- : 0:  railties (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/railties-3.2.3.gemspec
+I, [2014-05-14T00:49:35.327922 #95743]  INFO -- : 0:  coffee-rails (3.2.2) from /Library/Ruby/Gems/2.0.0/specifications/coffee-rails-3.2.2.gemspec
+I, [2014-05-14T00:49:35.328155 #95743]  INFO -- : 0:  jquery-rails (3.1.0) from /Library/Ruby/Gems/2.0.0/specifications/jquery-rails-3.1.0.gemspec
+I, [2014-05-14T00:49:35.328398 #95743]  INFO -- : 0:  rails (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/rails-3.2.3.gemspec
+I, [2014-05-14T00:49:35.328633 #95743]  INFO -- : 0:  sass (3.3.7) from /Library/Ruby/Gems/2.0.0/specifications/sass-3.3.7.gemspec
+I, [2014-05-14T00:49:35.328866 #95743]  INFO -- : 0:  sass-rails (3.2.6) from /Library/Ruby/Gems/2.0.0/specifications/sass-rails-3.2.6.gemspec
+E, [2014-05-14T00:49:37.035487 #95743] ERROR -- : Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
+
+        /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/bin/ruby extconf.rb 
+checking for sqlite3.h... yes
+checking for sqlite3_libversion_number() in -lsqlite3... yes
+checking for rb_proc_arity()... yes
+checking for rb_integer_pack()... no
+checking for sqlite3_initialize()... yes
+checking for sqlite3_backup_init()... yes
+checking for sqlite3_column_database_name()... no
+checking for sqlite3_enable_load_extension()... no
+checking for sqlite3_load_extension()... no
+checking for sqlite3_open_v2()... yes
+checking for sqlite3_prepare_v2()... yes
+checking for sqlite3_int64 in sqlite3.h... yes
+checking for sqlite3_uint64 in sqlite3.h... yes
+creating Makefile
+
+make
+compiling backup.c
+compiling database.c
+database.c:300:1: warning: control may reach end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+compiling exception.c
+compiling sqlite3.c
+compiling statement.c
+linking shared-object sqlite3/sqlite3_native.bundle
+clang: error: unknown argument: '-multiply_definedsuppress' [-Wunused-command-line-argument-hard-error-in-future]
+clang: note: this will be a hard error (cannot be downgraded to a warning) in the future
+make: *** [sqlite3_native.bundle] Error 1
+
+
+Gem files will remain installed in /Library/Ruby/Gems/2.0.0/gems/sqlite3-1.3.9 for inspection.
+Results logged to /Library/Ruby/Gems/2.0.0/gems/sqlite3-1.3.9/ext/sqlite3/gem_make.out
+
+/Library/Ruby/Site/2.0.0/rubygems/installer.rb:556:in `rescue in block in build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:534:in `block in build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:509:in `each'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:509:in `build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:180:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source/rubygems.rb:101:in `block in install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/rubygems_integration.rb:118:in `preserve_paths'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source/rubygems.rb:94:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:111:in `block in install_gem_from_spec'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/rubygems_integration.rb:150:in `with_build_args'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:110:in `install_gem_from_spec'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:295:in `block in install_sequentially'  \n/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/forwardable.rb:171:in `each'  \n/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/forwardable.rb:171:in `each'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:294:in `install_sequentially'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:97:in `run'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:15:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/cli.rb:257:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/command.rb:27:in `run'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/invocation.rb:120:in `invoke_command'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor.rb:363:in `dispatch'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/base.rb:438:in `start'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/cli.rb:10:in `start'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/bin/bundle:22:in `block in <top (required)>'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/friendly_errors.rb:5:in `with_friendly_errors'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/bin/bundle:22:in `<top (required)>'  \n/usr/bin/bundle:23:in `load'  \n/usr/bin/bundle:23:in `<main>'
+I, [2014-05-14T01:01:28.199815 #95925]  INFO -- : 0:  rake (10.3.1) from /Library/Ruby/Gems/2.0.0/specifications/rake-10.3.1.gemspec
+I, [2014-05-14T01:01:28.200222 #95925]  INFO -- : 0:  i18n (0.6.9) from /Library/Ruby/Gems/2.0.0/specifications/i18n-0.6.9.gemspec
+I, [2014-05-14T01:01:28.200512 #95925]  INFO -- : 0:  multi_json (1.10.0) from /Library/Ruby/Gems/2.0.0/specifications/multi_json-1.10.0.gemspec
+I, [2014-05-14T01:01:28.200783 #95925]  INFO -- : 0:  activesupport (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/activesupport-3.2.3.gemspec
+I, [2014-05-14T01:01:28.201045 #95925]  INFO -- : 0:  builder (3.0.4) from /Library/Ruby/Gems/2.0.0/specifications/builder-3.0.4.gemspec
+I, [2014-05-14T01:01:28.201291 #95925]  INFO -- : 0:  activemodel (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/activemodel-3.2.3.gemspec
+I, [2014-05-14T01:01:28.201523 #95925]  INFO -- : 0:  erubis (2.7.0) from /Library/Ruby/Gems/2.0.0/specifications/erubis-2.7.0.gemspec
+I, [2014-05-14T01:01:28.201757 #95925]  INFO -- : 0:  journey (1.0.4) from /Library/Ruby/Gems/2.0.0/specifications/journey-1.0.4.gemspec
+I, [2014-05-14T01:01:28.201987 #95925]  INFO -- : 0:  rack (1.4.5) from /Library/Ruby/Gems/2.0.0/specifications/rack-1.4.5.gemspec
+I, [2014-05-14T01:01:28.202218 #95925]  INFO -- : 0:  rack-cache (1.2) from /Library/Ruby/Gems/2.0.0/specifications/rack-cache-1.2.gemspec
+I, [2014-05-14T01:01:28.202462 #95925]  INFO -- : 0:  rack-test (0.6.2) from /Library/Ruby/Gems/2.0.0/specifications/rack-test-0.6.2.gemspec
+I, [2014-05-14T01:01:28.202697 #95925]  INFO -- : 0:  hike (1.2.3) from /Library/Ruby/Gems/2.0.0/specifications/hike-1.2.3.gemspec
+I, [2014-05-14T01:01:28.202937 #95925]  INFO -- : 0:  tilt (1.4.1) from /Library/Ruby/Gems/2.0.0/specifications/tilt-1.4.1.gemspec
+I, [2014-05-14T01:01:28.203178 #95925]  INFO -- : 0:  sprockets (2.1.3) from /Library/Ruby/Gems/2.0.0/specifications/sprockets-2.1.3.gemspec
+I, [2014-05-14T01:01:28.203417 #95925]  INFO -- : 0:  actionpack (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/actionpack-3.2.3.gemspec
+I, [2014-05-14T01:01:28.203651 #95925]  INFO -- : 0:  mime-types (1.25.1) from /Library/Ruby/Gems/2.0.0/specifications/mime-types-1.25.1.gemspec
+I, [2014-05-14T01:01:28.203889 #95925]  INFO -- : 0:  polyglot (0.3.4) from /Library/Ruby/Gems/2.0.0/specifications/polyglot-0.3.4.gemspec
+I, [2014-05-14T01:01:28.204122 #95925]  INFO -- : 0:  treetop (1.4.15) from /Library/Ruby/Gems/2.0.0/specifications/treetop-1.4.15.gemspec
+I, [2014-05-14T01:01:28.204351 #95925]  INFO -- : 0:  mail (2.4.4) from /Library/Ruby/Gems/2.0.0/specifications/mail-2.4.4.gemspec
+I, [2014-05-14T01:01:28.204583 #95925]  INFO -- : 0:  actionmailer (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/actionmailer-3.2.3.gemspec
+I, [2014-05-14T01:01:28.204814 #95925]  INFO -- : 0:  arel (3.0.3) from /Library/Ruby/Gems/2.0.0/specifications/arel-3.0.3.gemspec
+I, [2014-05-14T01:01:28.205045 #95925]  INFO -- : 0:  tzinfo (0.3.39) from /Library/Ruby/Gems/2.0.0/specifications/tzinfo-0.3.39.gemspec
+I, [2014-05-14T01:01:28.205276 #95925]  INFO -- : 0:  activerecord (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/activerecord-3.2.3.gemspec
+I, [2014-05-14T01:01:28.205513 #95925]  INFO -- : 0:  activeresource (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/activeresource-3.2.3.gemspec
+I, [2014-05-14T01:01:28.205763 #95925]  INFO -- : 0:  bundler (1.5.1) from /Library/Ruby/Gems/2.0.0/specifications/bundler-1.5.1.gemspec
+I, [2014-05-14T01:01:28.206067 #95925]  INFO -- : 0:  coffee-script-source (1.7.0) from /Library/Ruby/Gems/2.0.0/specifications/coffee-script-source-1.7.0.gemspec
+I, [2014-05-14T01:01:28.206320 #95925]  INFO -- : 0:  execjs (2.0.2) from /Library/Ruby/Gems/2.0.0/specifications/execjs-2.0.2.gemspec
+I, [2014-05-14T01:01:28.206590 #95925]  INFO -- : 0:  coffee-script (2.2.0) from /Library/Ruby/Gems/2.0.0/specifications/coffee-script-2.2.0.gemspec
+I, [2014-05-14T01:01:28.206833 #95925]  INFO -- : 0:  rack-ssl (1.3.4) from /Library/Ruby/Gems/2.0.0/specifications/rack-ssl-1.3.4.gemspec
+I, [2014-05-14T01:01:28.207071 #95925]  INFO -- : 0:  json (1.8.1) from /Library/Ruby/Gems/2.0.0/specifications/json-1.8.1.gemspec
+I, [2014-05-14T01:01:28.207306 #95925]  INFO -- : 0:  rdoc (3.12.2) from /Library/Ruby/Gems/2.0.0/specifications/rdoc-3.12.2.gemspec
+I, [2014-05-14T01:01:28.207539 #95925]  INFO -- : 0:  thor (0.14.6) from /Library/Ruby/Gems/2.0.0/specifications/thor-0.14.6.gemspec
+I, [2014-05-14T01:01:28.207774 #95925]  INFO -- : 0:  railties (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/railties-3.2.3.gemspec
+I, [2014-05-14T01:01:28.208003 #95925]  INFO -- : 0:  coffee-rails (3.2.2) from /Library/Ruby/Gems/2.0.0/specifications/coffee-rails-3.2.2.gemspec
+I, [2014-05-14T01:01:28.208233 #95925]  INFO -- : 0:  jquery-rails (3.1.0) from /Library/Ruby/Gems/2.0.0/specifications/jquery-rails-3.1.0.gemspec
+I, [2014-05-14T01:01:28.208467 #95925]  INFO -- : 0:  rails (3.2.3) from /Library/Ruby/Gems/2.0.0/specifications/rails-3.2.3.gemspec
+I, [2014-05-14T01:01:28.208699 #95925]  INFO -- : 0:  sass (3.3.7) from /Library/Ruby/Gems/2.0.0/specifications/sass-3.3.7.gemspec
+I, [2014-05-14T01:01:28.208932 #95925]  INFO -- : 0:  sass-rails (3.2.6) from /Library/Ruby/Gems/2.0.0/specifications/sass-rails-3.2.6.gemspec
+E, [2014-05-14T01:01:38.161342 #95925] ERROR -- : Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
+
+        /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/bin/ruby extconf.rb 
+checking for sqlite3.h... yes
+checking for sqlite3_libversion_number() in -lsqlite3... yes
+checking for rb_proc_arity()... yes
+checking for rb_integer_pack()... no
+checking for sqlite3_initialize()... yes
+checking for sqlite3_backup_init()... yes
+checking for sqlite3_column_database_name()... no
+checking for sqlite3_enable_load_extension()... no
+checking for sqlite3_load_extension()... no
+checking for sqlite3_open_v2()... yes
+checking for sqlite3_prepare_v2()... yes
+checking for sqlite3_int64 in sqlite3.h... yes
+checking for sqlite3_uint64 in sqlite3.h... yes
+creating Makefile
+
+make
+compiling backup.c
+compiling database.c
+database.c:300:1: warning: control may reach end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+compiling exception.c
+compiling sqlite3.c
+compiling statement.c
+linking shared-object sqlite3/sqlite3_native.bundle
+clang: error: unknown argument: '-multiply_definedsuppress' [-Wunused-command-line-argument-hard-error-in-future]
+clang: note: this will be a hard error (cannot be downgraded to a warning) in the future
+make: *** [sqlite3_native.bundle] Error 1
+
+
+Gem files will remain installed in /Users/ethanyu94/.bundler/tmp/95925/gems/sqlite3-1.3.9 for inspection.
+Results logged to /Users/ethanyu94/.bundler/tmp/95925/gems/sqlite3-1.3.9/ext/sqlite3/gem_make.out
+
+/Library/Ruby/Site/2.0.0/rubygems/installer.rb:556:in `rescue in block in build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:534:in `block in build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:509:in `each'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:509:in `build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:180:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source/rubygems.rb:101:in `block in install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/rubygems_integration.rb:118:in `preserve_paths'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source/rubygems.rb:94:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:111:in `block in install_gem_from_spec'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/rubygems_integration.rb:150:in `with_build_args'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:110:in `install_gem_from_spec'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:295:in `block in install_sequentially'  \n/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/forwardable.rb:171:in `each'  \n/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/forwardable.rb:171:in `each'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:294:in `install_sequentially'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:97:in `run'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:15:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/cli.rb:257:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/command.rb:27:in `run'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/invocation.rb:120:in `invoke_command'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor.rb:363:in `dispatch'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/base.rb:438:in `start'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/cli.rb:10:in `start'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/bin/bundle:22:in `block in <top (required)>'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/friendly_errors.rb:5:in `with_friendly_errors'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/bin/bundle:22:in `<top (required)>'  \n/usr/bin/bundle:23:in `load'  \n/usr/bin/bundle:23:in `<main>'
+I, [2014-05-14T01:01:57.338376 #96042]  INFO -- : 0:  rake (10.3.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rake-10.3.1.gemspec
+I, [2014-05-14T01:01:58.015070 #96042]  INFO -- : 0:  i18n (0.6.9) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/i18n-0.6.9.gemspec
+I, [2014-05-14T01:01:58.572245 #96042]  INFO -- : 0:  multi_json (1.10.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/multi_json-1.10.0.gemspec
+I, [2014-05-14T01:01:59.591395 #96042]  INFO -- : 0:  activesupport (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activesupport-3.2.3.gemspec
+I, [2014-05-14T01:02:00.147286 #96042]  INFO -- : 0:  builder (3.0.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/builder-3.0.4.gemspec
+I, [2014-05-14T01:02:00.762495 #96042]  INFO -- : 0:  activemodel (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activemodel-3.2.3.gemspec
+I, [2014-05-14T01:02:01.524810 #96042]  INFO -- : 0:  erubis (2.7.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/erubis-2.7.0.gemspec
+I, [2014-05-14T01:02:02.105982 #96042]  INFO -- : 0:  journey (1.0.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/journey-1.0.4.gemspec
+I, [2014-05-14T01:02:02.885865 #96042]  INFO -- : 0:  rack (1.4.5) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-1.4.5.gemspec
+I, [2014-05-14T01:02:03.898936 #96042]  INFO -- : 0:  rack-cache (1.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-cache-1.2.gemspec
+I, [2014-05-14T01:02:04.445885 #96042]  INFO -- : 0:  rack-test (0.6.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-test-0.6.2.gemspec
+I, [2014-05-14T01:02:05.006566 #96042]  INFO -- : 0:  hike (1.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/hike-1.2.3.gemspec
+I, [2014-05-14T01:02:05.603850 #96042]  INFO -- : 0:  tilt (1.4.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/tilt-1.4.1.gemspec
+I, [2014-05-14T01:02:06.184174 #96042]  INFO -- : 0:  sprockets (2.1.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/sprockets-2.1.3.gemspec
+I, [2014-05-14T01:02:06.988142 #96042]  INFO -- : 0:  actionpack (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/actionpack-3.2.3.gemspec
+I, [2014-05-14T01:02:07.614958 #96042]  INFO -- : 0:  mime-types (1.25.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/mime-types-1.25.1.gemspec
+I, [2014-05-14T01:02:08.110947 #96042]  INFO -- : 0:  polyglot (0.3.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/polyglot-0.3.4.gemspec
+I, [2014-05-14T01:02:08.781711 #96042]  INFO -- : 0:  treetop (1.4.15) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/treetop-1.4.15.gemspec
+I, [2014-05-14T01:02:09.497615 #96042]  INFO -- : 0:  mail (2.4.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/mail-2.4.4.gemspec
+I, [2014-05-14T01:02:10.057479 #96042]  INFO -- : 0:  actionmailer (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/actionmailer-3.2.3.gemspec
+I, [2014-05-14T01:02:10.662198 #96042]  INFO -- : 0:  arel (3.0.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/arel-3.0.3.gemspec
+I, [2014-05-14T01:02:11.677839 #96042]  INFO -- : 0:  tzinfo (0.3.39) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/tzinfo-0.3.39.gemspec
+I, [2014-05-14T01:02:12.547357 #96042]  INFO -- : 0:  activerecord (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activerecord-3.2.3.gemspec
+I, [2014-05-14T01:02:13.132316 #96042]  INFO -- : 0:  activeresource (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activeresource-3.2.3.gemspec
+I, [2014-05-14T01:02:13.132708 #96042]  INFO -- : 0:  bundler (1.5.1) from /Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source
+I, [2014-05-14T01:02:13.692003 #96042]  INFO -- : 0:  coffee-script-source (1.7.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/coffee-script-source-1.7.0.gemspec
+I, [2014-05-14T01:02:14.238005 #96042]  INFO -- : 0:  execjs (2.0.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/execjs-2.0.2.gemspec
+I, [2014-05-14T01:02:14.734317 #96042]  INFO -- : 0:  coffee-script (2.2.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/coffee-script-2.2.0.gemspec
+I, [2014-05-14T01:02:15.228281 #96042]  INFO -- : 0:  rack-ssl (1.3.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-ssl-1.3.4.gemspec
+E, [2014-05-14T01:02:16.407742 #96042] ERROR -- : Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
+
+        /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/bin/ruby extconf.rb 
+creating Makefile
+
+make
+compiling generator.c
+linking shared-object json/ext/generator.bundle
+clang: error: unknown argument: '-multiply_definedsuppress' [-Wunused-command-line-argument-hard-error-in-future]
+clang: note: this will be a hard error (cannot be downgraded to a warning) in the future
+make: *** [generator.bundle] Error 1
+
+
+Gem files will remain installed in /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/gems/json-1.8.1 for inspection.
+Results logged to /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/gems/json-1.8.1/ext/json/ext/generator/gem_make.out
+
+/Library/Ruby/Site/2.0.0/rubygems/installer.rb:556:in `rescue in block in build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:534:in `block in build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:509:in `each'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:509:in `build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:180:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source/rubygems.rb:101:in `block in install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/rubygems_integration.rb:118:in `preserve_paths'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source/rubygems.rb:94:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:111:in `block in install_gem_from_spec'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/rubygems_integration.rb:150:in `with_build_args'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:110:in `install_gem_from_spec'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:295:in `block in install_sequentially'  \n/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/forwardable.rb:171:in `each'  \n/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/forwardable.rb:171:in `each'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:294:in `install_sequentially'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:97:in `run'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:15:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/cli.rb:257:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/command.rb:27:in `run'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/invocation.rb:120:in `invoke_command'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor.rb:363:in `dispatch'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/base.rb:438:in `start'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/cli.rb:10:in `start'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/bin/bundle:22:in `block in <top (required)>'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/friendly_errors.rb:5:in `with_friendly_errors'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/bin/bundle:22:in `<top (required)>'  \n/usr/bin/bundle:23:in `load'  \n/usr/bin/bundle:23:in `<main>'
+I, [2014-05-14T01:07:12.037128 #96111]  INFO -- : 0:  rake (10.3.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rake-10.3.1.gemspec
+I, [2014-05-14T01:07:12.037518 #96111]  INFO -- : 0:  i18n (0.6.9) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/i18n-0.6.9.gemspec
+I, [2014-05-14T01:07:12.037825 #96111]  INFO -- : 0:  multi_json (1.10.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/multi_json-1.10.0.gemspec
+I, [2014-05-14T01:07:12.038126 #96111]  INFO -- : 0:  activesupport (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activesupport-3.2.3.gemspec
+I, [2014-05-14T01:07:12.038425 #96111]  INFO -- : 0:  builder (3.0.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/builder-3.0.4.gemspec
+I, [2014-05-14T01:07:12.038712 #96111]  INFO -- : 0:  activemodel (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activemodel-3.2.3.gemspec
+I, [2014-05-14T01:07:12.038997 #96111]  INFO -- : 0:  erubis (2.7.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/erubis-2.7.0.gemspec
+I, [2014-05-14T01:07:12.039290 #96111]  INFO -- : 0:  journey (1.0.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/journey-1.0.4.gemspec
+I, [2014-05-14T01:07:12.039562 #96111]  INFO -- : 0:  rack (1.4.5) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-1.4.5.gemspec
+I, [2014-05-14T01:07:12.039833 #96111]  INFO -- : 0:  rack-cache (1.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-cache-1.2.gemspec
+I, [2014-05-14T01:07:12.040104 #96111]  INFO -- : 0:  rack-test (0.6.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-test-0.6.2.gemspec
+I, [2014-05-14T01:07:12.040375 #96111]  INFO -- : 0:  hike (1.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/hike-1.2.3.gemspec
+I, [2014-05-14T01:07:12.040664 #96111]  INFO -- : 0:  tilt (1.4.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/tilt-1.4.1.gemspec
+I, [2014-05-14T01:07:12.040927 #96111]  INFO -- : 0:  sprockets (2.1.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/sprockets-2.1.3.gemspec
+I, [2014-05-14T01:07:12.041193 #96111]  INFO -- : 0:  actionpack (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/actionpack-3.2.3.gemspec
+I, [2014-05-14T01:07:12.041474 #96111]  INFO -- : 0:  mime-types (1.25.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/mime-types-1.25.1.gemspec
+I, [2014-05-14T01:07:12.041774 #96111]  INFO -- : 0:  polyglot (0.3.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/polyglot-0.3.4.gemspec
+I, [2014-05-14T01:07:12.042042 #96111]  INFO -- : 0:  treetop (1.4.15) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/treetop-1.4.15.gemspec
+I, [2014-05-14T01:07:12.042312 #96111]  INFO -- : 0:  mail (2.4.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/mail-2.4.4.gemspec
+I, [2014-05-14T01:07:12.042592 #96111]  INFO -- : 0:  actionmailer (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/actionmailer-3.2.3.gemspec
+I, [2014-05-14T01:07:12.042880 #96111]  INFO -- : 0:  arel (3.0.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/arel-3.0.3.gemspec
+I, [2014-05-14T01:07:12.043178 #96111]  INFO -- : 0:  tzinfo (0.3.39) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/tzinfo-0.3.39.gemspec
+I, [2014-05-14T01:07:12.043462 #96111]  INFO -- : 0:  activerecord (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activerecord-3.2.3.gemspec
+I, [2014-05-14T01:07:12.043727 #96111]  INFO -- : 0:  activeresource (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activeresource-3.2.3.gemspec
+I, [2014-05-14T01:07:12.043986 #96111]  INFO -- : 0:  bundler (1.5.1) from /Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source
+I, [2014-05-14T01:07:12.044263 #96111]  INFO -- : 0:  coffee-script-source (1.7.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/coffee-script-source-1.7.0.gemspec
+I, [2014-05-14T01:07:12.058413 #96111]  INFO -- : 0:  execjs (2.0.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/execjs-2.0.2.gemspec
+I, [2014-05-14T01:07:12.058701 #96111]  INFO -- : 0:  coffee-script (2.2.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/coffee-script-2.2.0.gemspec
+I, [2014-05-14T01:07:12.058956 #96111]  INFO -- : 0:  rack-ssl (1.3.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-ssl-1.3.4.gemspec
+E, [2014-05-14T01:07:12.601104 #96111] ERROR -- : Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
+
+        /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/bin/ruby extconf.rb 
+creating Makefile
+
+make
+compiling generator.c
+linking shared-object json/ext/generator.bundle
+clang: error: unknown argument: '-multiply_definedsuppress' [-Wunused-command-line-argument-hard-error-in-future]
+clang: note: this will be a hard error (cannot be downgraded to a warning) in the future
+make: *** [generator.bundle] Error 1
+
+
+Gem files will remain installed in /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/gems/json-1.8.1 for inspection.
+Results logged to /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/gems/json-1.8.1/ext/json/ext/generator/gem_make.out
+
+/Library/Ruby/Site/2.0.0/rubygems/installer.rb:556:in `rescue in block in build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:534:in `block in build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:509:in `each'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:509:in `build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:180:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source/rubygems.rb:101:in `block in install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/rubygems_integration.rb:118:in `preserve_paths'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source/rubygems.rb:94:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:111:in `block in install_gem_from_spec'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/rubygems_integration.rb:150:in `with_build_args'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:110:in `install_gem_from_spec'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:295:in `block in install_sequentially'  \n/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/forwardable.rb:171:in `each'  \n/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/forwardable.rb:171:in `each'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:294:in `install_sequentially'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:97:in `run'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:15:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/cli.rb:257:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/command.rb:27:in `run'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/invocation.rb:120:in `invoke_command'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor.rb:363:in `dispatch'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/base.rb:438:in `start'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/cli.rb:10:in `start'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/bin/bundle:22:in `block in <top (required)>'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/friendly_errors.rb:5:in `with_friendly_errors'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/bin/bundle:22:in `<top (required)>'  \n/usr/bin/bundle:23:in `load'  \n/usr/bin/bundle:23:in `<main>'
+I, [2014-05-14T01:08:26.035219 #96189]  INFO -- : 0:  rake (10.3.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rake-10.3.1.gemspec
+I, [2014-05-14T01:08:26.035641 #96189]  INFO -- : 0:  i18n (0.6.9) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/i18n-0.6.9.gemspec
+I, [2014-05-14T01:08:26.035919 #96189]  INFO -- : 0:  multi_json (1.10.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/multi_json-1.10.0.gemspec
+I, [2014-05-14T01:08:26.036168 #96189]  INFO -- : 0:  activesupport (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activesupport-3.2.3.gemspec
+I, [2014-05-14T01:08:26.036413 #96189]  INFO -- : 0:  builder (3.0.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/builder-3.0.4.gemspec
+I, [2014-05-14T01:08:26.036661 #96189]  INFO -- : 0:  activemodel (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activemodel-3.2.3.gemspec
+I, [2014-05-14T01:08:26.036895 #96189]  INFO -- : 0:  erubis (2.7.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/erubis-2.7.0.gemspec
+I, [2014-05-14T01:08:26.037133 #96189]  INFO -- : 0:  journey (1.0.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/journey-1.0.4.gemspec
+I, [2014-05-14T01:08:26.037384 #96189]  INFO -- : 0:  rack (1.4.5) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-1.4.5.gemspec
+I, [2014-05-14T01:08:26.037626 #96189]  INFO -- : 0:  rack-cache (1.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-cache-1.2.gemspec
+I, [2014-05-14T01:08:26.037866 #96189]  INFO -- : 0:  rack-test (0.6.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-test-0.6.2.gemspec
+I, [2014-05-14T01:08:26.038111 #96189]  INFO -- : 0:  hike (1.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/hike-1.2.3.gemspec
+I, [2014-05-14T01:08:26.038349 #96189]  INFO -- : 0:  tilt (1.4.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/tilt-1.4.1.gemspec
+I, [2014-05-14T01:08:26.038595 #96189]  INFO -- : 0:  sprockets (2.1.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/sprockets-2.1.3.gemspec
+I, [2014-05-14T01:08:26.038869 #96189]  INFO -- : 0:  actionpack (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/actionpack-3.2.3.gemspec
+I, [2014-05-14T01:08:26.039115 #96189]  INFO -- : 0:  mime-types (1.25.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/mime-types-1.25.1.gemspec
+I, [2014-05-14T01:08:26.039366 #96189]  INFO -- : 0:  polyglot (0.3.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/polyglot-0.3.4.gemspec
+I, [2014-05-14T01:08:26.039640 #96189]  INFO -- : 0:  treetop (1.4.15) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/treetop-1.4.15.gemspec
+I, [2014-05-14T01:08:26.039888 #96189]  INFO -- : 0:  mail (2.4.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/mail-2.4.4.gemspec
+I, [2014-05-14T01:08:26.040134 #96189]  INFO -- : 0:  actionmailer (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/actionmailer-3.2.3.gemspec
+I, [2014-05-14T01:08:26.040388 #96189]  INFO -- : 0:  arel (3.0.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/arel-3.0.3.gemspec
+I, [2014-05-14T01:08:26.040643 #96189]  INFO -- : 0:  tzinfo (0.3.39) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/tzinfo-0.3.39.gemspec
+I, [2014-05-14T01:08:26.040893 #96189]  INFO -- : 0:  activerecord (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activerecord-3.2.3.gemspec
+I, [2014-05-14T01:08:26.041130 #96189]  INFO -- : 0:  activeresource (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activeresource-3.2.3.gemspec
+I, [2014-05-14T01:08:26.041370 #96189]  INFO -- : 0:  bundler (1.5.1) from /Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source
+I, [2014-05-14T01:08:26.041627 #96189]  INFO -- : 0:  coffee-script-source (1.7.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/coffee-script-source-1.7.0.gemspec
+I, [2014-05-14T01:08:26.041866 #96189]  INFO -- : 0:  execjs (2.0.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/execjs-2.0.2.gemspec
+I, [2014-05-14T01:08:26.042103 #96189]  INFO -- : 0:  coffee-script (2.2.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/coffee-script-2.2.0.gemspec
+I, [2014-05-14T01:08:26.042344 #96189]  INFO -- : 0:  rack-ssl (1.3.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-ssl-1.3.4.gemspec
+E, [2014-05-14T01:08:26.551587 #96189] ERROR -- : Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
+
+        /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/bin/ruby extconf.rb 
+creating Makefile
+
+make
+compiling generator.c
+linking shared-object json/ext/generator.bundle
+clang: error: unknown argument: '-multiply_definedsuppress' [-Wunused-command-line-argument-hard-error-in-future]
+clang: note: this will be a hard error (cannot be downgraded to a warning) in the future
+make: *** [generator.bundle] Error 1
+
+
+Gem files will remain installed in /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/gems/json-1.8.1 for inspection.
+Results logged to /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/gems/json-1.8.1/ext/json/ext/generator/gem_make.out
+
+/Library/Ruby/Site/2.0.0/rubygems/installer.rb:556:in `rescue in block in build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:534:in `block in build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:509:in `each'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:509:in `build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:180:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source/rubygems.rb:101:in `block in install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/rubygems_integration.rb:118:in `preserve_paths'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source/rubygems.rb:94:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:111:in `block in install_gem_from_spec'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/rubygems_integration.rb:150:in `with_build_args'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:110:in `install_gem_from_spec'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:295:in `block in install_sequentially'  \n/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/forwardable.rb:171:in `each'  \n/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/forwardable.rb:171:in `each'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:294:in `install_sequentially'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:97:in `run'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:15:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/cli.rb:336:in `update'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/command.rb:27:in `run'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/invocation.rb:120:in `invoke_command'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor.rb:363:in `dispatch'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/base.rb:438:in `start'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/cli.rb:10:in `start'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/bin/bundle:22:in `block in <top (required)>'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/friendly_errors.rb:5:in `with_friendly_errors'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/bin/bundle:22:in `<top (required)>'  \n/usr/bin/bundle:23:in `load'  \n/usr/bin/bundle:23:in `<main>'
+I, [2014-05-14T01:09:43.632808 #96261]  INFO -- : 0:  rake (10.3.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rake-10.3.1.gemspec
+I, [2014-05-14T01:09:43.633201 #96261]  INFO -- : 0:  i18n (0.6.9) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/i18n-0.6.9.gemspec
+I, [2014-05-14T01:09:43.633479 #96261]  INFO -- : 0:  multi_json (1.10.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/multi_json-1.10.0.gemspec
+I, [2014-05-14T01:09:43.633747 #96261]  INFO -- : 0:  activesupport (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activesupport-3.2.3.gemspec
+I, [2014-05-14T01:09:43.634010 #96261]  INFO -- : 0:  builder (3.0.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/builder-3.0.4.gemspec
+I, [2014-05-14T01:09:43.634268 #96261]  INFO -- : 0:  activemodel (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activemodel-3.2.3.gemspec
+I, [2014-05-14T01:09:43.634508 #96261]  INFO -- : 0:  erubis (2.7.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/erubis-2.7.0.gemspec
+I, [2014-05-14T01:09:43.634758 #96261]  INFO -- : 0:  journey (1.0.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/journey-1.0.4.gemspec
+I, [2014-05-14T01:09:43.635006 #96261]  INFO -- : 0:  rack (1.4.5) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-1.4.5.gemspec
+I, [2014-05-14T01:09:43.635252 #96261]  INFO -- : 0:  rack-cache (1.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-cache-1.2.gemspec
+I, [2014-05-14T01:09:43.635500 #96261]  INFO -- : 0:  rack-test (0.6.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-test-0.6.2.gemspec
+I, [2014-05-14T01:09:43.635745 #96261]  INFO -- : 0:  hike (1.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/hike-1.2.3.gemspec
+I, [2014-05-14T01:09:43.635994 #96261]  INFO -- : 0:  tilt (1.4.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/tilt-1.4.1.gemspec
+I, [2014-05-14T01:09:43.636242 #96261]  INFO -- : 0:  sprockets (2.1.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/sprockets-2.1.3.gemspec
+I, [2014-05-14T01:09:43.636492 #96261]  INFO -- : 0:  actionpack (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/actionpack-3.2.3.gemspec
+I, [2014-05-14T01:09:43.636767 #96261]  INFO -- : 0:  mime-types (1.25.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/mime-types-1.25.1.gemspec
+I, [2014-05-14T01:09:43.637023 #96261]  INFO -- : 0:  polyglot (0.3.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/polyglot-0.3.4.gemspec
+I, [2014-05-14T01:09:43.637287 #96261]  INFO -- : 0:  treetop (1.4.15) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/treetop-1.4.15.gemspec
+I, [2014-05-14T01:09:43.637556 #96261]  INFO -- : 0:  mail (2.4.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/mail-2.4.4.gemspec
+I, [2014-05-14T01:09:43.637803 #96261]  INFO -- : 0:  actionmailer (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/actionmailer-3.2.3.gemspec
+I, [2014-05-14T01:09:43.638062 #96261]  INFO -- : 0:  arel (3.0.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/arel-3.0.3.gemspec
+I, [2014-05-14T01:09:43.638321 #96261]  INFO -- : 0:  tzinfo (0.3.39) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/tzinfo-0.3.39.gemspec
+I, [2014-05-14T01:09:43.638575 #96261]  INFO -- : 0:  activerecord (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activerecord-3.2.3.gemspec
+I, [2014-05-14T01:09:43.638819 #96261]  INFO -- : 0:  activeresource (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activeresource-3.2.3.gemspec
+I, [2014-05-14T01:09:43.639061 #96261]  INFO -- : 0:  bundler (1.5.1) from /Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source
+I, [2014-05-14T01:09:43.639322 #96261]  INFO -- : 0:  coffee-script-source (1.7.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/coffee-script-source-1.7.0.gemspec
+I, [2014-05-14T01:09:43.639571 #96261]  INFO -- : 0:  execjs (2.0.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/execjs-2.0.2.gemspec
+I, [2014-05-14T01:09:43.639813 #96261]  INFO -- : 0:  coffee-script (2.2.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/coffee-script-2.2.0.gemspec
+I, [2014-05-14T01:09:43.640074 #96261]  INFO -- : 0:  rack-ssl (1.3.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-ssl-1.3.4.gemspec
+E, [2014-05-14T01:09:44.163297 #96261] ERROR -- : Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
+
+        /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/bin/ruby extconf.rb 
+creating Makefile
+
+make
+compiling generator.c
+linking shared-object json/ext/generator.bundle
+clang: error: unknown argument: '-multiply_definedsuppress' [-Wunused-command-line-argument-hard-error-in-future]
+clang: note: this will be a hard error (cannot be downgraded to a warning) in the future
+make: *** [generator.bundle] Error 1
+
+
+Gem files will remain installed in /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/gems/json-1.8.1 for inspection.
+Results logged to /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/gems/json-1.8.1/ext/json/ext/generator/gem_make.out
+
+/Library/Ruby/Site/2.0.0/rubygems/installer.rb:556:in `rescue in block in build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:534:in `block in build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:509:in `each'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:509:in `build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:180:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source/rubygems.rb:101:in `block in install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/rubygems_integration.rb:118:in `preserve_paths'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source/rubygems.rb:94:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:111:in `block in install_gem_from_spec'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/rubygems_integration.rb:150:in `with_build_args'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:110:in `install_gem_from_spec'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:295:in `block in install_sequentially'  \n/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/forwardable.rb:171:in `each'  \n/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/forwardable.rb:171:in `each'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:294:in `install_sequentially'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:97:in `run'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:15:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/cli.rb:336:in `update'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/command.rb:27:in `run'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/invocation.rb:120:in `invoke_command'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor.rb:363:in `dispatch'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/base.rb:438:in `start'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/cli.rb:10:in `start'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/bin/bundle:22:in `block in <top (required)>'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/friendly_errors.rb:5:in `with_friendly_errors'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/bin/bundle:22:in `<top (required)>'  \n/usr/bin/bundle:23:in `load'  \n/usr/bin/bundle:23:in `<main>'
+I, [2014-05-14T01:10:33.365912 #96306]  INFO -- : 0:  rake (10.3.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rake-10.3.1.gemspec
+I, [2014-05-14T01:10:33.366325 #96306]  INFO -- : 0:  i18n (0.6.9) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/i18n-0.6.9.gemspec
+I, [2014-05-14T01:10:33.366635 #96306]  INFO -- : 0:  multi_json (1.10.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/multi_json-1.10.0.gemspec
+I, [2014-05-14T01:10:33.366956 #96306]  INFO -- : 0:  activesupport (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activesupport-3.2.3.gemspec
+I, [2014-05-14T01:10:33.367268 #96306]  INFO -- : 0:  builder (3.0.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/builder-3.0.4.gemspec
+I, [2014-05-14T01:10:33.367564 #96306]  INFO -- : 0:  activemodel (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activemodel-3.2.3.gemspec
+I, [2014-05-14T01:10:33.367853 #96306]  INFO -- : 0:  erubis (2.7.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/erubis-2.7.0.gemspec
+I, [2014-05-14T01:10:33.368144 #96306]  INFO -- : 0:  journey (1.0.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/journey-1.0.4.gemspec
+I, [2014-05-14T01:10:33.368430 #96306]  INFO -- : 0:  rack (1.4.5) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-1.4.5.gemspec
+I, [2014-05-14T01:10:33.368723 #96306]  INFO -- : 0:  rack-cache (1.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-cache-1.2.gemspec
+I, [2014-05-14T01:10:33.369005 #96306]  INFO -- : 0:  rack-test (0.6.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-test-0.6.2.gemspec
+I, [2014-05-14T01:10:33.369279 #96306]  INFO -- : 0:  hike (1.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/hike-1.2.3.gemspec
+I, [2014-05-14T01:10:33.369555 #96306]  INFO -- : 0:  tilt (1.4.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/tilt-1.4.1.gemspec
+I, [2014-05-14T01:10:33.369815 #96306]  INFO -- : 0:  sprockets (2.1.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/sprockets-2.1.3.gemspec
+I, [2014-05-14T01:10:33.370091 #96306]  INFO -- : 0:  actionpack (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/actionpack-3.2.3.gemspec
+I, [2014-05-14T01:10:33.370383 #96306]  INFO -- : 0:  mime-types (1.25.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/mime-types-1.25.1.gemspec
+I, [2014-05-14T01:10:33.384832 #96306]  INFO -- : 0:  polyglot (0.3.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/polyglot-0.3.4.gemspec
+I, [2014-05-14T01:10:33.385159 #96306]  INFO -- : 0:  treetop (1.4.15) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/treetop-1.4.15.gemspec
+I, [2014-05-14T01:10:33.385807 #96306]  INFO -- : 0:  mail (2.4.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/mail-2.4.4.gemspec
+I, [2014-05-14T01:10:33.386080 #96306]  INFO -- : 0:  actionmailer (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/actionmailer-3.2.3.gemspec
+I, [2014-05-14T01:10:33.386343 #96306]  INFO -- : 0:  arel (3.0.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/arel-3.0.3.gemspec
+I, [2014-05-14T01:10:33.386591 #96306]  INFO -- : 0:  tzinfo (0.3.39) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/tzinfo-0.3.39.gemspec
+I, [2014-05-14T01:10:33.386827 #96306]  INFO -- : 0:  activerecord (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activerecord-3.2.3.gemspec
+I, [2014-05-14T01:10:33.387086 #96306]  INFO -- : 0:  activeresource (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activeresource-3.2.3.gemspec
+I, [2014-05-14T01:10:33.387314 #96306]  INFO -- : 0:  bundler (1.5.1) from /Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source
+I, [2014-05-14T01:10:33.387563 #96306]  INFO -- : 0:  coffee-script-source (1.7.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/coffee-script-source-1.7.0.gemspec
+I, [2014-05-14T01:10:33.387808 #96306]  INFO -- : 0:  execjs (2.0.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/execjs-2.0.2.gemspec
+I, [2014-05-14T01:10:33.388051 #96306]  INFO -- : 0:  coffee-script (2.2.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/coffee-script-2.2.0.gemspec
+I, [2014-05-14T01:10:33.388293 #96306]  INFO -- : 0:  rack-ssl (1.3.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-ssl-1.3.4.gemspec
+E, [2014-05-14T01:10:33.884033 #96306] ERROR -- : Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
+
+        /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/bin/ruby extconf.rb 
+creating Makefile
+
+make
+compiling generator.c
+linking shared-object json/ext/generator.bundle
+clang: error: unknown argument: '-multiply_definedsuppress' [-Wunused-command-line-argument-hard-error-in-future]
+clang: note: this will be a hard error (cannot be downgraded to a warning) in the future
+make: *** [generator.bundle] Error 1
+
+
+Gem files will remain installed in /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/gems/json-1.8.1 for inspection.
+Results logged to /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/gems/json-1.8.1/ext/json/ext/generator/gem_make.out
+
+/Library/Ruby/Site/2.0.0/rubygems/installer.rb:556:in `rescue in block in build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:534:in `block in build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:509:in `each'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:509:in `build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:180:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source/rubygems.rb:101:in `block in install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/rubygems_integration.rb:118:in `preserve_paths'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source/rubygems.rb:94:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:111:in `block in install_gem_from_spec'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/rubygems_integration.rb:150:in `with_build_args'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:110:in `install_gem_from_spec'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:295:in `block in install_sequentially'  \n/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/forwardable.rb:171:in `each'  \n/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/forwardable.rb:171:in `each'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:294:in `install_sequentially'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:97:in `run'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:15:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/cli.rb:257:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/command.rb:27:in `run'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/invocation.rb:120:in `invoke_command'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor.rb:363:in `dispatch'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/base.rb:438:in `start'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/cli.rb:10:in `start'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/bin/bundle:22:in `block in <top (required)>'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/friendly_errors.rb:5:in `with_friendly_errors'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/bin/bundle:22:in `<top (required)>'  \n/usr/bin/bundle:23:in `load'  \n/usr/bin/bundle:23:in `<main>'
+I, [2014-05-14T01:12:51.279736 #98272]  INFO -- : 0:  rake (10.3.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rake-10.3.1.gemspec
+I, [2014-05-14T01:12:51.280140 #98272]  INFO -- : 0:  i18n (0.6.9) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/i18n-0.6.9.gemspec
+I, [2014-05-14T01:12:51.280464 #98272]  INFO -- : 0:  multi_json (1.10.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/multi_json-1.10.0.gemspec
+I, [2014-05-14T01:12:51.280779 #98272]  INFO -- : 0:  activesupport (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activesupport-3.2.3.gemspec
+I, [2014-05-14T01:12:51.281081 #98272]  INFO -- : 0:  builder (3.0.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/builder-3.0.4.gemspec
+I, [2014-05-14T01:12:51.281388 #98272]  INFO -- : 0:  activemodel (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activemodel-3.2.3.gemspec
+I, [2014-05-14T01:12:51.281673 #98272]  INFO -- : 0:  erubis (2.7.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/erubis-2.7.0.gemspec
+I, [2014-05-14T01:12:51.281959 #98272]  INFO -- : 0:  journey (1.0.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/journey-1.0.4.gemspec
+I, [2014-05-14T01:12:51.282257 #98272]  INFO -- : 0:  rack (1.4.5) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-1.4.5.gemspec
+I, [2014-05-14T01:12:51.282566 #98272]  INFO -- : 0:  rack-cache (1.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-cache-1.2.gemspec
+I, [2014-05-14T01:12:51.282869 #98272]  INFO -- : 0:  rack-test (0.6.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-test-0.6.2.gemspec
+I, [2014-05-14T01:12:51.283151 #98272]  INFO -- : 0:  hike (1.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/hike-1.2.3.gemspec
+I, [2014-05-14T01:12:51.283445 #98272]  INFO -- : 0:  tilt (1.4.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/tilt-1.4.1.gemspec
+I, [2014-05-14T01:12:51.283751 #98272]  INFO -- : 0:  sprockets (2.1.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/sprockets-2.1.3.gemspec
+I, [2014-05-14T01:12:51.284045 #98272]  INFO -- : 0:  actionpack (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/actionpack-3.2.3.gemspec
+I, [2014-05-14T01:12:51.284334 #98272]  INFO -- : 0:  mime-types (1.25.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/mime-types-1.25.1.gemspec
+I, [2014-05-14T01:12:51.284638 #98272]  INFO -- : 0:  polyglot (0.3.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/polyglot-0.3.4.gemspec
+I, [2014-05-14T01:12:51.284962 #98272]  INFO -- : 0:  treetop (1.4.15) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/treetop-1.4.15.gemspec
+I, [2014-05-14T01:12:51.285303 #98272]  INFO -- : 0:  mail (2.4.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/mail-2.4.4.gemspec
+I, [2014-05-14T01:12:51.285624 #98272]  INFO -- : 0:  actionmailer (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/actionmailer-3.2.3.gemspec
+I, [2014-05-14T01:12:51.300833 #98272]  INFO -- : 0:  arel (3.0.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/arel-3.0.3.gemspec
+I, [2014-05-14T01:12:51.301164 #98272]  INFO -- : 0:  tzinfo (0.3.39) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/tzinfo-0.3.39.gemspec
+I, [2014-05-14T01:12:51.301440 #98272]  INFO -- : 0:  activerecord (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activerecord-3.2.3.gemspec
+I, [2014-05-14T01:12:51.301716 #98272]  INFO -- : 0:  activeresource (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activeresource-3.2.3.gemspec
+I, [2014-05-14T01:12:51.301969 #98272]  INFO -- : 0:  bundler (1.5.1) from /Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source
+I, [2014-05-14T01:12:51.302246 #98272]  INFO -- : 0:  coffee-script-source (1.7.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/coffee-script-source-1.7.0.gemspec
+I, [2014-05-14T01:12:51.302503 #98272]  INFO -- : 0:  execjs (2.0.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/execjs-2.0.2.gemspec
+I, [2014-05-14T01:12:51.302759 #98272]  INFO -- : 0:  coffee-script (2.2.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/coffee-script-2.2.0.gemspec
+I, [2014-05-14T01:12:51.303011 #98272]  INFO -- : 0:  rack-ssl (1.3.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-ssl-1.3.4.gemspec
+E, [2014-05-14T01:12:51.796175 #98272] ERROR -- : Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
+
+        /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/bin/ruby extconf.rb 
+creating Makefile
+
+make
+compiling generator.c
+linking shared-object json/ext/generator.bundle
+clang: error: unknown argument: '-multiply_definedsuppress' [-Wunused-command-line-argument-hard-error-in-future]
+clang: note: this will be a hard error (cannot be downgraded to a warning) in the future
+make: *** [generator.bundle] Error 1
+
+
+Gem files will remain installed in /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/gems/json-1.8.1 for inspection.
+Results logged to /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/gems/json-1.8.1/ext/json/ext/generator/gem_make.out
+
+/Library/Ruby/Site/2.0.0/rubygems/installer.rb:556:in `rescue in block in build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:534:in `block in build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:509:in `each'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:509:in `build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:180:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source/rubygems.rb:101:in `block in install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/rubygems_integration.rb:118:in `preserve_paths'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source/rubygems.rb:94:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:111:in `block in install_gem_from_spec'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/rubygems_integration.rb:150:in `with_build_args'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:110:in `install_gem_from_spec'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:295:in `block in install_sequentially'  \n/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/forwardable.rb:171:in `each'  \n/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/forwardable.rb:171:in `each'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:294:in `install_sequentially'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:97:in `run'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:15:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/cli.rb:257:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/command.rb:27:in `run'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/invocation.rb:120:in `invoke_command'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor.rb:363:in `dispatch'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/base.rb:438:in `start'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/cli.rb:10:in `start'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/bin/bundle:22:in `block in <top (required)>'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/friendly_errors.rb:5:in `with_friendly_errors'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/bin/bundle:22:in `<top (required)>'  \n/usr/bin/bundle:23:in `load'  \n/usr/bin/bundle:23:in `<main>'
+I, [2014-05-14T01:16:43.537398 #98334]  INFO -- : 0:  rake (10.3.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rake-10.3.1.gemspec
+I, [2014-05-14T01:16:43.537782 #98334]  INFO -- : 0:  i18n (0.6.9) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/i18n-0.6.9.gemspec
+I, [2014-05-14T01:16:43.538068 #98334]  INFO -- : 0:  multi_json (1.10.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/multi_json-1.10.0.gemspec
+I, [2014-05-14T01:16:43.538356 #98334]  INFO -- : 0:  activesupport (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activesupport-3.2.3.gemspec
+I, [2014-05-14T01:16:43.538633 #98334]  INFO -- : 0:  builder (3.0.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/builder-3.0.4.gemspec
+I, [2014-05-14T01:16:43.538899 #98334]  INFO -- : 0:  activemodel (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activemodel-3.2.3.gemspec
+I, [2014-05-14T01:16:43.539159 #98334]  INFO -- : 0:  erubis (2.7.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/erubis-2.7.0.gemspec
+I, [2014-05-14T01:16:43.539408 #98334]  INFO -- : 0:  journey (1.0.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/journey-1.0.4.gemspec
+I, [2014-05-14T01:16:43.539655 #98334]  INFO -- : 0:  rack (1.4.5) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-1.4.5.gemspec
+I, [2014-05-14T01:16:43.539902 #98334]  INFO -- : 0:  rack-cache (1.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-cache-1.2.gemspec
+I, [2014-05-14T01:16:43.540156 #98334]  INFO -- : 0:  rack-test (0.6.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-test-0.6.2.gemspec
+I, [2014-05-14T01:16:43.540403 #98334]  INFO -- : 0:  hike (1.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/hike-1.2.3.gemspec
+I, [2014-05-14T01:16:43.540648 #98334]  INFO -- : 0:  tilt (1.4.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/tilt-1.4.1.gemspec
+I, [2014-05-14T01:16:43.540894 #98334]  INFO -- : 0:  sprockets (2.1.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/sprockets-2.1.3.gemspec
+I, [2014-05-14T01:16:43.541140 #98334]  INFO -- : 0:  actionpack (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/actionpack-3.2.3.gemspec
+I, [2014-05-14T01:16:43.541386 #98334]  INFO -- : 0:  mime-types (1.25.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/mime-types-1.25.1.gemspec
+I, [2014-05-14T01:16:43.541632 #98334]  INFO -- : 0:  polyglot (0.3.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/polyglot-0.3.4.gemspec
+I, [2014-05-14T01:16:43.541877 #98334]  INFO -- : 0:  treetop (1.4.15) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/treetop-1.4.15.gemspec
+I, [2014-05-14T01:16:43.542122 #98334]  INFO -- : 0:  mail (2.4.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/mail-2.4.4.gemspec
+I, [2014-05-14T01:16:43.542368 #98334]  INFO -- : 0:  actionmailer (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/actionmailer-3.2.3.gemspec
+I, [2014-05-14T01:16:43.542631 #98334]  INFO -- : 0:  arel (3.0.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/arel-3.0.3.gemspec
+I, [2014-05-14T01:16:43.542876 #98334]  INFO -- : 0:  tzinfo (0.3.39) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/tzinfo-0.3.39.gemspec
+I, [2014-05-14T01:16:43.543122 #98334]  INFO -- : 0:  activerecord (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activerecord-3.2.3.gemspec
+I, [2014-05-14T01:16:43.543369 #98334]  INFO -- : 0:  activeresource (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activeresource-3.2.3.gemspec
+I, [2014-05-14T01:16:43.543589 #98334]  INFO -- : 0:  bundler (1.5.1) from /Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source
+I, [2014-05-14T01:16:43.543836 #98334]  INFO -- : 0:  coffee-script-source (1.7.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/coffee-script-source-1.7.0.gemspec
+I, [2014-05-14T01:16:43.544079 #98334]  INFO -- : 0:  execjs (2.0.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/execjs-2.0.2.gemspec
+I, [2014-05-14T01:16:43.544325 #98334]  INFO -- : 0:  coffee-script (2.2.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/coffee-script-2.2.0.gemspec
+I, [2014-05-14T01:16:43.544569 #98334]  INFO -- : 0:  rack-ssl (1.3.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-ssl-1.3.4.gemspec
+E, [2014-05-14T01:16:44.130163 #98334] ERROR -- : Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
+
+    /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/bin/ruby extconf.rb 
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling generator.c
+linking shared-object json/ext/generator.bundle
+clang: error: unknown argument: '-multiply_definedsuppress' [-Wunused-command-line-argument-hard-error-in-future]
+clang: note: this will be a hard error (cannot be downgraded to a warning) in the future
+make: *** [generator.bundle] Error 1
+
+make failed, exit code 2
+
+Gem files will remain installed in /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/gems/json-1.8.1 for inspection.
+Results logged to /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/extensions/universal-darwin-13/2.0.0/json-1.8.1/gem_make.out
+
+/Library/Ruby/Site/2.0.0/rubygems/ext/builder.rb:89:in `run'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/builder.rb:51:in `block in make'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/builder.rb:43:in `each'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/builder.rb:43:in `make'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/ext_conf_builder.rb:47:in `block in build'  \n/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/tempfile.rb:324:in `open'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/ext_conf_builder.rb:17:in `build'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/builder.rb:161:in `block (2 levels) in build_extension'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/builder.rb:160:in `chdir'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/builder.rb:160:in `block in build_extension'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/builder.rb:159:in `synchronize'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/builder.rb:159:in `build_extension'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/builder.rb:198:in `block in build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/builder.rb:195:in `each'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/builder.rb:195:in `build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:677:in `build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:232:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source/rubygems.rb:101:in `block in install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/rubygems_integration.rb:118:in `preserve_paths'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source/rubygems.rb:94:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:111:in `block in install_gem_from_spec'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/rubygems_integration.rb:150:in `with_build_args'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:110:in `install_gem_from_spec'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:295:in `block in install_sequentially'  \n/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/forwardable.rb:171:in `each'  \n/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/forwardable.rb:171:in `each'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:294:in `install_sequentially'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:97:in `run'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:15:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/cli.rb:257:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/command.rb:27:in `run'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/invocation.rb:120:in `invoke_command'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor.rb:363:in `dispatch'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/base.rb:438:in `start'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/cli.rb:10:in `start'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/bin/bundle:22:in `block in <top (required)>'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/friendly_errors.rb:5:in `with_friendly_errors'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/bin/bundle:22:in `<top (required)>'  \n/usr/bin/bundle:23:in `load'  \n/usr/bin/bundle:23:in `<main>'
+I, [2014-05-14T01:18:43.080908 #99607]  INFO -- : 0:  rake (10.3.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rake-10.3.1.gemspec
+I, [2014-05-14T01:18:43.081286 #99607]  INFO -- : 0:  i18n (0.6.9) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/i18n-0.6.9.gemspec
+I, [2014-05-14T01:18:43.081567 #99607]  INFO -- : 0:  multi_json (1.10.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/multi_json-1.10.0.gemspec
+I, [2014-05-14T01:18:43.081850 #99607]  INFO -- : 0:  activesupport (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activesupport-3.2.3.gemspec
+I, [2014-05-14T01:18:43.082121 #99607]  INFO -- : 0:  builder (3.0.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/builder-3.0.4.gemspec
+I, [2014-05-14T01:18:43.082383 #99607]  INFO -- : 0:  activemodel (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activemodel-3.2.3.gemspec
+I, [2014-05-14T01:18:43.082639 #99607]  INFO -- : 0:  erubis (2.7.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/erubis-2.7.0.gemspec
+I, [2014-05-14T01:18:43.082882 #99607]  INFO -- : 0:  journey (1.0.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/journey-1.0.4.gemspec
+I, [2014-05-14T01:18:43.083125 #99607]  INFO -- : 0:  rack (1.4.5) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-1.4.5.gemspec
+I, [2014-05-14T01:18:43.083369 #99607]  INFO -- : 0:  rack-cache (1.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-cache-1.2.gemspec
+I, [2014-05-14T01:18:43.083612 #99607]  INFO -- : 0:  rack-test (0.6.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-test-0.6.2.gemspec
+I, [2014-05-14T01:18:43.083855 #99607]  INFO -- : 0:  hike (1.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/hike-1.2.3.gemspec
+I, [2014-05-14T01:18:43.084101 #99607]  INFO -- : 0:  tilt (1.4.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/tilt-1.4.1.gemspec
+I, [2014-05-14T01:18:43.084346 #99607]  INFO -- : 0:  sprockets (2.1.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/sprockets-2.1.3.gemspec
+I, [2014-05-14T01:18:43.084606 #99607]  INFO -- : 0:  actionpack (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/actionpack-3.2.3.gemspec
+I, [2014-05-14T01:18:43.084848 #99607]  INFO -- : 0:  mime-types (1.25.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/mime-types-1.25.1.gemspec
+I, [2014-05-14T01:18:43.085097 #99607]  INFO -- : 0:  polyglot (0.3.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/polyglot-0.3.4.gemspec
+I, [2014-05-14T01:18:43.085340 #99607]  INFO -- : 0:  treetop (1.4.15) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/treetop-1.4.15.gemspec
+I, [2014-05-14T01:18:43.085583 #99607]  INFO -- : 0:  mail (2.4.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/mail-2.4.4.gemspec
+I, [2014-05-14T01:18:43.085831 #99607]  INFO -- : 0:  actionmailer (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/actionmailer-3.2.3.gemspec
+I, [2014-05-14T01:18:43.086074 #99607]  INFO -- : 0:  arel (3.0.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/arel-3.0.3.gemspec
+I, [2014-05-14T01:18:43.086317 #99607]  INFO -- : 0:  tzinfo (0.3.39) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/tzinfo-0.3.39.gemspec
+I, [2014-05-14T01:18:43.086562 #99607]  INFO -- : 0:  activerecord (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activerecord-3.2.3.gemspec
+I, [2014-05-14T01:18:43.086807 #99607]  INFO -- : 0:  activeresource (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activeresource-3.2.3.gemspec
+I, [2014-05-14T01:18:43.087021 #99607]  INFO -- : 0:  bundler (1.5.1) from /Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source
+I, [2014-05-14T01:18:43.087412 #99607]  INFO -- : 0:  coffee-script-source (1.7.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/coffee-script-source-1.7.0.gemspec
+I, [2014-05-14T01:18:43.087656 #99607]  INFO -- : 0:  execjs (2.0.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/execjs-2.0.2.gemspec
+I, [2014-05-14T01:18:43.087899 #99607]  INFO -- : 0:  coffee-script (2.2.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/coffee-script-2.2.0.gemspec
+I, [2014-05-14T01:18:43.088141 #99607]  INFO -- : 0:  rack-ssl (1.3.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-ssl-1.3.4.gemspec
+E, [2014-05-14T01:18:43.670067 #99607] ERROR -- : Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
+
+    /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/bin/ruby extconf.rb 
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling generator.c
+linking shared-object json/ext/generator.bundle
+clang: error: unknown argument: '-multiply_definedsuppress' [-Wunused-command-line-argument-hard-error-in-future]
+clang: note: this will be a hard error (cannot be downgraded to a warning) in the future
+make: *** [generator.bundle] Error 1
+
+make failed, exit code 2
+
+Gem files will remain installed in /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/gems/json-1.8.1 for inspection.
+Results logged to /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/extensions/universal-darwin-13/2.0.0/json-1.8.1/gem_make.out
+
+/Library/Ruby/Site/2.0.0/rubygems/ext/builder.rb:89:in `run'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/builder.rb:51:in `block in make'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/builder.rb:43:in `each'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/builder.rb:43:in `make'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/ext_conf_builder.rb:47:in `block in build'  \n/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/tempfile.rb:324:in `open'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/ext_conf_builder.rb:17:in `build'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/builder.rb:161:in `block (2 levels) in build_extension'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/builder.rb:160:in `chdir'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/builder.rb:160:in `block in build_extension'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/builder.rb:159:in `synchronize'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/builder.rb:159:in `build_extension'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/builder.rb:198:in `block in build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/builder.rb:195:in `each'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/builder.rb:195:in `build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:677:in `build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:232:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source/rubygems.rb:101:in `block in install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/rubygems_integration.rb:118:in `preserve_paths'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source/rubygems.rb:94:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:111:in `block in install_gem_from_spec'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/rubygems_integration.rb:150:in `with_build_args'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:110:in `install_gem_from_spec'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:295:in `block in install_sequentially'  \n/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/forwardable.rb:171:in `each'  \n/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/forwardable.rb:171:in `each'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:294:in `install_sequentially'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:97:in `run'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:15:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/cli.rb:257:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/command.rb:27:in `run'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/invocation.rb:120:in `invoke_command'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor.rb:363:in `dispatch'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/base.rb:438:in `start'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/cli.rb:10:in `start'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/bin/bundle:22:in `block in <top (required)>'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/friendly_errors.rb:5:in `with_friendly_errors'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/bin/bundle:22:in `<top (required)>'  \n/usr/bin/bundle:23:in `load'  \n/usr/bin/bundle:23:in `<main>'
+I, [2014-05-14T01:24:21.862908 #99712]  INFO -- : 0:  rake (10.3.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rake-10.3.1.gemspec
+I, [2014-05-14T01:24:21.863285 #99712]  INFO -- : 0:  i18n (0.6.9) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/i18n-0.6.9.gemspec
+I, [2014-05-14T01:24:21.863557 #99712]  INFO -- : 0:  multi_json (1.10.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/multi_json-1.10.0.gemspec
+I, [2014-05-14T01:24:21.863821 #99712]  INFO -- : 0:  activesupport (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activesupport-3.2.3.gemspec
+I, [2014-05-14T01:24:21.864083 #99712]  INFO -- : 0:  builder (3.0.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/builder-3.0.4.gemspec
+I, [2014-05-14T01:24:21.864337 #99712]  INFO -- : 0:  activemodel (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activemodel-3.2.3.gemspec
+I, [2014-05-14T01:24:21.864579 #99712]  INFO -- : 0:  erubis (2.7.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/erubis-2.7.0.gemspec
+I, [2014-05-14T01:24:21.864819 #99712]  INFO -- : 0:  journey (1.0.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/journey-1.0.4.gemspec
+I, [2014-05-14T01:24:21.865059 #99712]  INFO -- : 0:  rack (1.4.5) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-1.4.5.gemspec
+I, [2014-05-14T01:24:21.865317 #99712]  INFO -- : 0:  rack-cache (1.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-cache-1.2.gemspec
+I, [2014-05-14T01:24:21.865558 #99712]  INFO -- : 0:  rack-test (0.6.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-test-0.6.2.gemspec
+I, [2014-05-14T01:24:21.865796 #99712]  INFO -- : 0:  hike (1.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/hike-1.2.3.gemspec
+I, [2014-05-14T01:24:21.866034 #99712]  INFO -- : 0:  tilt (1.4.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/tilt-1.4.1.gemspec
+I, [2014-05-14T01:24:21.866276 #99712]  INFO -- : 0:  sprockets (2.1.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/sprockets-2.1.3.gemspec
+I, [2014-05-14T01:24:21.866514 #99712]  INFO -- : 0:  actionpack (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/actionpack-3.2.3.gemspec
+I, [2014-05-14T01:24:21.866755 #99712]  INFO -- : 0:  mime-types (1.25.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/mime-types-1.25.1.gemspec
+I, [2014-05-14T01:24:21.866998 #99712]  INFO -- : 0:  polyglot (0.3.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/polyglot-0.3.4.gemspec
+I, [2014-05-14T01:24:21.867236 #99712]  INFO -- : 0:  treetop (1.4.15) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/treetop-1.4.15.gemspec
+I, [2014-05-14T01:24:21.867474 #99712]  INFO -- : 0:  mail (2.4.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/mail-2.4.4.gemspec
+I, [2014-05-14T01:24:21.867714 #99712]  INFO -- : 0:  actionmailer (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/actionmailer-3.2.3.gemspec
+I, [2014-05-14T01:24:21.867951 #99712]  INFO -- : 0:  arel (3.0.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/arel-3.0.3.gemspec
+I, [2014-05-14T01:24:21.868190 #99712]  INFO -- : 0:  tzinfo (0.3.39) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/tzinfo-0.3.39.gemspec
+I, [2014-05-14T01:24:21.868428 #99712]  INFO -- : 0:  activerecord (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activerecord-3.2.3.gemspec
+I, [2014-05-14T01:24:21.868668 #99712]  INFO -- : 0:  activeresource (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activeresource-3.2.3.gemspec
+I, [2014-05-14T01:24:21.868881 #99712]  INFO -- : 0:  bundler (1.5.1) from /Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source
+I, [2014-05-14T01:24:21.869122 #99712]  INFO -- : 0:  coffee-script-source (1.7.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/coffee-script-source-1.7.0.gemspec
+I, [2014-05-14T01:24:21.869360 #99712]  INFO -- : 0:  execjs (2.0.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/execjs-2.0.2.gemspec
+I, [2014-05-14T01:24:21.869598 #99712]  INFO -- : 0:  coffee-script (2.2.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/coffee-script-2.2.0.gemspec
+I, [2014-05-14T01:24:21.869837 #99712]  INFO -- : 0:  rack-ssl (1.3.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-ssl-1.3.4.gemspec
+E, [2014-05-14T01:24:22.450130 #99712] ERROR -- : Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
+
+    /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/bin/ruby extconf.rb 
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling generator.c
+linking shared-object json/ext/generator.bundle
+clang: error: unknown argument: '-multiply_definedsuppress' [-Wunused-command-line-argument-hard-error-in-future]
+clang: note: this will be a hard error (cannot be downgraded to a warning) in the future
+make: *** [generator.bundle] Error 1
+
+make failed, exit code 2
+
+Gem files will remain installed in /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/gems/json-1.8.1 for inspection.
+Results logged to /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/extensions/universal-darwin-13/2.0.0/json-1.8.1/gem_make.out
+
+/Library/Ruby/Site/2.0.0/rubygems/ext/builder.rb:89:in `run'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/builder.rb:51:in `block in make'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/builder.rb:43:in `each'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/builder.rb:43:in `make'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/ext_conf_builder.rb:47:in `block in build'  \n/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/tempfile.rb:324:in `open'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/ext_conf_builder.rb:17:in `build'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/builder.rb:161:in `block (2 levels) in build_extension'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/builder.rb:160:in `chdir'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/builder.rb:160:in `block in build_extension'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/builder.rb:159:in `synchronize'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/builder.rb:159:in `build_extension'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/builder.rb:198:in `block in build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/builder.rb:195:in `each'  \n/Library/Ruby/Site/2.0.0/rubygems/ext/builder.rb:195:in `build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:677:in `build_extensions'  \n/Library/Ruby/Site/2.0.0/rubygems/installer.rb:232:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source/rubygems.rb:101:in `block in install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/rubygems_integration.rb:118:in `preserve_paths'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source/rubygems.rb:94:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:111:in `block in install_gem_from_spec'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/rubygems_integration.rb:150:in `with_build_args'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:110:in `install_gem_from_spec'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:295:in `block in install_sequentially'  \n/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/forwardable.rb:171:in `each'  \n/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/forwardable.rb:171:in `each'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:294:in `install_sequentially'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:97:in `run'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/installer.rb:15:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/cli.rb:257:in `install'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/command.rb:27:in `run'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/invocation.rb:120:in `invoke_command'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor.rb:363:in `dispatch'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/vendor/thor/base.rb:438:in `start'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/cli.rb:10:in `start'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/bin/bundle:22:in `block in <top (required)>'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/friendly_errors.rb:5:in `with_friendly_errors'  \n/Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/bin/bundle:22:in `<top (required)>'  \n/usr/bin/bundle:23:in `load'  \n/usr/bin/bundle:23:in `<main>'
+I, [2014-05-14T01:35:43.404319 #334]  INFO -- : 0:  rake (10.3.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rake-10.3.1.gemspec
+I, [2014-05-14T01:35:43.405480 #334]  INFO -- : 0:  i18n (0.6.9) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/i18n-0.6.9.gemspec
+I, [2014-05-14T01:35:43.405826 #334]  INFO -- : 0:  multi_json (1.10.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/multi_json-1.10.0.gemspec
+I, [2014-05-14T01:35:43.406086 #334]  INFO -- : 0:  activesupport (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activesupport-3.2.3.gemspec
+I, [2014-05-14T01:35:43.406367 #334]  INFO -- : 0:  builder (3.0.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/builder-3.0.4.gemspec
+I, [2014-05-14T01:35:43.406632 #334]  INFO -- : 0:  activemodel (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activemodel-3.2.3.gemspec
+I, [2014-05-14T01:35:43.406883 #334]  INFO -- : 0:  erubis (2.7.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/erubis-2.7.0.gemspec
+I, [2014-05-14T01:35:43.407132 #334]  INFO -- : 0:  journey (1.0.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/journey-1.0.4.gemspec
+I, [2014-05-14T01:35:43.407379 #334]  INFO -- : 0:  rack (1.4.5) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-1.4.5.gemspec
+I, [2014-05-14T01:35:43.407627 #334]  INFO -- : 0:  rack-cache (1.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-cache-1.2.gemspec
+I, [2014-05-14T01:35:43.407875 #334]  INFO -- : 0:  rack-test (0.6.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-test-0.6.2.gemspec
+I, [2014-05-14T01:35:43.408121 #334]  INFO -- : 0:  hike (1.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/hike-1.2.3.gemspec
+I, [2014-05-14T01:35:43.408366 #334]  INFO -- : 0:  tilt (1.4.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/tilt-1.4.1.gemspec
+I, [2014-05-14T01:35:43.408611 #334]  INFO -- : 0:  sprockets (2.1.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/sprockets-2.1.3.gemspec
+I, [2014-05-14T01:35:43.408861 #334]  INFO -- : 0:  actionpack (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/actionpack-3.2.3.gemspec
+I, [2014-05-14T01:35:43.409109 #334]  INFO -- : 0:  mime-types (1.25.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/mime-types-1.25.1.gemspec
+I, [2014-05-14T01:35:43.409356 #334]  INFO -- : 0:  polyglot (0.3.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/polyglot-0.3.4.gemspec
+I, [2014-05-14T01:35:43.409603 #334]  INFO -- : 0:  treetop (1.4.15) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/treetop-1.4.15.gemspec
+I, [2014-05-14T01:35:43.409848 #334]  INFO -- : 0:  mail (2.4.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/mail-2.4.4.gemspec
+I, [2014-05-14T01:35:43.410095 #334]  INFO -- : 0:  actionmailer (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/actionmailer-3.2.3.gemspec
+I, [2014-05-14T01:35:43.410341 #334]  INFO -- : 0:  arel (3.0.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/arel-3.0.3.gemspec
+I, [2014-05-14T01:35:43.410586 #334]  INFO -- : 0:  tzinfo (0.3.39) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/tzinfo-0.3.39.gemspec
+I, [2014-05-14T01:35:43.410832 #334]  INFO -- : 0:  activerecord (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activerecord-3.2.3.gemspec
+I, [2014-05-14T01:35:43.411232 #334]  INFO -- : 0:  activeresource (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activeresource-3.2.3.gemspec
+I, [2014-05-14T01:35:43.411456 #334]  INFO -- : 0:  bundler (1.5.1) from /Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source
+I, [2014-05-14T01:35:43.411708 #334]  INFO -- : 0:  coffee-script-source (1.7.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/coffee-script-source-1.7.0.gemspec
+I, [2014-05-14T01:35:43.411958 #334]  INFO -- : 0:  execjs (2.0.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/execjs-2.0.2.gemspec
+I, [2014-05-14T01:35:43.412207 #334]  INFO -- : 0:  coffee-script (2.2.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/coffee-script-2.2.0.gemspec
+I, [2014-05-14T01:35:43.412459 #334]  INFO -- : 0:  rack-ssl (1.3.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-ssl-1.3.4.gemspec
+I, [2014-05-14T01:35:46.474710 #334]  INFO -- : 0:  json (1.8.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/json-1.8.1.gemspec
+I, [2014-05-14T01:35:47.431387 #334]  INFO -- : 0:  rdoc (3.12.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rdoc-3.12.2.gemspec
+I, [2014-05-14T01:35:48.055577 #334]  INFO -- : 0:  thor (0.14.6) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/thor-0.14.6.gemspec
+I, [2014-05-14T01:35:49.417432 #334]  INFO -- : 0:  railties (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/railties-3.2.3.gemspec
+I, [2014-05-14T01:35:49.919841 #334]  INFO -- : 0:  coffee-rails (3.2.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/coffee-rails-3.2.2.gemspec
+I, [2014-05-14T01:35:50.648557 #334]  INFO -- : 0:  jquery-rails (3.1.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/jquery-rails-3.1.0.gemspec
+I, [2014-05-14T01:35:51.153715 #334]  INFO -- : 0:  rails (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rails-3.2.3.gemspec
+I, [2014-05-14T01:35:52.233494 #334]  INFO -- : 0:  sass (3.3.7) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/sass-3.3.7.gemspec
+I, [2014-05-14T01:35:52.935187 #334]  INFO -- : 0:  sass-rails (3.2.6) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/sass-rails-3.2.6.gemspec
+I, [2014-05-14T01:35:56.584804 #334]  INFO -- : 0:  sqlite3 (1.3.9) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/sqlite3-1.3.9.gemspec
+I, [2014-05-14T01:35:57.234205 #334]  INFO -- : 0:  uglifier (2.5.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/uglifier-2.5.0.gemspec
+I, [2014-05-14T03:10:05.466658 #3488]  INFO -- : 0:  rake (10.3.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rake-10.3.1.gemspec
+I, [2014-05-14T03:10:05.467075 #3488]  INFO -- : 0:  i18n (0.6.9) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/i18n-0.6.9.gemspec
+I, [2014-05-14T03:10:05.467376 #3488]  INFO -- : 0:  multi_json (1.10.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/multi_json-1.10.0.gemspec
+I, [2014-05-14T03:10:05.467679 #3488]  INFO -- : 0:  activesupport (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activesupport-3.2.3.gemspec
+I, [2014-05-14T03:10:05.467959 #3488]  INFO -- : 0:  builder (3.0.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/builder-3.0.4.gemspec
+I, [2014-05-14T03:10:05.468216 #3488]  INFO -- : 0:  activemodel (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activemodel-3.2.3.gemspec
+I, [2014-05-14T03:10:05.468471 #3488]  INFO -- : 0:  erubis (2.7.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/erubis-2.7.0.gemspec
+I, [2014-05-14T03:10:05.468726 #3488]  INFO -- : 0:  journey (1.0.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/journey-1.0.4.gemspec
+I, [2014-05-14T03:10:05.468978 #3488]  INFO -- : 0:  rack (1.4.5) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-1.4.5.gemspec
+I, [2014-05-14T03:10:05.469230 #3488]  INFO -- : 0:  rack-cache (1.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-cache-1.2.gemspec
+I, [2014-05-14T03:10:05.469482 #3488]  INFO -- : 0:  rack-test (0.6.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-test-0.6.2.gemspec
+I, [2014-05-14T03:10:05.469732 #3488]  INFO -- : 0:  hike (1.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/hike-1.2.3.gemspec
+I, [2014-05-14T03:10:05.469982 #3488]  INFO -- : 0:  tilt (1.4.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/tilt-1.4.1.gemspec
+I, [2014-05-14T03:10:05.470234 #3488]  INFO -- : 0:  sprockets (2.1.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/sprockets-2.1.3.gemspec
+I, [2014-05-14T03:10:05.470507 #3488]  INFO -- : 0:  actionpack (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/actionpack-3.2.3.gemspec
+I, [2014-05-14T03:10:05.470759 #3488]  INFO -- : 0:  mime-types (1.25.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/mime-types-1.25.1.gemspec
+I, [2014-05-14T03:10:05.471015 #3488]  INFO -- : 0:  polyglot (0.3.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/polyglot-0.3.4.gemspec
+I, [2014-05-14T03:10:05.471270 #3488]  INFO -- : 0:  treetop (1.4.15) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/treetop-1.4.15.gemspec
+I, [2014-05-14T03:10:05.471527 #3488]  INFO -- : 0:  mail (2.4.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/mail-2.4.4.gemspec
+I, [2014-05-14T03:10:05.471792 #3488]  INFO -- : 0:  actionmailer (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/actionmailer-3.2.3.gemspec
+I, [2014-05-14T03:10:05.472050 #3488]  INFO -- : 0:  arel (3.0.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/arel-3.0.3.gemspec
+I, [2014-05-14T03:10:05.472308 #3488]  INFO -- : 0:  tzinfo (0.3.39) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/tzinfo-0.3.39.gemspec
+I, [2014-05-14T03:10:05.472568 #3488]  INFO -- : 0:  activerecord (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activerecord-3.2.3.gemspec
+I, [2014-05-14T03:10:05.472886 #3488]  INFO -- : 0:  activeresource (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activeresource-3.2.3.gemspec
+I, [2014-05-14T03:10:05.473151 #3488]  INFO -- : 0:  coffee-script-source (1.7.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/coffee-script-source-1.7.0.gemspec
+I, [2014-05-14T03:10:05.473412 #3488]  INFO -- : 0:  execjs (2.0.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/execjs-2.0.2.gemspec
+I, [2014-05-14T03:10:05.473674 #3488]  INFO -- : 0:  coffee-script (2.2.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/coffee-script-2.2.0.gemspec
+I, [2014-05-14T03:10:05.473933 #3488]  INFO -- : 0:  rack-ssl (1.3.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-ssl-1.3.4.gemspec
+I, [2014-05-14T03:10:05.474204 #3488]  INFO -- : 0:  json (1.8.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/json-1.8.1.gemspec
+I, [2014-05-14T03:10:05.474467 #3488]  INFO -- : 0:  rdoc (3.12.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rdoc-3.12.2.gemspec
+I, [2014-05-14T03:10:05.474727 #3488]  INFO -- : 0:  thor (0.14.6) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/thor-0.14.6.gemspec
+I, [2014-05-14T03:10:05.474991 #3488]  INFO -- : 0:  railties (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/railties-3.2.3.gemspec
+I, [2014-05-14T03:10:05.475263 #3488]  INFO -- : 0:  coffee-rails (3.2.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/coffee-rails-3.2.2.gemspec
+I, [2014-05-14T03:10:05.475527 #3488]  INFO -- : 0:  jquery-rails (3.1.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/jquery-rails-3.1.0.gemspec
+I, [2014-05-14T03:10:05.475756 #3488]  INFO -- : 0:  bundler (1.5.1) from /Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source
+I, [2014-05-14T03:10:05.476016 #3488]  INFO -- : 0:  rails (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rails-3.2.3.gemspec
+I, [2014-05-14T03:10:05.476278 #3488]  INFO -- : 0:  sass (3.3.7) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/sass-3.3.7.gemspec
+I, [2014-05-14T03:10:05.476547 #3488]  INFO -- : 0:  sass-rails (3.2.6) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/sass-rails-3.2.6.gemspec
+I, [2014-05-14T03:10:05.476810 #3488]  INFO -- : 0:  sqlite3 (1.3.9) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/sqlite3-1.3.9.gemspec
+I, [2014-05-14T03:10:05.477088 #3488]  INFO -- : 0:  uglifier (2.5.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/uglifier-2.5.0.gemspec
+I, [2014-05-15T17:23:32.846989 #9897]  INFO -- : 0:  rake (10.3.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rake-10.3.1.gemspec
+I, [2014-05-15T17:23:32.849503 #9897]  INFO -- : 0:  i18n (0.6.9) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/i18n-0.6.9.gemspec
+I, [2014-05-15T17:23:32.849968 #9897]  INFO -- : 0:  multi_json (1.10.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/multi_json-1.10.0.gemspec
+I, [2014-05-15T17:23:32.850323 #9897]  INFO -- : 0:  activesupport (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activesupport-3.2.3.gemspec
+I, [2014-05-15T17:23:32.850656 #9897]  INFO -- : 0:  builder (3.0.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/builder-3.0.4.gemspec
+I, [2014-05-15T17:23:32.850996 #9897]  INFO -- : 0:  activemodel (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activemodel-3.2.3.gemspec
+I, [2014-05-15T17:23:32.851339 #9897]  INFO -- : 0:  erubis (2.7.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/erubis-2.7.0.gemspec
+I, [2014-05-15T17:23:32.851680 #9897]  INFO -- : 0:  journey (1.0.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/journey-1.0.4.gemspec
+I, [2014-05-15T17:23:32.852020 #9897]  INFO -- : 0:  rack (1.4.5) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-1.4.5.gemspec
+I, [2014-05-15T17:23:32.852359 #9897]  INFO -- : 0:  rack-cache (1.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-cache-1.2.gemspec
+I, [2014-05-15T17:23:32.852687 #9897]  INFO -- : 0:  rack-test (0.6.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-test-0.6.2.gemspec
+I, [2014-05-15T17:23:32.852955 #9897]  INFO -- : 0:  hike (1.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/hike-1.2.3.gemspec
+I, [2014-05-15T17:23:32.853225 #9897]  INFO -- : 0:  tilt (1.4.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/tilt-1.4.1.gemspec
+I, [2014-05-15T17:23:32.853536 #9897]  INFO -- : 0:  sprockets (2.1.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/sprockets-2.1.3.gemspec
+I, [2014-05-15T17:23:32.853851 #9897]  INFO -- : 0:  actionpack (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/actionpack-3.2.3.gemspec
+I, [2014-05-15T17:23:32.854165 #9897]  INFO -- : 0:  mime-types (1.25.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/mime-types-1.25.1.gemspec
+I, [2014-05-15T17:23:32.854479 #9897]  INFO -- : 0:  polyglot (0.3.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/polyglot-0.3.4.gemspec
+I, [2014-05-15T17:23:32.854793 #9897]  INFO -- : 0:  treetop (1.4.15) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/treetop-1.4.15.gemspec
+I, [2014-05-15T17:23:32.855105 #9897]  INFO -- : 0:  mail (2.4.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/mail-2.4.4.gemspec
+I, [2014-05-15T17:23:32.855421 #9897]  INFO -- : 0:  actionmailer (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/actionmailer-3.2.3.gemspec
+I, [2014-05-15T17:23:32.855732 #9897]  INFO -- : 0:  arel (3.0.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/arel-3.0.3.gemspec
+I, [2014-05-15T17:23:32.855994 #9897]  INFO -- : 0:  tzinfo (0.3.39) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/tzinfo-0.3.39.gemspec
+I, [2014-05-15T17:23:32.856281 #9897]  INFO -- : 0:  activerecord (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activerecord-3.2.3.gemspec
+I, [2014-05-15T17:23:32.856599 #9897]  INFO -- : 0:  activeresource (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/activeresource-3.2.3.gemspec
+I, [2014-05-15T17:23:32.856901 #9897]  INFO -- : 0:  bundler (1.5.1) from /Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source
+I, [2014-05-15T17:23:32.857217 #9897]  INFO -- : 0:  coffee-script-source (1.7.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/coffee-script-source-1.7.0.gemspec
+I, [2014-05-15T17:23:32.857514 #9897]  INFO -- : 0:  execjs (2.0.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/execjs-2.0.2.gemspec
+I, [2014-05-15T17:23:32.857814 #9897]  INFO -- : 0:  coffee-script (2.2.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/coffee-script-2.2.0.gemspec
+I, [2014-05-15T17:23:32.858142 #9897]  INFO -- : 0:  rack-ssl (1.3.4) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rack-ssl-1.3.4.gemspec
+I, [2014-05-15T17:23:32.858460 #9897]  INFO -- : 0:  json (1.8.1) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/json-1.8.1.gemspec
+I, [2014-05-15T17:23:32.858782 #9897]  INFO -- : 0:  rdoc (3.12.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rdoc-3.12.2.gemspec
+I, [2014-05-15T17:23:32.859099 #9897]  INFO -- : 0:  thor (0.14.6) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/thor-0.14.6.gemspec
+I, [2014-05-15T17:23:32.859418 #9897]  INFO -- : 0:  railties (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/railties-3.2.3.gemspec
+I, [2014-05-15T17:23:32.859695 #9897]  INFO -- : 0:  coffee-rails (3.2.2) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/coffee-rails-3.2.2.gemspec
+I, [2014-05-15T17:23:32.859970 #9897]  INFO -- : 0:  jquery-rails (3.1.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/jquery-rails-3.1.0.gemspec
+I, [2014-05-15T17:23:32.860243 #9897]  INFO -- : 0:  rails (3.2.3) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/rails-3.2.3.gemspec
+I, [2014-05-15T17:23:32.860516 #9897]  INFO -- : 0:  sass (3.3.7) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/sass-3.3.7.gemspec
+I, [2014-05-15T17:23:32.860789 #9897]  INFO -- : 0:  sass-rails (3.2.6) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/sass-rails-3.2.6.gemspec
+I, [2014-05-15T17:23:32.861060 #9897]  INFO -- : 0:  sqlite3 (1.3.9) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/sqlite3-1.3.9.gemspec
+I, [2014-05-15T17:23:32.861331 #9897]  INFO -- : 0:  uglifier (2.5.0) from /Users/ethanyu94/dartsync/vendor/bundle/ruby/2.0.0/specifications/uglifier-2.5.0.gemspec
+I, [2014-05-27T03:28:24.623121 #1916]  INFO -- : 0:  rake (10.3.1) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/rake-10.3.1.gemspec
+I, [2014-05-27T03:28:25.192629 #1916]  INFO -- : 0:  i18n (0.6.9) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/i18n-0.6.9.gemspec
+I, [2014-05-27T03:28:25.825118 #1916]  INFO -- : 0:  multi_json (1.10.0) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/multi_json-1.10.0.gemspec
+I, [2014-05-27T03:28:26.770540 #1916]  INFO -- : 0:  activesupport (3.2.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/activesupport-3.2.3.gemspec
+I, [2014-05-27T03:28:27.246560 #1916]  INFO -- : 0:  builder (3.0.4) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/builder-3.0.4.gemspec
+I, [2014-05-27T03:28:27.817880 #1916]  INFO -- : 0:  activemodel (3.2.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/activemodel-3.2.3.gemspec
+I, [2014-05-27T03:28:28.516439 #1916]  INFO -- : 0:  erubis (2.7.0) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/erubis-2.7.0.gemspec
+I, [2014-05-27T03:28:29.006195 #1916]  INFO -- : 0:  journey (1.0.4) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/journey-1.0.4.gemspec
+I, [2014-05-27T03:28:29.700439 #1916]  INFO -- : 0:  rack (1.4.5) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/rack-1.4.5.gemspec
+I, [2014-05-27T03:28:30.402181 #1916]  INFO -- : 0:  rack-cache (1.2) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/rack-cache-1.2.gemspec
+I, [2014-05-27T03:28:30.865917 #1916]  INFO -- : 0:  rack-test (0.6.2) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/rack-test-0.6.2.gemspec
+I, [2014-05-27T03:28:31.431880 #1916]  INFO -- : 0:  hike (1.2.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/hike-1.2.3.gemspec
+I, [2014-05-27T03:28:32.148354 #1916]  INFO -- : 0:  tilt (1.4.1) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/tilt-1.4.1.gemspec
+I, [2014-05-27T03:28:32.805647 #1916]  INFO -- : 0:  sprockets (2.1.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/sprockets-2.1.3.gemspec
+I, [2014-05-27T03:28:33.614969 #1916]  INFO -- : 0:  actionpack (3.2.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/actionpack-3.2.3.gemspec
+I, [2014-05-27T03:28:34.343974 #1916]  INFO -- : 0:  mime-types (1.25.1) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/mime-types-1.25.1.gemspec
+I, [2014-05-27T03:28:34.913657 #1916]  INFO -- : 0:  polyglot (0.3.4) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/polyglot-0.3.4.gemspec
+I, [2014-05-27T03:28:35.496080 #1916]  INFO -- : 0:  treetop (1.4.15) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/treetop-1.4.15.gemspec
+I, [2014-05-27T03:28:36.374239 #1916]  INFO -- : 0:  mail (2.4.4) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/mail-2.4.4.gemspec
+I, [2014-05-27T03:28:36.931904 #1916]  INFO -- : 0:  actionmailer (3.2.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/actionmailer-3.2.3.gemspec
+I, [2014-05-27T03:28:37.472776 #1916]  INFO -- : 0:  arel (3.0.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/arel-3.0.3.gemspec
+I, [2014-05-27T03:28:38.339694 #1916]  INFO -- : 0:  tzinfo (0.3.39) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/tzinfo-0.3.39.gemspec
+I, [2014-05-27T03:28:39.173343 #1916]  INFO -- : 0:  activerecord (3.2.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/activerecord-3.2.3.gemspec
+I, [2014-05-27T03:28:39.714951 #1916]  INFO -- : 0:  activeresource (3.2.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/activeresource-3.2.3.gemspec
+I, [2014-05-27T03:28:40.238526 #1916]  INFO -- : 0:  coffee-script-source (1.7.0) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/coffee-script-source-1.7.0.gemspec
+I, [2014-05-27T03:28:40.714229 #1916]  INFO -- : 0:  execjs (2.0.2) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/execjs-2.0.2.gemspec
+I, [2014-05-27T03:28:41.164049 #1916]  INFO -- : 0:  coffee-script (2.2.0) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/coffee-script-2.2.0.gemspec
+I, [2014-05-27T03:28:41.607852 #1916]  INFO -- : 0:  rack-ssl (1.3.4) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/rack-ssl-1.3.4.gemspec
+I, [2014-05-27T03:28:44.238473 #1916]  INFO -- : 0:  json (1.8.1) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/json-1.8.1.gemspec
+I, [2014-05-27T03:28:45.323400 #1916]  INFO -- : 0:  rdoc (3.12.2) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/rdoc-3.12.2.gemspec
+I, [2014-05-27T03:28:45.852920 #1916]  INFO -- : 0:  thor (0.14.6) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/thor-0.14.6.gemspec
+I, [2014-05-27T03:28:47.108913 #1916]  INFO -- : 0:  railties (3.2.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/railties-3.2.3.gemspec
+I, [2014-05-27T03:28:47.564537 #1916]  INFO -- : 0:  coffee-rails (3.2.2) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/coffee-rails-3.2.2.gemspec
+I, [2014-05-27T03:28:48.370991 #1916]  INFO -- : 0:  jquery-rails (3.1.0) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/jquery-rails-3.1.0.gemspec
+I, [2014-05-27T03:28:48.371400 #1916]  INFO -- : 0:  bundler (1.5.1) from /Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source
+I, [2014-05-27T03:28:48.871867 #1916]  INFO -- : 0:  rails (3.2.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/rails-3.2.3.gemspec
+I, [2014-05-27T03:28:49.850265 #1916]  INFO -- : 0:  sass (3.3.7) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/sass-3.3.7.gemspec
+I, [2014-05-27T03:28:50.678197 #1916]  INFO -- : 0:  sass-rails (3.2.6) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/sass-rails-3.2.6.gemspec
+I, [2014-05-27T03:28:54.412106 #1916]  INFO -- : 0:  sqlite3 (1.3.9) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/sqlite3-1.3.9.gemspec
+I, [2014-05-27T03:28:54.960153 #1916]  INFO -- : 0:  uglifier (2.5.0) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/uglifier-2.5.0.gemspec
+I, [2014-05-27T22:43:52.584404 #11416]  INFO -- : 0:  rake (10.3.1) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/rake-10.3.1.gemspec
+I, [2014-05-27T22:43:52.584907 #11416]  INFO -- : 0:  i18n (0.6.9) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/i18n-0.6.9.gemspec
+I, [2014-05-27T22:43:52.585250 #11416]  INFO -- : 0:  multi_json (1.10.0) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/multi_json-1.10.0.gemspec
+I, [2014-05-27T22:43:52.585578 #11416]  INFO -- : 0:  activesupport (3.2.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/activesupport-3.2.3.gemspec
+I, [2014-05-27T22:43:52.585883 #11416]  INFO -- : 0:  builder (3.0.4) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/builder-3.0.4.gemspec
+I, [2014-05-27T22:43:52.586168 #11416]  INFO -- : 0:  activemodel (3.2.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/activemodel-3.2.3.gemspec
+I, [2014-05-27T22:43:52.586437 #11416]  INFO -- : 0:  erubis (2.7.0) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/erubis-2.7.0.gemspec
+I, [2014-05-27T22:43:52.586727 #11416]  INFO -- : 0:  journey (1.0.4) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/journey-1.0.4.gemspec
+I, [2014-05-27T22:43:52.587001 #11416]  INFO -- : 0:  rack (1.4.5) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/rack-1.4.5.gemspec
+I, [2014-05-27T22:43:52.587306 #11416]  INFO -- : 0:  rack-cache (1.2) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/rack-cache-1.2.gemspec
+I, [2014-05-27T22:43:52.587569 #11416]  INFO -- : 0:  rack-test (0.6.2) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/rack-test-0.6.2.gemspec
+I, [2014-05-27T22:43:52.587830 #11416]  INFO -- : 0:  hike (1.2.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/hike-1.2.3.gemspec
+I, [2014-05-27T22:43:52.588118 #11416]  INFO -- : 0:  tilt (1.4.1) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/tilt-1.4.1.gemspec
+I, [2014-05-27T22:43:52.588386 #11416]  INFO -- : 0:  sprockets (2.1.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/sprockets-2.1.3.gemspec
+I, [2014-05-27T22:43:52.588675 #11416]  INFO -- : 0:  actionpack (3.2.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/actionpack-3.2.3.gemspec
+I, [2014-05-27T22:43:52.588965 #11416]  INFO -- : 0:  mime-types (1.25.1) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/mime-types-1.25.1.gemspec
+I, [2014-05-27T22:43:52.589246 #11416]  INFO -- : 0:  polyglot (0.3.4) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/polyglot-0.3.4.gemspec
+I, [2014-05-27T22:43:52.589517 #11416]  INFO -- : 0:  treetop (1.4.15) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/treetop-1.4.15.gemspec
+I, [2014-05-27T22:43:52.589806 #11416]  INFO -- : 0:  mail (2.4.4) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/mail-2.4.4.gemspec
+I, [2014-05-27T22:43:52.590087 #11416]  INFO -- : 0:  actionmailer (3.2.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/actionmailer-3.2.3.gemspec
+I, [2014-05-27T22:43:52.590359 #11416]  INFO -- : 0:  arel (3.0.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/arel-3.0.3.gemspec
+I, [2014-05-27T22:43:52.590638 #11416]  INFO -- : 0:  tzinfo (0.3.39) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/tzinfo-0.3.39.gemspec
+I, [2014-05-27T22:43:52.590917 #11416]  INFO -- : 0:  activerecord (3.2.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/activerecord-3.2.3.gemspec
+I, [2014-05-27T22:43:52.595903 #11416]  INFO -- : 0:  activeresource (3.2.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/activeresource-3.2.3.gemspec
+I, [2014-05-27T22:43:52.596256 #11416]  INFO -- : 0:  coffee-script-source (1.7.0) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/coffee-script-source-1.7.0.gemspec
+I, [2014-05-27T22:43:52.596559 #11416]  INFO -- : 0:  execjs (2.0.2) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/execjs-2.0.2.gemspec
+I, [2014-05-27T22:43:52.596863 #11416]  INFO -- : 0:  coffee-script (2.2.0) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/coffee-script-2.2.0.gemspec
+I, [2014-05-27T22:43:52.597151 #11416]  INFO -- : 0:  rack-ssl (1.3.4) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/rack-ssl-1.3.4.gemspec
+I, [2014-05-27T22:43:52.597457 #11416]  INFO -- : 0:  json (1.8.1) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/json-1.8.1.gemspec
+I, [2014-05-27T22:43:52.597766 #11416]  INFO -- : 0:  rdoc (3.12.2) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/rdoc-3.12.2.gemspec
+I, [2014-05-27T22:43:52.598031 #11416]  INFO -- : 0:  thor (0.14.6) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/thor-0.14.6.gemspec
+I, [2014-05-27T22:43:52.598297 #11416]  INFO -- : 0:  railties (3.2.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/railties-3.2.3.gemspec
+I, [2014-05-27T22:43:52.598572 #11416]  INFO -- : 0:  coffee-rails (3.2.2) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/coffee-rails-3.2.2.gemspec
+I, [2014-05-27T22:43:52.598850 #11416]  INFO -- : 0:  jquery-rails (3.1.0) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/jquery-rails-3.1.0.gemspec
+I, [2014-05-27T22:43:52.599091 #11416]  INFO -- : 0:  bundler (1.5.1) from /Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source
+I, [2014-05-27T22:43:52.599360 #11416]  INFO -- : 0:  rails (3.2.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/rails-3.2.3.gemspec
+I, [2014-05-27T22:43:52.599633 #11416]  INFO -- : 0:  sass (3.3.7) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/sass-3.3.7.gemspec
+I, [2014-05-27T22:43:52.599913 #11416]  INFO -- : 0:  sass-rails (3.2.6) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/sass-rails-3.2.6.gemspec
+I, [2014-05-27T22:43:52.600172 #11416]  INFO -- : 0:  sqlite3 (1.3.9) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/sqlite3-1.3.9.gemspec
+I, [2014-05-27T22:43:52.600441 #11416]  INFO -- : 0:  uglifier (2.5.0) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/uglifier-2.5.0.gemspec
+I, [2014-05-27T22:44:56.550867 #11429]  INFO -- : 0:  rake (10.3.1) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/rake-10.3.1.gemspec
+I, [2014-05-27T22:44:56.551262 #11429]  INFO -- : 0:  i18n (0.6.9) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/i18n-0.6.9.gemspec
+I, [2014-05-27T22:44:56.551591 #11429]  INFO -- : 0:  multi_json (1.10.0) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/multi_json-1.10.0.gemspec
+I, [2014-05-27T22:44:56.551922 #11429]  INFO -- : 0:  activesupport (3.2.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/activesupport-3.2.3.gemspec
+I, [2014-05-27T22:44:56.552230 #11429]  INFO -- : 0:  builder (3.0.4) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/builder-3.0.4.gemspec
+I, [2014-05-27T22:44:56.552536 #11429]  INFO -- : 0:  activemodel (3.2.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/activemodel-3.2.3.gemspec
+I, [2014-05-27T22:44:56.552814 #11429]  INFO -- : 0:  erubis (2.7.0) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/erubis-2.7.0.gemspec
+I, [2014-05-27T22:44:56.553104 #11429]  INFO -- : 0:  journey (1.0.4) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/journey-1.0.4.gemspec
+I, [2014-05-27T22:44:56.553387 #11429]  INFO -- : 0:  rack (1.4.5) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/rack-1.4.5.gemspec
+I, [2014-05-27T22:44:56.553712 #11429]  INFO -- : 0:  rack-cache (1.2) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/rack-cache-1.2.gemspec
+I, [2014-05-27T22:44:56.553993 #11429]  INFO -- : 0:  rack-test (0.6.2) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/rack-test-0.6.2.gemspec
+I, [2014-05-27T22:44:56.554249 #11429]  INFO -- : 0:  hike (1.2.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/hike-1.2.3.gemspec
+I, [2014-05-27T22:44:56.554514 #11429]  INFO -- : 0:  tilt (1.4.1) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/tilt-1.4.1.gemspec
+I, [2014-05-27T22:44:56.554783 #11429]  INFO -- : 0:  sprockets (2.1.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/sprockets-2.1.3.gemspec
+I, [2014-05-27T22:44:56.555067 #11429]  INFO -- : 0:  actionpack (3.2.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/actionpack-3.2.3.gemspec
+I, [2014-05-27T22:44:56.555359 #11429]  INFO -- : 0:  mime-types (1.25.1) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/mime-types-1.25.1.gemspec
+I, [2014-05-27T22:44:56.555636 #11429]  INFO -- : 0:  polyglot (0.3.4) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/polyglot-0.3.4.gemspec
+I, [2014-05-27T22:44:56.555896 #11429]  INFO -- : 0:  treetop (1.4.15) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/treetop-1.4.15.gemspec
+I, [2014-05-27T22:44:56.556171 #11429]  INFO -- : 0:  mail (2.4.4) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/mail-2.4.4.gemspec
+I, [2014-05-27T22:44:56.556442 #11429]  INFO -- : 0:  actionmailer (3.2.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/actionmailer-3.2.3.gemspec
+I, [2014-05-27T22:44:56.556711 #11429]  INFO -- : 0:  arel (3.0.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/arel-3.0.3.gemspec
+I, [2014-05-27T22:44:56.556976 #11429]  INFO -- : 0:  tzinfo (0.3.39) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/tzinfo-0.3.39.gemspec
+I, [2014-05-27T22:44:56.557256 #11429]  INFO -- : 0:  activerecord (3.2.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/activerecord-3.2.3.gemspec
+I, [2014-05-27T22:44:56.562056 #11429]  INFO -- : 0:  activeresource (3.2.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/activeresource-3.2.3.gemspec
+I, [2014-05-27T22:44:56.562395 #11429]  INFO -- : 0:  coffee-script-source (1.7.0) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/coffee-script-source-1.7.0.gemspec
+I, [2014-05-27T22:44:56.562705 #11429]  INFO -- : 0:  execjs (2.0.2) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/execjs-2.0.2.gemspec
+I, [2014-05-27T22:44:56.563011 #11429]  INFO -- : 0:  coffee-script (2.2.0) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/coffee-script-2.2.0.gemspec
+I, [2014-05-27T22:44:56.563327 #11429]  INFO -- : 0:  rack-ssl (1.3.4) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/rack-ssl-1.3.4.gemspec
+I, [2014-05-27T22:44:56.563628 #11429]  INFO -- : 0:  json (1.8.1) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/json-1.8.1.gemspec
+I, [2014-05-27T22:44:56.563921 #11429]  INFO -- : 0:  rdoc (3.12.2) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/rdoc-3.12.2.gemspec
+I, [2014-05-27T22:44:56.564206 #11429]  INFO -- : 0:  thor (0.14.6) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/thor-0.14.6.gemspec
+I, [2014-05-27T22:44:56.564484 #11429]  INFO -- : 0:  railties (3.2.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/railties-3.2.3.gemspec
+I, [2014-05-27T22:44:56.564836 #11429]  INFO -- : 0:  coffee-rails (3.2.2) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/coffee-rails-3.2.2.gemspec
+I, [2014-05-27T22:44:56.565125 #11429]  INFO -- : 0:  jquery-rails (3.1.0) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/jquery-rails-3.1.0.gemspec
+I, [2014-05-27T22:44:56.565379 #11429]  INFO -- : 0:  bundler (1.5.1) from /Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source
+I, [2014-05-27T22:44:56.565657 #11429]  INFO -- : 0:  rails (3.2.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/rails-3.2.3.gemspec
+I, [2014-05-27T22:44:56.565925 #11429]  INFO -- : 0:  sass (3.3.7) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/sass-3.3.7.gemspec
+I, [2014-05-27T22:44:56.566197 #11429]  INFO -- : 0:  sass-rails (3.2.6) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/sass-rails-3.2.6.gemspec
+I, [2014-05-27T22:44:56.566468 #11429]  INFO -- : 0:  sqlite3 (1.3.9) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/sqlite3-1.3.9.gemspec
+I, [2014-05-27T22:44:56.566725 #11429]  INFO -- : 0:  uglifier (2.5.0) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/uglifier-2.5.0.gemspec
+I, [2014-05-27T22:46:00.834477 #11467]  INFO -- : 0:  rake (10.3.2) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/rake-10.3.2.gemspec
+I, [2014-05-27T22:46:00.835137 #11467]  INFO -- : 0:  i18n (0.6.9) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/i18n-0.6.9.gemspec
+I, [2014-05-27T22:46:00.835564 #11467]  INFO -- : 0:  multi_json (1.10.0) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/multi_json-1.10.0.gemspec
+I, [2014-05-27T22:46:00.835972 #11467]  INFO -- : 0:  activesupport (3.2.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/activesupport-3.2.3.gemspec
+I, [2014-05-27T22:46:00.836384 #11467]  INFO -- : 0:  builder (3.0.4) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/builder-3.0.4.gemspec
+I, [2014-05-27T22:46:00.836787 #11467]  INFO -- : 0:  activemodel (3.2.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/activemodel-3.2.3.gemspec
+I, [2014-05-27T22:46:00.837192 #11467]  INFO -- : 0:  erubis (2.7.0) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/erubis-2.7.0.gemspec
+I, [2014-05-27T22:46:00.837601 #11467]  INFO -- : 0:  journey (1.0.4) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/journey-1.0.4.gemspec
+I, [2014-05-27T22:46:00.838006 #11467]  INFO -- : 0:  rack (1.4.5) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/rack-1.4.5.gemspec
+I, [2014-05-27T22:46:00.838405 #11467]  INFO -- : 0:  rack-cache (1.2) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/rack-cache-1.2.gemspec
+I, [2014-05-27T22:46:00.838806 #11467]  INFO -- : 0:  rack-test (0.6.2) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/rack-test-0.6.2.gemspec
+I, [2014-05-27T22:46:00.839201 #11467]  INFO -- : 0:  hike (1.2.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/hike-1.2.3.gemspec
+I, [2014-05-27T22:46:00.839615 #11467]  INFO -- : 0:  tilt (1.4.1) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/tilt-1.4.1.gemspec
+I, [2014-05-27T22:46:00.840047 #11467]  INFO -- : 0:  sprockets (2.1.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/sprockets-2.1.3.gemspec
+I, [2014-05-27T22:46:00.840502 #11467]  INFO -- : 0:  actionpack (3.2.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/actionpack-3.2.3.gemspec
+I, [2014-05-27T22:46:00.840936 #11467]  INFO -- : 0:  mime-types (1.25.1) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/mime-types-1.25.1.gemspec
+I, [2014-05-27T22:46:00.841370 #11467]  INFO -- : 0:  polyglot (0.3.4) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/polyglot-0.3.4.gemspec
+I, [2014-05-27T22:46:00.841803 #11467]  INFO -- : 0:  treetop (1.4.15) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/treetop-1.4.15.gemspec
+I, [2014-05-27T22:46:00.842222 #11467]  INFO -- : 0:  mail (2.4.4) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/mail-2.4.4.gemspec
+I, [2014-05-27T22:46:00.842647 #11467]  INFO -- : 0:  actionmailer (3.2.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/actionmailer-3.2.3.gemspec
+I, [2014-05-27T22:46:00.842956 #11467]  INFO -- : 0:  arel (3.0.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/arel-3.0.3.gemspec
+I, [2014-05-27T22:46:00.843200 #11467]  INFO -- : 0:  tzinfo (0.3.39) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/tzinfo-0.3.39.gemspec
+I, [2014-05-27T22:46:00.843435 #11467]  INFO -- : 0:  activerecord (3.2.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/activerecord-3.2.3.gemspec
+I, [2014-05-27T22:46:00.866403 #11467]  INFO -- : 0:  activeresource (3.2.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/activeresource-3.2.3.gemspec
+I, [2014-05-27T22:46:00.866763 #11467]  INFO -- : 0:  bundler (1.5.1) from /Library/Ruby/Gems/2.0.0/gems/bundler-1.5.1/lib/bundler/source
+I, [2014-05-27T22:46:00.867012 #11467]  INFO -- : 0:  coffee-script-source (1.7.0) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/coffee-script-source-1.7.0.gemspec
+I, [2014-05-27T22:46:00.867358 #11467]  INFO -- : 0:  execjs (2.0.2) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/execjs-2.0.2.gemspec
+I, [2014-05-27T22:46:00.867667 #11467]  INFO -- : 0:  coffee-script (2.2.0) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/coffee-script-2.2.0.gemspec
+I, [2014-05-27T22:46:00.867948 #11467]  INFO -- : 0:  rack-ssl (1.3.4) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/rack-ssl-1.3.4.gemspec
+I, [2014-05-27T22:46:00.868273 #11467]  INFO -- : 0:  json (1.8.1) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/json-1.8.1.gemspec
+I, [2014-05-27T22:46:00.868550 #11467]  INFO -- : 0:  rdoc (3.12.2) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/rdoc-3.12.2.gemspec
+I, [2014-05-27T22:46:00.868826 #11467]  INFO -- : 0:  thor (0.14.6) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/thor-0.14.6.gemspec
+I, [2014-05-27T22:46:00.869080 #11467]  INFO -- : 0:  railties (3.2.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/railties-3.2.3.gemspec
+I, [2014-05-27T22:46:00.869320 #11467]  INFO -- : 0:  coffee-rails (3.2.2) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/coffee-rails-3.2.2.gemspec
+I, [2014-05-27T22:46:00.869559 #11467]  INFO -- : 0:  jquery-rails (3.1.0) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/jquery-rails-3.1.0.gemspec
+I, [2014-05-27T22:46:00.869810 #11467]  INFO -- : 0:  rails (3.2.3) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/rails-3.2.3.gemspec
+I, [2014-05-27T22:46:00.870054 #11467]  INFO -- : 0:  sass (3.3.7) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/sass-3.3.7.gemspec
+I, [2014-05-27T22:46:00.870365 #11467]  INFO -- : 0:  sass-rails (3.2.6) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/sass-rails-3.2.6.gemspec
+I, [2014-05-27T22:46:00.870600 #11467]  INFO -- : 0:  sqlite3 (1.3.9) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/sqlite3-1.3.9.gemspec
+I, [2014-05-27T22:46:00.870837 #11467]  INFO -- : 0:  uglifier (2.5.0) from /Users/ethanyu94/hip/WebApp/vendor/bundle/ruby/2.0.0/specifications/uglifier-2.5.0.gemspec

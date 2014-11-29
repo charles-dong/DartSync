@@ -1,0 +1,9 @@
+{"duncompress": <%= @stat.duncompress %> ,
+ "tuncompress": <%= @stat.tuncompress %>,
+ "dcompress": <%= @stat.dcompress %>,
+ "tcompress": <%= @stat.tcompress %>,
+ "dencrypt": <%= @stat.dencrypt %> ,
+ "tencrypt": <%= @stat.tencrypt %>,
+ "starttime": <%= @stat.starttime %>,
+ "updatetime": <%= @stat.updatetime %>,
+ "uptime": <%= @uptime %>}

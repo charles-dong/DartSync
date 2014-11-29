@@ -1,0 +1,24 @@
+//
+//  DirectoryOrFile.m
+//  DartSync
+//
+//  Created by Charles on 5/18/14.
+//  Copyright (c) 2014 Charles. All rights reserved.
+//
+
+#import "DirectoryOrFile.h"
+#import "PeerIP.h"
+
+
+@implementation DirectoryOrFile
+
+@dynamic directory;
+@dynamic name;
+@dynamic numPeers;
+@dynamic size;
+@dynamic version_number;
+@dynamic inDirectory;
+@dynamic parentDirectoryOf;
+@dynamic peerIPs;
+
+@end

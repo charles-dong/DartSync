@@ -1,0 +1,14 @@
+//
+//  DirectoryCDTVC.h
+//  DartSync
+//
+//  Created by Charles on 5/14/14.
+//  Copyright (c) 2014 Charles. All rights reserved.
+//
+
+#import "CoreDataTableViewController.h"
+#import "DirectoryOrFile.h"
+
+@interface DirectoryCDTVC : CoreDataTableViewController <UITableViewDataSource, UITableViewDelegate,UIDocumentInteractionControllerDelegate>
+@property (strong, nonatomic) DirectoryOrFile *currentDirectory;
+@end

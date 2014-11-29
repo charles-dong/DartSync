@@ -1,0 +1,84 @@
+//
+//  LoginViewController.m
+//  DartSync
+//
+//  Created by Charles on 5/16/14.
+//  Copyright (c) 2014 Charles. All rights reserved.
+//
+
+#import "LoginViewController.h"
+#import "DirectoryCDTVC.h"
+#import "FileManagement.h"
+#import "DirectoryOrFile+Access.h"
+#import "iOSpeer.h"
+#import "TBCoreDataStoreS1.h"
+
+@interface LoginViewController ()
+
+@end
+
+@implementation LoginViewController
+
+
+- (void)viewDidLoad //not on screen yet - only called once
+{
+    [super viewDidLoad];
+    self.title = @"Log in";
+    self.spinner.hidesWhenStopped = YES;
+    self.loginFailed.hidden = true;
+    
+}
+
+
+#pragma mark User Actions
+
+- (IBAction)login:(id)sender {
+    if ([self.password.text length] == 0)
+        return;
+    
+    [self.spinner startAnimating];
+    self.loginFailed.hidden = true;
+  if (sendPassword([self.password.text UTF8String]) > 0) {
+    printf("Correct password\n");
+    if ( sendRegister() > 0) {
+      printf("Successfully sent REGISTER");
+      [self pushDirectoryCDTVC];
+    }
+    else
+      printf("Failure sending REGISTER");
+  } else {
+    printf("Incorrect password\n");
+    [self.spinner stopAnimating];
+    self.loginFailed.hidden = false;
+  }
+}
+
+- (IBAction)backgroundTap:(id)sender {
+    [self.password resignFirstResponder];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+	[textField resignFirstResponder];
+	[self login:nil];
+	return YES;
+}
+
+#pragma mark Navigation
+
+- (void)pushDirectoryCDTVC {
+    DirectoryCDTVC *newDirectoryCDTVC = [[DirectoryCDTVC alloc] init];
+    DirectoryOrFile *rootDirectory = [DirectoryOrFile getRootDirectory];
+    [DirectoryOrFile updateAllCoreDataRelationships];
+    NSError *saveError = nil;
+    [[TBCoreDataStoreS1 privateQueueContext] save:&saveError];
+    printf("\n\n\nPushing root directory CDTVC\n\n\n");
+    [DirectoryOrFile printCoreData];
+    newDirectoryCDTVC.currentDirectory = rootDirectory;
+    newDirectoryCDTVC.title = @"Root";
+    newDirectoryCDTVC.navigationItem.hidesBackButton = YES;
+    [self.navigationController pushViewController:newDirectoryCDTVC animated:YES];
+}
+
+
+
+@end

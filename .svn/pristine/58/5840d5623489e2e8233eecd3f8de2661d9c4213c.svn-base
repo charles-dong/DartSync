@@ -1,0 +1,351 @@
+//
+//  DirectoryOrFile+Access.m
+//  DartSync
+//
+//  Created by Charles on 5/14/14.
+//  Copyright (c) 2014 Charles. All rights reserved.
+//
+
+#import "DirectoryOrFile+Access.h"
+#import "TBCoreDataStoreS1.h"
+#import "PeerIP+Access.h"
+#import "FileManagement.h"
+
+#define DIRECTORY_TYPE 100
+
+@implementation DirectoryOrFile (Access)
+
++ (void)updateCoreDataWithCollection:(file_collection_t *)collection {
+  
+  //fetch all directories or files
+  NSManagedObjectContext *context = [TBCoreDataStoreS1 privateQueueContext];
+  NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"DirectoryOrFile"];
+  //[request setIncludesPropertyValues:NO]; //only fetch the managedObjectID
+  NSError *error;
+  NSArray *matches = [context executeFetchRequest:request error:&error];
+  
+  //fetch all peers
+  NSArray *peers = [PeerIP getAllPeers];
+  for (PeerIP *peer in peers){
+    peer.hasFile = nil;
+  }
+  
+  if (!matches) { //nil pointer
+    NSLog(@"Error in updateCoreDataWithCollection - nil pointer.\n");
+  } else { //found no directories
+    if (![matches count])
+      NSLog(@"updateCoreDataWithCollection found no subdirectories/files.\n");
+    else
+      NSLog(@"updateCoreDataWithCollection found existing subdirectories/files.\n");
+    
+    //scrap everything
+    for (DirectoryOrFile *current in matches){
+      if (![current.name isEqualToString:@"rootDirectory"])
+        [context deleteObject:current];
+    }    
+    //and start anew..
+      //add existing
+    file_node_t *current = collection->common_files;
+    while (current) {
+      peers = [DirectoryOrFile addDirectoryOrFileWithFile_Node_Struct:current andPeers:peers];
+      current = current->next;
+    }
+      //add new
+    current = collection->new_head;
+    while (current) {
+      peers = [DirectoryOrFile addDirectoryOrFileWithFile_Node_Struct:current andPeers:peers];
+      current = current->next;
+    }
+      //add modified
+    current = collection->modified_head;
+    while (current) {
+      peers = [DirectoryOrFile addDirectoryOrFileWithFile_Node_Struct:current andPeers:peers];
+      current = current->next;
+    }
+  }
+  
+  //update relationships
+  [DirectoryOrFile updateAllCoreDataRelationships];
+  //[DirectoryOrFile printCoreData];
+  NSError *saveError2 = nil;
+  [[TBCoreDataStoreS1 privateQueueContext] save:&saveError2];
+  if (saveError2)
+    NSLog(@"Error updating Core Data with differences: %@\n", saveError2);
+  else {
+    NSLog(@"Done updating Core Data with differences!\n");
+
+  }
+}
+
+
++ (void)updateAllCoreDataRelationships {
+  
+  NSArray *allDirectories = [DirectoryOrFile getAllDirectories];
+  if (!allDirectories)
+    return;
+  
+  //for each directory, look for subdirectories files
+  for (DirectoryOrFile *directory in allDirectories){
+    //NSLog(@"updateAllCoreDataRelationships is updating subdirectories for %@", directory.name);
+    [directory setSubdirectoriesAndFiles];
+  }
+}
+
+
+
++ (void) printCoreData {
+  //fetch all directories or files
+  NSManagedObjectContext *context = [TBCoreDataStoreS1 privateQueueContext];
+  NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"DirectoryOrFile"];
+  request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name"
+                                                         ascending:YES
+                                                             selector:@selector(localizedStandardCompare:)]];
+  NSError *error;
+  NSArray *matches = [context executeFetchRequest:request error:&error];
+  if ([matches count]) {
+    for (DirectoryOrFile *current in matches)
+      NSLog(@"%@ is a %@ in directory %@", current.name, [current.directory intValue] == 1 ? @"Directory" : @"File", current.inDirectory.name);
+  }
+}
+
+
+#pragma mark - Helper Functions
+
+/*
++ (void)deleteDirectoryOrFileWithFile_Node_Struct:(file_node_t *)fileNodeStruct{
+  //look for existing directory or File
+  NSString *name = [NSString stringWithCString:fileNodeStruct->name encoding:NSASCIIStringEncoding];
+  NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"DirectoryOrFile"];
+  request.predicate = [NSPredicate predicateWithFormat:@"name = %@", name];
+  NSError *error;
+  NSArray *matches = [context executeFetchRequest:request error:&error];
+  
+  if (!matches || ([matches count] > 1)) { //nil pointer or more than one match
+    //handle error
+    NSLog(@"Error in deleteDirectoryOrFileWithFile_Node_Struct. Nil pointer or more than one match.\n");
+  } else if ([matches count]) {
+    //delete it
+    [context deleteObject:[matches lastObject]];
+  }
+}
+*/
+
+- (NSArray *)modifyWithFileNode:(file_node_t *)fileNodeStruct andPeers:(NSArray *)peers {
+  
+  //setup
+  NSMutableArray *peerIPs = [peers mutableCopy];
+  NSManagedObjectContext *context = [TBCoreDataStoreS1 privateQueueContext];
+  
+  //set attributes
+  self.directory = [NSNumber numberWithBool:(fileNodeStruct->type == DIRECTORY_TYPE)];
+  if (self.directory)
+    return peerIPs;
+  self.version_number = [NSNumber numberWithInt:fileNodeStruct->version_number];
+  self.size = [NSNumber numberWithInt:fileNodeStruct->size];
+  self.numPeers =[NSNumber numberWithInt:fileNodeStruct->numPeers];
+  
+  //set peer ips
+  NSMutableSet *tempMutableSet= [[NSMutableSet alloc] init];
+  for (int i = 0; i < fileNodeStruct->numPeers; i++) {
+    NSString *newPeerIP = [NSString stringWithCString:fileNodeStruct->newpeerip[i]
+                                             encoding:NSASCIIStringEncoding];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.peerIP LIKE %@", newPeerIP];
+    NSArray *filteredArray = [peerIPs filteredArrayUsingPredicate:predicate];
+    if ([filteredArray count])
+      [tempMutableSet addObject:[filteredArray lastObject]];
+    else {
+      PeerIP *new = [NSEntityDescription insertNewObjectForEntityForName:@"PeerIP"
+                                                  inManagedObjectContext:context];
+      [peerIPs addObject:new];
+      [tempMutableSet addObject:new];
+    }
+  }
+  self.peerIPs = [NSSet setWithSet:tempMutableSet];
+  
+  //return updated peer IP array
+  return peerIPs;
+}
+
++ (NSArray *)addDirectoryOrFileWithFile_Node_Struct:(file_node_t *)fileNodeStruct andPeers:(NSArray *)peers {
+  NSMutableArray *peerIPs = [peers mutableCopy];
+  
+  if (fileNodeStruct && fileNodeStruct->name) {
+    /*
+    //look for existing directory or File
+    NSString *name = [NSString stringWithCString:fileNodeStruct->name encoding:NSASCIIStringEncoding];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"DirectoryOrFile"];
+    request.predicate = [NSPredicate predicateWithFormat:@"name = %@", name];
+    NSError *error;
+    NSArray *matches = [context executeFetchRequest:request error:&error];
+    
+    if (!matches || ([matches count] > 1)) { //nil pointer or more than one match
+      //handle error
+      NSLog(@"Error in addDirectoryOrFileWithFile_Node_Struct. Nil pointer or more than one match.\n");
+      return nil;
+    } else if (![matches count]) {
+      //create the new directory/file in Core Data
+      newDirectoryOrFile = [NSEntityDescription insertNewObjectForEntityForName:@"DirectoryOrFile"
+                                                         inManagedObjectContext:context];
+      newDirectoryOrFile.name = name;
+    } else {
+      //directory/file already exists
+      newDirectoryOrFile = [matches lastObject];
+    }
+    */
+
+    NSMutableArray *peerIPs = [peers mutableCopy];
+    NSManagedObjectContext *context = [TBCoreDataStoreS1 privateQueueContext];
+    DirectoryOrFile *newDirectoryOrFile = [NSEntityDescription
+                                           insertNewObjectForEntityForName:@"DirectoryOrFile"
+                                           inManagedObjectContext:context];
+    
+    //set attributes
+    newDirectoryOrFile.name = [NSString stringWithCString:fileNodeStruct->name encoding:NSASCIIStringEncoding];
+    newDirectoryOrFile.directory = [NSNumber numberWithBool:(fileNodeStruct->type == DIRECTORY_TYPE)];
+    
+    //debug
+    if ([newDirectoryOrFile.directory intValue] == 1)
+      return peerIPs;
+    newDirectoryOrFile.version_number = [NSNumber numberWithInt:fileNodeStruct->version_number];
+    newDirectoryOrFile.size = [NSNumber numberWithInt:fileNodeStruct->size];
+    newDirectoryOrFile.numPeers =[NSNumber numberWithInt:fileNodeStruct->numPeers];
+    
+    //set peer ips
+    NSMutableSet *tempMutableSet= [[NSMutableSet alloc] init];
+    for (int i = 0; i < fileNodeStruct->numPeers; i++) {
+      NSString *newPeerIP = [NSString stringWithCString:fileNodeStruct->newpeerip[i]
+                                               encoding:NSASCIIStringEncoding];
+      NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.peerIP LIKE %@", newPeerIP];
+      NSArray *filteredArray = [peerIPs filteredArrayUsingPredicate:predicate];
+      if ([filteredArray count])
+        [tempMutableSet addObject:[filteredArray lastObject]];
+      else {
+        PeerIP *new = [NSEntityDescription insertNewObjectForEntityForName:@"PeerIP"
+                                                    inManagedObjectContext:context];
+        new.peerIP = newPeerIP;
+        [peerIPs addObject:new];
+        [tempMutableSet addObject:new];
+      }
+    }
+    newDirectoryOrFile.peerIPs = [NSSet setWithSet:tempMutableSet];
+    
+    //return updated peer ip array
+    return peerIPs;
+    /*
+    //set parent directory relationship
+    NSFetchRequest *parentDirectoryRequest = [NSFetchRequest fetchRequestWithEntityName:@"DirectoryOrFile"];
+    parentDirectoryRequest.predicate = [NSPredicate predicateWithFormat:@"name = %@", [name stringByDeletingLastPathComponent]];
+    NSArray *parentDirectoryMatches = [context executeFetchRequest:parentDirectoryRequest error:&error];
+    if (!parentDirectoryMatches || ([parentDirectoryMatches count] > 1)) { //nil pointer or more than one match
+      //handle error
+      NSLog(@"Error in addDirectoryOrFileWithFile_Node_Struct while fetching parent directory. Nil pointer or more than one match.\n");
+      return nil;
+    } else if (![parentDirectoryMatches count]) {
+      //no parent directory found
+      NSLog(@"Error in addDirectoryOrFileWithFile_Node_Struct while fetching parent directory. Not found.\n");
+      return nil;
+    } else {
+      //success
+      newDirectoryOrFile.inDirectory = [parentDirectoryMatches lastObject];
+    }
+     */
+  }
+  return peerIPs;
+}
+
+
+// called on directory - sets relationships for all direct subdirectories and files
+- (void)setSubdirectoriesAndFiles {
+  NSString *parentDirectoryPath;
+  if ([self.name isEqualToString:@"rootDirectory"]){
+    parentDirectoryPath = @"";
+  }
+  else {
+    parentDirectoryPath = self.name;
+  }
+  NSManagedObjectContext *context = [TBCoreDataStoreS1 privateQueueContext];
+  NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"DirectoryOrFile"];
+  if ([parentDirectoryPath length])
+    request.predicate = [NSPredicate predicateWithFormat:@"name contains %@", parentDirectoryPath];
+  NSError *error;
+  NSArray *matches = [context executeFetchRequest:request error:&error];
+  
+  if (!matches) { //nil pointer
+    NSLog(@"Error in setSubdirectoriesAndFiles - nil pointer.\n");
+  } else if (![matches count]) { //found no directories
+    NSLog(@"setSubdirectoriesAndFiles found no subdirectores or files.\n");
+  } else { //found some directories and/or files
+    
+    //filter to direct subdirectories or files
+    for (DirectoryOrFile *sub in matches) {
+      NSString *calcParentPath = [sub.name stringByDeletingLastPathComponent];
+      if (!calcParentPath && [parentDirectoryPath isEqualToString:@""])
+        sub.inDirectory = self;
+      else if ([parentDirectoryPath isEqualToString:calcParentPath])
+        sub.inDirectory = self;
+    }
+    
+    //NSLog(@"setSubdirectoriesAndFiles successfully updated relationships with parent directory %@\n", parentDirectoryPath);
+    if ([self.name isEqualToString:@"rootDirectory"]){
+      self.inDirectory = nil;
+    }
+  }
+  
+}
+
++ (DirectoryOrFile *)getRootDirectory {
+  
+  //setup
+  DirectoryOrFile *rootDirectory;
+  NSManagedObjectContext *context = [TBCoreDataStoreS1 privateQueueContext];
+  NSString *name = @"rootDirectory";
+  NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"DirectoryOrFile"];
+  request.predicate = [NSPredicate predicateWithFormat:@"name = %@", name];
+  NSError *error;
+  NSArray *matches = [context executeFetchRequest:request error:&error];
+  
+  if (!matches || ([matches count] > 1)) { //nil pointer or more than one match
+    //handle error
+    NSLog(@"Error in getRootDirectory. Nil pointer or more than one match.\n");
+    return nil;
+  } else if (![matches count]) {
+    //create new root directory
+    rootDirectory = [NSEntityDescription insertNewObjectForEntityForName:@"DirectoryOrFile"
+                                                  inManagedObjectContext:context];
+    rootDirectory.name = @"rootDirectory";
+    rootDirectory.directory = [NSNumber numberWithBool:YES];
+  } else {
+    //found it
+    rootDirectory = [matches lastObject];
+  }
+  return rootDirectory;
+}
+
+
++ (NSArray *)getAllDirectories {
+  
+  //setup
+  NSManagedObjectContext *context = [TBCoreDataStoreS1 privateQueueContext];
+  NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"DirectoryOrFile"];
+  request.predicate = [NSPredicate predicateWithFormat:@"directory == %@", [NSNumber numberWithBool:YES]];
+  NSError *error;
+  NSArray *matches = [context executeFetchRequest:request error:&error];
+  
+  if (!matches) { //nil pointer or more than one match
+    //handle error
+    NSLog(@"Error in getAllDirectories. Nil pointer or more than one match.\n");
+    return nil;
+  } else if (![matches count]) {
+    //found no directories
+    NSLog(@"getAllDirectories found no directores.\n");
+    return nil;
+  } else {
+    //found some directories
+    //NSLog(@"getAllDirectories found some directories.\n");
+    return matches;
+  }
+}
+
+
+
+@end
